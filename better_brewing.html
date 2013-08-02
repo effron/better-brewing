@@ -26,7 +26,7 @@ a {
 }
 
 .top {
-  background-color: blue;
+  background-color: #B7B9D2;
   position: fixed;
   top:0;
   left:0;
@@ -34,21 +34,23 @@ a {
 }
 
 header{
-  width: 800px;
+  width: 1000px;
   margin:auto;
-  border: 1px solid green;
-  background-color: green;
+  background-color: #ACA6D3;
 }
 
 header h1{
   float: left;
   font-weight: bold;
   font-size: 20px;
-  padding: 10px 10px 5px 10px;
+  border-left: 1px solid black;
+  padding: 12px 10px 5px 10px;
+  margin-left: 200px;
 }
 
 header nav{
   float: right;
+  margin-right: 10px;
 }
 
 header nav ul li{
@@ -62,7 +64,7 @@ header nav ul li a{
 }
 
 header nav ul li a:hover{
-  background-color: pink;
+  background-color: #9989D1;
 }
 
 header nav ul .account-dropdown{
@@ -72,32 +74,37 @@ header nav ul .account-dropdown{
 header nav ul .account-dropdown .hidden-menu {
   display: none;
   position: absolute;
-  border: 1px solid purple;
-  background: purple;
+  background: #9989D1;
 }
 
 header nav ul .account-dropdown .hidden-menu li{
   float: none;
-  border : 2px solid yellow;
 }
 
 header nav ul .account-dropdown:hover .hidden-menu{
   display: block;
 }
 
+header nav ul .account-dropdown .hidden-menu li a:hover{
+  background: #667F8F;
+}
+
 .main-body {
-  width: 800px;
-  margin: 60px auto;
+  width: 1000px;
+  margin: 37px auto;
 }
 
 .sidebar {
-  width: 198px;
+  width: 200px;
   float:left;
-  border: 2px solid brown;
 }
 
 .sidebar li {
-  border-top: 5px solid orange;
+  border-top: 5px solid #D5846C;
+}
+
+.sidebar li:last-child{
+  border-bottom: 5px solid #D5846C;
 }
 
 .sidebar li a{
@@ -106,33 +113,47 @@ header nav ul .account-dropdown:hover .hidden-menu{
 }
 
 .sidebar li a:hover{
-  background: grey;
+  background: #BABABA;
 }
 
 .main-content {
   float: left;
-  width: 596px;
-  background: grey;
+  width: 798px;
+  background: #9FA7CB;
   border-left: 2px solid black;
 }
 
 .main-content ul li {
   float: left;
-  border: 1px solid black;
   margin: 10px;
+  border-radius: 5px;
 }
 
 .main-content ul li a{
   display: block;
   padding: 50px 90px 50px 90px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
 }
 
 .main-content ul li a:hover{
-  background: white;
+  background: #C4C0D3;
+  box-shadow: 0px 0px 10px black;
+}
+
+.main-content ul li a:active{
+  box-shadow: inset 0px 0px 10px black;
 }
 
 footer {
   clear:both;
+  width: 1000px;
+  margin: auto;
+  border: 1px solid black;
+}
+
+footer h2 {
+  padding: 10px;
 }
 /*clearfix*/
 .group:after{
@@ -182,6 +203,11 @@ footer {
         <li><a href="#">RecipeBox2</a></li>
         <li><a href="#">RecipeBox3</a></li>
         <li><a href="#">RecipeBox4</a></li>
+        <li><a href="#">RecipeBox5</a></li>
+        <li><a href="#">RecipeBox6</a></li>
+        <li><a href="#">RecipeBox7</a></li>
+        <li><a href="#">RecipeBox8</a></li>
+        <li><a href="#">RecipeBox9</a></li>
       </ul>
     </div>
 

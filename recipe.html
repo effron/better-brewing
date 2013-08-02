@@ -6,79 +6,168 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
+<style>
+html, body, div, header, h1, h2, nav, ul, li, a, footer, table, tr, th, td, button {
+  margin:0;
+  padding:0;
+  border:0;
+  font-size:100%;
+  vertical-align: baseline;
+}
+
+body{
+  line-height:1;
+  font-family: sans-serif;
+}
+
+ul {
+  list-style:none;
+}
+
+a {
+  text-decoration: none;
+  color:black;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th, td{
+  padding: 10px;
+}
+
+.recipe-title{
+  color: blue;
+  font-size: 40px;
+}
+
+.description{
+  padding:10px;
+}
+
+.fermentables{
+  padding: 20px;
+}
+
+.fermentables h2{
+  color: brown;
+}
+
+.hops{
+  padding: 20px;
+}
+
+.hops h2{
+  color: green;
+}
+
+.yeasts{
+  padding: 20px;
+}
+
+.yeasts h2{
+  color: orange;
+}
+
+.additives{
+  padding: 20px;
+}
+
+.additives h2{
+  color: red;
+}
+
+
+</style>
 
 <body>
-  <h1>Blueberry Rye Stout</h1>
+  <h1 class="recipe-title">Blueberry Rye Stout</h1>
+  <div class="description">
+    <h2>Description</h2>
+    <p>This is a recipe I just made up using one of each type of ingredient. The name is completely unrelated to its ingredients.</p>
+  </div>
 
+  <div class="fermentables">
   <h2>FERMENTABLES</h2>
-  <table class="fermentables">
-    <tr class="fermentables-head">
-      <th>Weight</th>
-      <th>Name</th>
-      <th>Type</th>
-      <th>˚L</th>
-    </tr>
-    <tr class="fermentables-row">
-      <td>.5 kg</td>
-      <td>2-Row Caramel Malt</td>
-      <td>Grain</td>
-      <td>60</td>
-    </tr>
-  </table>
+    <table class="fermentables-table">
+      <tr class="fermentables-head">
+        <th>Weight</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>˚L</th>
+      </tr>
+      <tr class="fermentables-row">
+        <td>.5 kg</td>
+        <td><a href="#">2-Row Caramel Malt</a></td>
+        <td>Grain</td>
+        <td>60</td>
+      </tr>
+    </table>
+  </div>
 
-  <h2>HOPS</h2>
-  <table class="hops">
-    <tr class="hops-head">
-      <th>Usage</th>
-      <th>Time</th>
-      <th>Weight</th>
-      <th>Name</th>
-      <th>Form</th>
-      <th>AA%</th>
-    </tr>
-    <tr class="hops-row">
-      <td>Boil</td>
-      <td>20 minutes</td>
-      <td>2 oz</td>
-      <td>Citra</td>
-      <td>Pellet</td>
-      <td>14.1</td>
-    </tr>
-  </table>
+  <div class="hops">
+    <h2>HOPS</h2>
+    <table class="hops-table">
+      <tr class="hops-head">
+        <th>Usage</th>
+        <th>Time</th>
+        <th>Weight</th>
+        <th>Name</th>
+        <th>Form</th>
+        <th>AA%</th>
+      </tr>
+      <tr class="hops-row">
+        <td>Boil</td>
+        <td>20 minutes</td>
+        <td>2 oz</td>
+        <td>Citra</td>
+        <td>Pellet</td>
+        <td>14.1</td>
+      </tr>
+    </table>
+  </div>
 
+  <div class="yeasts">
   <h2>YEASTS</h2>
-  <table class="yeasts">
-    <tr id="yeasts-head">
-      <th>Name</th>
-      <th>Lab</th>
-      <th>Form</th>
-      <th>Attenuation</th>
-    </tr>
+    <table class="yeasts-table">
+      <tr id="yeasts-head">
+        <th>Name</th>
+        <th>Lab</th>
+        <th>Form</th>
+        <th>Attenuation</th>
+      </tr>
 
-    <tr class="yeasts-row">
-      <td>Safale US-05</td>
-      <td>Fermentis</td>
-      <td>Dry</td>
-      <td>73%</td>
-    </tr>
-  </table>
+      <tr class="yeasts-row">
+        <td>Safale US-05</td>
+        <td>Fermentis</td>
+        <td>Dry</td>
+        <td>73%</td>
+      </tr>
+    </table>
+  </div>
 
-  <h2>ADDITIVES</h2>
-  <table class="additions">
-    <tr id="additions-head">
-      <th>Amount</th>
-      <th>Name</th>
-      <th>Added at</th>
-      <th>Time</th
-    </tr>
-    <tr class="additions-row">
-      <td>2 oz</td>
-      <td>Hibiscus</td>
-      <td>Mash</td>
-      <td>60 min</td>
-    </tr>
-  </table>
+  <div class="additives">
+    <h2>ADDITIVES</h2>
+    <table class="additives-table">
+      <tr id="additives-head">
+        <th>Amount</th>
+        <th>Name</th>
+        <th>Added at</th>
+        <th>Time</th
+      </tr>
+      <tr class="additives-row">
+        <td>2 oz</td>
+        <td>Hibiscus</td>
+        <td>Mash</td>
+        <td>60 min</td>
+      </tr>
+    </table>
+  </div>
 
   <button class="brew-me">BREW ME</button>
+  <button class="shopping-list">Shopping List</button>
+  <button class="brew-notes">Brew Notes</button>
+  <button class="tasting-notes">Tasting Notes</button>
 </body>
 </html>

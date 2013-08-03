@@ -7,10 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<!-- Alerts -->
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
-<%= yield %>
+<!-- Header -->
 
+<%= render "layouts/header" %>
+
+<div class="main-body group">
+<!-- Sidebar -->
+
+<%= render "layouts/sidebar" %>
+
+<!-- Main content -->
+
+  <div class="main-content group">
+  <%= yield %>
+  </div>
+  
+  <!-- Footer -->
+  <%= render"layouts/footer"  %>
+  
+</div>
 </body>
 </html>

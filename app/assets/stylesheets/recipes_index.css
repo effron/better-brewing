@@ -1,0 +1,20 @@
+.recipes li {
+  float: left;
+  margin: 10px;
+
+}
+
+.recipes li a{
+  display: block;
+  padding: 50px 90px 50px 90px;
+  box-shadow: 0px 0px 5px black;
+}
+
+.recipes li a:hover{
+  background: #C4C0D3;
+  box-shadow: 0px 0px 10px black;
+}
+
+.recipes li a:active{
+  box-shadow: inset 0px 0px 10px black;
+}

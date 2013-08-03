@@ -13,6 +13,7 @@ group :development do
   gem "binding_of_caller"
 end
 
+gem 'brewser', github: 'brewpoo/brewser', ref: 'ad6654981950cd046d697f974cf3d98a799c6b57' 
 
 # Gems used only for assets and not required
 # in production environments by default.

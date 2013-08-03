@@ -1,0 +1,221 @@
+<html>
+<head>
+<title>Welcome to Better Brewing!</title>
+<style>
+/*reset CSS*/
+html, body, div, header, h1, h2, nav, ul, li, a, footer {
+  margin:0;
+  padding:0;
+  border:0;
+  font-size:100%;
+  vertical-align: baseline;
+}
+
+body{
+  line-height:1;
+  font-family: sans-serif;
+}
+
+ul {
+  list-style:none;
+}
+
+a {
+  text-decoration: none;
+  color:black;
+}
+
+.top {
+  background-color: #FFBF56;
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+}
+
+header{
+  width: 1000px;
+  margin:auto;
+  background-color: #E89A4E;
+  box-shadow: 0px 0px 1px black;
+}
+
+header h1{
+  float: left;
+  font-weight: bold;
+  font-size: 20px;
+  border-left: 1px solid black;
+  padding: 12px 10px 5px 10px;
+  margin-left: 200px;
+}
+
+header nav{
+  float: right;
+  margin-right: 10px;
+}
+
+header nav ul li{
+  float: left;
+  box-shadow: 0px 0px 1px black;
+
+}
+
+header nav ul li a{
+  display:block;
+  padding:10px 10px 10px 10px;
+}
+
+header nav ul li a:hover{
+  background-color: #E58A59;
+}
+
+header nav ul .account-dropdown{
+  position:relative;
+}
+
+header nav ul .account-dropdown .hidden-menu {
+  display: none;
+  position: absolute;
+  background: #FC7755;
+}
+
+header nav ul .account-dropdown .hidden-menu li{
+  float: none;
+}
+
+header nav ul .account-dropdown:hover .hidden-menu{
+  display: block;
+}
+
+header nav ul .account-dropdown .hidden-menu li a:hover{
+  background: #D65048;
+}
+
+.main-body {
+  width: 1000px;
+  margin: 37px auto;
+}
+
+.sidebar {
+  width: 200px;
+  float:left;
+}
+
+.sidebar li {
+  border-top: 5px solid #D5846C;
+}
+
+.sidebar li:last-child{
+  border-bottom: 5px solid #D5846C;
+}
+
+.sidebar li a{
+  display:block;
+  padding: 10px;
+}
+
+.sidebar li a:hover{
+  background: #BABABA;
+}
+
+.main-content {
+  float: left;
+  width: 798px;
+  background: #E37A41;
+  border-left: 2px solid black;
+}
+
+.main-content ul li {
+  float: left;
+  margin: 10px;
+
+}
+
+.main-content ul li a{
+  display: block;
+  padding: 50px 90px 50px 90px;
+  box-shadow: 0px 0px 5px black;
+}
+
+.main-content ul li a:hover{
+  background: #C4C0D3;
+  box-shadow: 0px 0px 10px black;
+}
+
+.main-content ul li a:active{
+  box-shadow: inset 0px 0px 10px black;
+}
+
+footer {
+  clear:both;
+  width: 1000px;
+  border-top: 5px solid #A2B8BE;
+  margin: auto;
+}
+
+footer h2 {
+  padding: 10px;
+}
+/*clearfix*/
+.group:after{
+  content:"";
+  display:block;
+  clear:both;
+}
+
+</style>
+
+
+</head>
+<body>
+  <div class="top">
+    <header class="group">
+      <h1>Better Brewing</h1>
+      <nav>
+        <ul>
+          <li class="account-dropdown">
+            <a href="#">My Account</a>
+            <ul class="hidden-menu">
+              <li><a href="#">My Recipes</a></li>
+              <li><a href="#">My Brew Notes</a></li>
+              <li><a href="#">My Tasting Notes</a></li>
+              <li><a href="#">Sign Out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <div class="main-body group">
+    <div class="sidebar">
+      <ul>
+        <li><a href="#">Recipes</a></li>
+        <li><a href="#">Brewers</a></li>
+        <li><a href="#">Style Guide</a></li>
+        <li><a href="#">Tasting Guide</a></li>
+        <li><a href="#">Upload BeerXML</a></li>
+      </ul>
+    </div>
+
+    <div class="main-content group">
+      <ul class="recipes group">
+        <li><a href="#">RecipeBox1</a></li>
+        <li><a href="#">RecipeBox2</a></li>
+        <li><a href="#">RecipeBox3</a></li>
+        <li><a href="#">RecipeBox4</a></li>
+        <li><a href="#">RecipeBox5</a></li>
+        <li><a href="#">RecipeBox6</a></li>
+        <li><a href="#">RecipeBox7</a></li>
+        <li><a href="#">RecipeBox8</a></li>
+        <li><a href="#">RecipeBox9</a></li>
+      </ul>
+    </div>
+
+    <footer>
+      <h2>Copyright Information</h2>
+    </footer>
+  </div>
+
+</body>
+</html>

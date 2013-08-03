@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130803152145) do
+ActiveRecord::Schema.define(:version => 20130803160653) do
+
+  create_table "recipes", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.text     "xml"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

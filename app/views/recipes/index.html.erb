@@ -1,11 +1,5 @@
 <ul class="recipes group">
-  <li><a href="#">RecipeBox1</a></li>
-  <li><a href="#">RecipeBox2</a></li>
-  <li><a href="#">RecipeBox3</a></li>
-  <li><a href="#">RecipeBox4</a></li>
-  <li><a href="#">RecipeBox5</a></li>
-  <li><a href="#">RecipeBox6</a></li>
-  <li><a href="#">RecipeBox7</a></li>
-  <li><a href="#">RecipeBox8</a></li>
-  <li><a href="#">RecipeBox9</a></li>
+  <% @recipes.each do |recipe| %>
+    <li><%= link_to recipe.name, recipe %></li>  
+  <% end %>
 </ul>

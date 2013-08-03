@@ -71,12 +71,14 @@ header nav ul .account-dropdown .hidden-menu li form{
 
 header nav ul .account-dropdown .hidden-menu li input{
   display: block;
+  width: 100%;
   padding: 10px;
   background: #FC7755;
 }
 
 header nav ul .account-dropdown .hidden-menu li input:hover{
   background: #D65048;
+  cursor: pointer;
 }
 
 

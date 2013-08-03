@@ -3,15 +3,24 @@
     <h1>Better Brewing</h1>
     <nav>
       <ul>
-        <li class="account-dropdown">
-          <a href="#">My Account</a>
-          <ul class="hidden-menu">
-            <li><a href="#">My Recipes</a></li>
-            <li><a href="#">My Brew Notes</a></li>
-            <li><a href="#">My Tasting Notes</a></li>
-            <li><a href="#">Sign Out</a></li>
-          </ul>
-        </li>
+        <% if user_signed_in? %>
+          <li class="account-dropdown">
+            <a href="#">My Account</a>
+            <ul class="hidden-menu">
+              <li><a href="#">My Recipes</a></li>
+              <li><a href="#">My Brew Notes</a></li>
+              <li><a href="#">My Tasting Notes</a></li>
+              <li>
+                <%= button_to "Sign Out", destroy_user_session_url, 
+                    method: :delete %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li class="sign-in-button">
+            <%= link_to "Sign In", new_user_session_url %>
+          </li>
+        <% end %>
       </ul>
     </nav>
   </header>

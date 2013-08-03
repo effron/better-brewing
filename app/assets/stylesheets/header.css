@@ -1,0 +1,88 @@
+.top {
+  background-color: #FFBF56;
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+}
+
+header{
+  width: 1000px;
+  margin:auto;
+  background-color: #E89A4E;
+  box-shadow: 0px 0px 1px black;
+}
+
+header h1{
+  float: left;
+  font-weight: bold;
+  font-size: 20px;
+  border-left: 1px solid black;
+  padding: 12px 10px 5px 10px;
+  margin-left: 200px;
+}
+
+header nav{
+  float: right;
+  margin-right: 10px;
+}
+
+header nav ul li{
+  float: left;
+  box-shadow: 0px 0px 1px black;
+
+}
+
+header nav ul li a{
+  display:block;
+  padding:10px;
+}
+
+header nav ul li a:hover{
+  background-color: #E58A59;
+}
+
+header nav ul .account-dropdown{
+  position:relative;
+}
+
+header nav ul .account-dropdown .hidden-menu {
+  display: none;
+  position: absolute;
+  background: #FC7755;
+}
+
+header nav ul .account-dropdown .hidden-menu li{
+  float: none;
+}
+
+header nav ul .account-dropdown:hover .hidden-menu{
+  display: block;
+}
+
+header nav ul .account-dropdown .hidden-menu li a:hover{
+  background: #D65048;
+}
+header nav ul .account-dropdown .hidden-menu li form{
+  display: block;
+  width: 100%;
+}
+
+
+header nav ul .account-dropdown .hidden-menu li input{
+  display: block;
+  padding: 10px;
+  background: #FC7755;
+}
+
+header nav ul .account-dropdown .hidden-menu li input:hover{
+  background: #D65048;
+}
+
+
+
+
+
+
+
+

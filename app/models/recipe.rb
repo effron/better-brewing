@@ -35,4 +35,84 @@ class Recipe < ActiveRecord::Base
     recipe_object.brewer
   end
   
+  def estimated_og
+    if recipe_object.estimated_og == 0
+      calculate_estimated_og
+    else
+      recipe_object.estimated_og
+    end
+  end
+  
+  def estimated_fg
+    if recipe_object.estimated_fg == 0
+      calculate_estimated_fg
+    else
+      recipe_object.estimated_fg
+    end
+  end
+  
+  def estimated_color
+    if recipe_object.estimated_color == 0
+      calculate_estimated_color
+    else
+      recipe_object.estimated_color
+    end
+  end
+  
+  def estimated_ibu
+    if recipe_object.estimated_ibu == 0
+      calculate_estimated_ibu
+    else
+      recipe_object.estimated_ibu
+    end
+  end
+  
+  def estimated_abv
+    if recipe_object.estimated_abv == 0
+      calculate_estimated_abv
+    else
+      recipe_object.estimated_abv
+    end
+  end
+
+  def boil_time
+    recipe_object.boil_time
+  end
+  
+  def method
+    recipe_object.method
+  end
+  
+  def recipe_volume
+    recipe_object.recipe_volume
+  end
+
+  private
+  
+    def calculate_estimated_og
+      # figure out how to calculate estimated og from malts information
+      # Brewtoad can do it!
+      1.060 #placeholder for testing
+    end
+  
+    def calculate_estimated_fg
+      # figure out how to calculate estimated fg from malts/yeasts information
+      # Brewtoad can do it!
+      1.010 #placeholder for testing
+    end
+    
+    def calculate_estimated_color
+      # figure it out!
+      40 #placeholder
+    end
+
+    def calculate_estimated_ibu
+      # figure it out!
+      60 #placeholder
+    end
+    
+    def calculate_estimated_abv
+      # figure it out!
+      8
+    end
 end

@@ -1,9 +1,17 @@
-<%= form_for @recipe do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<!-- To add: Upload from XML file -->
+<div id="new-recipe">
+  <h1>Upload a recipe</h1>
+  <h2>Enter a url for the BeerXML version of a recipe you'd like to brew.</h2>
+  <h3>E.g., http://www.brewtoad.com/recipes/good-brewer-ish-hefeweizen.xml</h3>
   
-  <%= f.label :xml, "Beer XML" %>
-  <%= f.url_field :xml %>
+
+  <%= form_for @recipe do |f| %>
+    <%= f.label :name, "Recipe Name" %>
+    <%= f.text_field :name %>
   
-  <%= f.submit "Updload Recipe" %>
-<% end %>
+    <%= f.label :xml, "BeerXML URL" %>
+    <%= f.url_field :xml %>
+  
+    <%= f.submit "Updload Recipe" %>
+  <% end %>
+</div>

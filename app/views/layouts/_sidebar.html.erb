@@ -4,8 +4,6 @@
     <li><%= link_to "Brewers", users_url %>
     <li><a href="#">Style Guide</a></li>
     <li><a href="#">Tasting Guide</a></li>
-    <% if user_signed_in? %>
     <li><%= link_to "Upload BeerXML", new_recipe_url %></li>
-    <% end %>
   </ul>
 </div>

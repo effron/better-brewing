@@ -34,7 +34,7 @@ a {
 
 .main-content {
   box-sizing: border-box;
-  float: left;
+  margin-left: $main-width * .2;
   width: $main-width * .8;
   background: desaturate($main-color, 30%);
   border-left: 2px solid black;

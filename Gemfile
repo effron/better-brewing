@@ -8,9 +8,10 @@ gem 'rails', '3.2.13'
 gem 'sqlite3'
 
 group :development do 
-  gem "letter_opener"
-  gem "better_errors"
-  gem "binding_of_caller"
+  gem 'letter_opener'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'quiet_assets'
 end
 
 gem 'brewser', github: 'brewpoo/brewser', ref: 'ad6654981950cd046d697f974cf3d98a799c6b57' 

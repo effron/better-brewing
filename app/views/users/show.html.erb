@@ -1,4 +1,4 @@
-<h1><%= @user.email %></h1>
+<h1><%= @user.username %></h1>
 <ul class="recipes">
 <% @user.recipes.each do |recipe| %>
 <li><%= link_to recipe.name, recipe %></li>

@@ -1,1 +1,91 @@
-<h1><%= @recipe.name %></h1>
+<h1 clsas="recipe-name"><%= @recipe.name %></h1>
+
+<div class="fermentables">
+<h2>Fermentables</h2>
+  <table class="fermentables-table">
+    <tr class="fermentables-head">
+      <th>Name</th>
+      <th>Weight</th>
+      <th>Type</th>
+      <th>˚L</th>
+    </tr>
+    <% @recipe.fermentables.each do |fermentable| %>
+    <tr class="fermentables-row">
+      <td><%= fermentable.name %></td>
+      <td><%= fermentable.amount %></td>
+      <td><%= fermentable.type %></td>
+      <td><%= fermentable.color %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="hops">
+  <h2>Hops</h2>
+  <table class="hops-table">
+    <tr class="hops-head">
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Time</th>
+      <th>Use</th>
+      <th>Form</th>
+      <th>AA%</th>
+    </tr>
+    <% @recipe.hops.each do |hop| %>
+    <tr class="hops-row">
+      <td><%= hop.name %></td>
+      <td><%= hop.amount %></td>
+      <td><%= hop.time %></td>
+      <td><%= hop.added_when %></td>
+      <td><%= hop.form %></td>
+      <td><%= hop.alpha_acids %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="yeasts">
+<h2>Yeasts</h2>
+  <table class="yeasts-table">
+    <tr id="yeasts-head">
+      <th>Name</th>
+      <th>Lab</th>
+      <th>Form</th>
+      <th>Attenuation</th>
+    </tr>
+    <% @recipe.yeasts.each do |yeast| %>
+    <tr class="yeasts-row">
+      <td><%= yeast.name %></td>
+      <td><%= yeast.supplier %></td>
+      <td><%= yeast.form %></td>
+      <td><%= yeast.attenuation %>%</td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+<% unless @recipe.additives.empty? %>
+<div class="additives">
+  <h2>Additives</h2>
+  <table class="additives-table">
+    <tr id="additives-head">
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Time</th>
+      <th>Use</th
+    </tr>
+    <% @recipe.additives.each do |additive| %>
+    <tr class="additives-row">
+      <td><%= additive.name %></td>
+      <td><%= additive.amount %></td>
+      <td><%= additive.time %></td>
+      <td><%= additive.added_when %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+<% end %>
+
+<button class="brew-me">BREW ME</button>
+<button class="shopping-list">Shopping List</button>
+<button class="brew-notes">Brew Notes</button>
+<button class="tasting-notes">Tasting Notes</button>

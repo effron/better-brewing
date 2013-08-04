@@ -1,0 +1,79 @@
+#recipe {
+  padding-left: 20px;
+  margin-top: -11px; //Not sure where the margin is coming from
+  background: lighten($main-color,35%);
+  header{
+    padding: 20px ;
+    .recipe-name{
+      line-height: 32px;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    .recipe-author{
+      line-height: 24px;
+      font-size: 16px;
+      font-weight: normal;
+    }
+  }
+  
+  .ingredients{
+    padding: 20px;
+    h2{
+      margin-bottom: 32px;
+      font-size: 18px;
+      line-height: 24px;
+    }
+    table{
+      border-top: solid 1px $main-color;
+      margin-bottom: 40px;
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    thead{
+      display: table-header-group;
+      font-size: 13px;
+      line-height: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    tr {
+      display: table-row;
+    }
+    td, th{
+     font-size: 14px;
+     line-height: 16px;
+     padding: 9px 4px 7px;
+     text-align: left; 
+    }    
+    th{
+      background: lighten(desaturate($main-color,30%), 20%);
+      border-bottom: solid 1px $main-color;
+      vertical-align: bottom;
+    }
+    tbody{
+      display: table-row-group;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+}

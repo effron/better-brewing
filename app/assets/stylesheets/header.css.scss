@@ -7,13 +7,13 @@
   border-bottom: 2px solid black;
 }
 
-header{
+.main-header{
   width: $main-width;
   margin:auto;
   background-color: $main-color;
 }
 
-header h1{
+.main-header h1{
   float: left;
   font-weight: bold;
   font-size: 20px;
@@ -22,12 +22,12 @@ header h1{
   margin-left: $main-width * .2;
 }
 
-header nav{
+.main-header nav{
   float: right;
   border-left: 2px solid black;
 }
 
-header nav ul li{
+.main-header nav ul li{
   float: left;
   &:hover{
     background-color: lighten($main-color, 10%);
@@ -35,7 +35,7 @@ header nav ul li{
 }
 
 
-header nav ul li a{
+.main-header nav ul li a{
   display:block;
   padding:16px 20px 15px 10px;
   &:hover{
@@ -43,7 +43,7 @@ header nav ul li a{
   }
 }
 
-header nav ul .account-dropdown{
+.main-header nav ul .account-dropdown{
   position:relative;
   .hidden-menu{
     display: none;
@@ -52,19 +52,19 @@ header nav ul .account-dropdown{
   }
 }
 
-header nav ul .account-dropdown .hidden-menu li{
+.main-header nav ul .account-dropdown .hidden-menu li{
   float: none;
 }
 
-header nav ul .account-dropdown:hover .hidden-menu{
+.main-header nav ul .account-dropdown:hover .hidden-menu{
   display: block;
 }
 
-header nav ul .account-dropdown .hidden-menu li a:hover{
+.main-header nav ul .account-dropdown .hidden-menu li a:hover{
   background: lighten($main-color, 20%);
 }
 
-header nav ul .account-dropdown .hidden-menu li input{
+.main-header nav ul .account-dropdown .hidden-menu li input{
   display: block;
   width: 100%;
   padding: 10px;

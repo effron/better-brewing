@@ -3,7 +3,8 @@ $main-color: adjust-hue(#6793D0, 0);
 $header-height: 47px;
 $main-width: 1000px;
 
-html, body, div, header, h1, h2, nav, ul, li, a, footer, button, form, input {
+//CSS Reset Styles
+html, body, div, header, h1, h2, nav, ul, li, a, footer, button, form, input, table, thead, tbody, tfoot, tr, th, td {
   margin:0;
   padding:0;
   border:0;

@@ -1,91 +1,115 @@
-<h1 clsas="recipe-name"><%= @recipe.name %></h1>
+<div id="recipe">
+<header>
+  <h1 class="recipe-name"><%= @recipe.name %></h1>
+  <h2 class="recipe-author">
+    By <%= link_to @recipe.user.username, @recipe.user %>
+  </h2>
+</header>
 
-<div class="fermentables">
+<div class="fermentables ingredients">
 <h2>Fermentables</h2>
   <table class="fermentables-table">
-    <tr class="fermentables-head">
-      <th>Name</th>
-      <th>Weight</th>
-      <th>Type</th>
-      <th>˚L</th>
-    </tr>
-    <% @recipe.fermentables.each do |fermentable| %>
-    <tr class="fermentables-row">
-      <td><%= fermentable.name %></td>
-      <td><%= fermentable.amount %></td>
-      <td><%= fermentable.type %></td>
-      <td><%= fermentable.color %></td>
-    </tr>
-    <% end %>
+    <thead>
+      <tr class="fermentables-head">
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Type</th>
+        <th>˚L</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipe.fermentables.each do |fermentable| %>
+        <tr class="fermentables-row">
+          <td><%= fermentable.name %></td>
+          <td><%= fermentable.amount %></td>
+          <td><%= fermentable.type %></td>
+          <td><%= fermentable.color %></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 </div>
 
-<div class="hops">
+<div class="hops ingredients">
   <h2>Hops</h2>
   <table class="hops-table">
-    <tr class="hops-head">
-      <th>Name</th>
-      <th>Amount</th>
-      <th>Time</th>
-      <th>Use</th>
-      <th>Form</th>
-      <th>AA%</th>
-    </tr>
-    <% @recipe.hops.each do |hop| %>
-    <tr class="hops-row">
-      <td><%= hop.name %></td>
-      <td><%= hop.amount %></td>
-      <td><%= hop.time %></td>
-      <td><%= hop.added_when %></td>
-      <td><%= hop.form %></td>
-      <td><%= hop.alpha_acids %></td>
-    </tr>
-    <% end %>
+    <thead>
+      <tr class="hops-head">
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Time</th>
+        <th>Use</th>
+        <th>Form</th>
+        <th>AA%</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipe.hops.each do |hop| %>
+        <tr class="hops-row">
+          <td><%= hop.name %></td>
+          <td><%= hop.amount %></td>
+          <td><%= hop.time %></td>
+          <td><%= hop.added_when %></td>
+          <td><%= hop.form %></td>
+          <td><%= hop.alpha_acids %></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 </div>
 
-<div class="yeasts">
+<div class="yeasts ingredients">
 <h2>Yeasts</h2>
   <table class="yeasts-table">
-    <tr id="yeasts-head">
-      <th>Name</th>
-      <th>Lab</th>
-      <th>Form</th>
-      <th>Attenuation</th>
-    </tr>
-    <% @recipe.yeasts.each do |yeast| %>
-    <tr class="yeasts-row">
-      <td><%= yeast.name %></td>
-      <td><%= yeast.supplier %></td>
-      <td><%= yeast.form %></td>
-      <td><%= yeast.attenuation %>%</td>
-    </tr>
-    <% end %>
+    <thead>
+      <tr id="yeasts-head">
+        <th>Name</th>
+        <th>Lab</th>
+        <th>Form</th>
+        <th>Attenuation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipe.yeasts.each do |yeast| %>
+        <tr class="yeasts-row">
+          <td><%= yeast.name %></td>
+          <td><%= yeast.supplier %></td>
+          <td><%= yeast.form %></td>
+          <td><%= yeast.attenuation %>%</td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 </div>
+
 <% unless @recipe.additives.empty? %>
-<div class="additives">
-  <h2>Additives</h2>
-  <table class="additives-table">
-    <tr id="additives-head">
-      <th>Name</th>
-      <th>Amount</th>
-      <th>Time</th>
-      <th>Use</th
-    </tr>
-    <% @recipe.additives.each do |additive| %>
-    <tr class="additives-row">
-      <td><%= additive.name %></td>
-      <td><%= additive.amount %></td>
-      <td><%= additive.time %></td>
-      <td><%= additive.added_when %></td>
-    </tr>
-    <% end %>
-  </table>
-</div>
+  <div class="additives ingredients">
+    <h2>Additives</h2>
+    <table class="additives-table">
+      <thead>
+        <tr class="additives-head">
+          <th>Name</th>
+          <th>Amount</th>
+          <th>Time</th>
+          <th>Use</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @recipe.additives.each do |additive| %>
+          <tr class="additives-row">
+            <td><%= additive.name %></td>
+            <td><%= additive.amount %></td>
+            <td><%= additive.time %></td>
+            <td><%= additive.added_when %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 <% end %>
 
 <button class="brew-me">BREW ME</button>
 <button class="shopping-list">Shopping List</button>
 <button class="brew-notes">Brew Notes</button>
 <button class="tasting-notes">Tasting Notes</button>
+</div>

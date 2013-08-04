@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   # This is in addition to a real persisted field like 'username'
   attr_accessor :login
   has_many :recipes
+  has_many :friendships
+  has_many :friends, through: :friendships
   
   validates :username, uniqueness: { case_sensitive: false }
   

@@ -4,3 +4,14 @@
 <li><%= link_to recipe.name, recipe %></li>
 <% end %>
 </ul>
+
+<% if user_signed_in? %>
+  <% if current_user.friends.include?(@user) %>
+  <%= button_to "Remove friend", user_friendship_url(@user), 
+      method: :delete %>
+  <% elsif current_user == @user %>
+
+  <% else %>
+  <%= button_to "Add friend", user_friendship_url(@user) %>
+  <% end %>
+<% end %>

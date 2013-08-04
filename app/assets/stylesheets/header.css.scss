@@ -19,7 +19,7 @@ header h1{
   font-size: 20px;
   border-left: 2px solid black;
   padding: 12px 10px 15px 10px;
-  margin-left: 200px;
+  margin-left: $main-width * .2;
 }
 
 header nav{

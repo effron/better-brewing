@@ -1,45 +1,47 @@
 .top {
-  background-color: #FFBF56;
+  background-color: desaturate($main-color, 30%);
   position: fixed;
   top:0;
   left:0;
   width: 100%;
+  border-bottom: 2px solid black;
 }
 
 header{
-  width: 1000px;
+  width: $main-width;
   margin:auto;
-  background-color: #E89A4E;
-  box-shadow: 0px 0px 1px black;
+  background-color: $main-color;
 }
 
 header h1{
   float: left;
   font-weight: bold;
   font-size: 20px;
-  border-left: 1px solid black;
-  padding: 12px 10px 5px 10px;
+  border-left: 2px solid black;
+  padding: 12px 10px 15px 10px;
   margin-left: 200px;
 }
 
 header nav{
   float: right;
-  margin-right: 10px;
+  border-left: 2px solid black;
 }
 
 header nav ul li{
   float: left;
-  box-shadow: 0px 0px 1px black;
+}
 
+header nav ul li:hover{
+  background-color: lighten($main-color, 10%);
 }
 
 header nav ul li a{
   display:block;
-  padding:10px;
+  padding:16px 20px 15px 10px;
 }
 
 header nav ul li a:hover{
-  background-color: #E58A59;
+  background-color: lighten($main-color, 10%);
 }
 
 header nav ul .account-dropdown{
@@ -49,7 +51,7 @@ header nav ul .account-dropdown{
 header nav ul .account-dropdown .hidden-menu {
   display: none;
   position: absolute;
-  background: #FC7755;
+  background: lighten($main-color, 15%);
 }
 
 header nav ul .account-dropdown .hidden-menu li{
@@ -61,7 +63,7 @@ header nav ul .account-dropdown:hover .hidden-menu{
 }
 
 header nav ul .account-dropdown .hidden-menu li a:hover{
-  background: #D65048;
+  background: lighten($main-color, 20%);
 }
 header nav ul .account-dropdown .hidden-menu li form{
   display: block;
@@ -73,11 +75,11 @@ header nav ul .account-dropdown .hidden-menu li input{
   display: block;
   width: 100%;
   padding: 10px;
-  background: #FC7755;
+  background: lighten($main-color, 15%);
 }
 
 header nav ul .account-dropdown .hidden-menu li input:hover{
-  background: #D65048;
+  background: lighten($main-color, 20%);
   cursor: pointer;
 }
 

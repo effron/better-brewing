@@ -1,17 +1,18 @@
 .recipes li {
   float: left;
   margin: 10px;
-
+  background: adjust-hue($main-color, -20);
 }
 
 .recipes li a{
   display: block;
   padding: 50px 90px 50px 90px;
+  border-radius: 2px;
   box-shadow: 0px 0px 5px black;
 }
 
 .recipes li a:hover{
-  background: #C4C0D3;
+  background: $main-color;
   box-shadow: 0px 0px 10px black;
 }
 

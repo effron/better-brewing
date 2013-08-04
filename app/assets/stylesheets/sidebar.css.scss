@@ -1,0 +1,24 @@
+.sidebar {
+  box-sizing: border-box;
+  width: $main-width * .2;
+  float:left;
+  background-color: lighten($main-color, 30%);
+}
+
+.sidebar li {
+  border-top: 5px solid desaturate($main-color, 25%);
+  &:last-child{
+    border-bottom: 5px solid desaturate($main-color, 25%);
+  }
+}
+
+.sidebar li a{
+  display:block;
+  padding: 10px;
+  &:hover{
+    background: lighten(desaturate($main-color, 100%), 30%);
+  }
+  &:active{
+    background: desaturate($main-color, 100%);
+  }
+}

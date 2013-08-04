@@ -1,3 +1,8 @@
+//$main-color: #6793D0;
+$main-color: adjust-hue(#6793D0, 0);
+$header-height: 47px;
+$main-width: 1000px;
+
 html, body, div, header, h1, h2, nav, ul, li, a, footer, button, form, input {
   margin:0;
   padding:0;
@@ -9,6 +14,7 @@ html, body, div, header, h1, h2, nav, ul, li, a, footer, button, form, input {
 body{
   line-height:1;
   font-family: sans-serif;
+  background-color: lighten(desaturate($main-color, 40%), 40%)
 }
 
 ul {
@@ -21,43 +27,22 @@ a {
 }
 
 .main-body {
-  width: 1000px;
-  margin: 37px auto;
-}
-
-.sidebar {
-  width: 200px;
-  float:left;
-}
-
-.sidebar li {
-  border-top: 5px solid #D5846C;
-}
-
-.sidebar li:last-child{
-  border-bottom: 5px solid #D5846C;
-}
-
-.sidebar li a{
-  display:block;
-  padding: 10px;
-}
-
-.sidebar li a:hover{
-  background: #BABABA;
+  width: $main-width;
+  margin: $header-height auto;
 }
 
 .main-content {
+  box-sizing: border-box;
   float: left;
-  width: 798px;
-  background: #E37A41;
+  width: $main-width * .8;
+  background: desaturate($main-color, 30%);
   border-left: 2px solid black;
 }
 
 footer {
   clear:both;
-  width: 1000px;
-  border-top: 5px solid #A2B8BE;
+  width: $main-width;
+  border-top: 5px solid darken($main-color, 10%);
   margin: auto;
 }
 

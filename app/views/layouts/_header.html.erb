@@ -5,7 +5,7 @@
       <ul>
         <% if user_signed_in? %>
           <li class="account-dropdown">
-            <a href="#">My Account</a>
+            <%= link_to "My Account", current_user %>
             <ul class="hidden-menu">
               <li><a href="#">My Recipes</a></li>
               <li><a href="#">My Brew Notes</a></li>

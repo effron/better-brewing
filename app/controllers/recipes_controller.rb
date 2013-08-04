@@ -1,4 +1,7 @@
 class RecipesController < ApplicationController
+  
+  before_filter :authenticate_user!, only: [:new, :create, :destroy]
+  
   def index
     @recipes = Recipe.all
   end
@@ -8,7 +11,12 @@ class RecipesController < ApplicationController
   end
   
   def create
-    @recipe = Recipe.new(params[:recipe])
+    @recipe = current_user.recipes.build(params[:recipe])
+    
+    if @recipe.xml_is_url?
+      @recipe.read_xml_from_url
+    end
+    
     if @recipe.save
       redirect_to @recipe
     else

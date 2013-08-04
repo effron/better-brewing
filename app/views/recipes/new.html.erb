@@ -1,0 +1,9 @@
+<%= form_for @recipe do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  
+  <%= f.label :xml, "Beer XML" %>
+  <%= f.url_field :xml %>
+  
+  <%= f.submit "Updload Recipe" %>
+<% end %>

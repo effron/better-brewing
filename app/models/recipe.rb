@@ -86,6 +86,16 @@ class Recipe < ActiveRecord::Base
   def recipe_volume
     recipe_object.recipe_volume
   end
+  
+  def xml_is_url?
+    xml =~ /^https?:\/\/.*\.xml$/i
+  end
+  
+  def read_xml_from_url
+    open(xml) do |file|
+      self.xml = file.read
+    end
+  end
 
   private
   

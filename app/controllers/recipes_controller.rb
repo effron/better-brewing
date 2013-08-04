@@ -12,11 +12,7 @@ class RecipesController < ApplicationController
   
   def create
     @recipe = current_user.recipes.build(params[:recipe])
-    
-    if @recipe.xml_is_url?
-      @recipe.read_xml_from_url
-    end
-    
+
     if @recipe.save
       redirect_to @recipe
     else

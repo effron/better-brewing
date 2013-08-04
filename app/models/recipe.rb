@@ -3,12 +3,17 @@ class Recipe < ActiveRecord::Base
   
   belongs_to :user
   
+  before_save :convert_url_to_xml
   # Add various instance methods to pull out information from parsed recipe 
   # without having to store it in various db tables. Assume only one recipe 
   # in each XML file
   
   def recipe_object
     @recipe_object ||= Brewser.parse(xml)[0]
+  end
+  
+  def convert_url_to_xml
+    read_xml_from_url if xml_is_url?
   end
   
   def hops

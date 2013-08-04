@@ -14,6 +14,6 @@ end
 User.create!(users)
 
 xml = File.read("./public/example.xml")
-xml2 = open("http://www.brewtoad.com/recipes/firework-cream-ale.xml").read
+xml2 = "http://www.brewtoad.com/recipes/firework-cream-ale.xml"
 Recipe.create!({name: "test_recipe", user_id: 1, xml: xml })
 Recipe.create!({name: "hopville_recipe", user_id: 2, xml: xml2})

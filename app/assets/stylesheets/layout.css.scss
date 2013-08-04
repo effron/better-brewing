@@ -44,11 +44,11 @@ footer {
   width: $main-width;
   border-top: 5px solid darken($main-color, 10%);
   margin: auto;
+  h2 {
+    padding: 10px;
+  }
 }
 
-footer h2 {
-  padding: 10px;
-}
 /*clearfix*/
 .group:after{
   content:"";

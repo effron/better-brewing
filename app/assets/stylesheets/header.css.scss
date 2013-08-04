@@ -29,29 +29,27 @@ header nav{
 
 header nav ul li{
   float: left;
+  &:hover{
+    background-color: lighten($main-color, 10%);
+  }
 }
 
-header nav ul li:hover{
-  background-color: lighten($main-color, 10%);
-}
 
 header nav ul li a{
   display:block;
   padding:16px 20px 15px 10px;
-}
-
-header nav ul li a:hover{
-  background-color: lighten($main-color, 10%);
+  &:hover{
+    background-color: lighten($main-color, 10%);
+  }
 }
 
 header nav ul .account-dropdown{
   position:relative;
-}
-
-header nav ul .account-dropdown .hidden-menu {
-  display: none;
-  position: absolute;
-  background: lighten($main-color, 15%);
+  .hidden-menu{
+    display: none;
+    position: absolute;
+    background: lighten($main-color, 15%);
+  }
 }
 
 header nav ul .account-dropdown .hidden-menu li{
@@ -65,28 +63,15 @@ header nav ul .account-dropdown:hover .hidden-menu{
 header nav ul .account-dropdown .hidden-menu li a:hover{
   background: lighten($main-color, 20%);
 }
-header nav ul .account-dropdown .hidden-menu li form{
-  display: block;
-  width: 100%;
-}
-
 
 header nav ul .account-dropdown .hidden-menu li input{
   display: block;
   width: 100%;
   padding: 10px;
   background: lighten($main-color, 15%);
+  text-align: left;
+  &:hover{
+    background: lighten($main-color, 20%);
+    cursor: pointer;
+  }
 }
-
-header nav ul .account-dropdown .hidden-menu li input:hover{
-  background: lighten($main-color, 20%);
-  cursor: pointer;
-}
-
-
-
-
-
-
-
-

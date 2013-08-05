@@ -18,4 +18,35 @@
     };
   }
 
+  h2{
+    padding: 20px;
+  }
+
+  table{
+    border-top: solid 1px $main-color;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  thead{
+    display: table-header-group;
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  tr {
+    display: table-row;
+  }
+  td, th{
+   font-size: 14px;
+   line-height: 16px;
+   padding: 9px 4px 7px;
+   text-align: left;
+  }
+  th{
+    background: lighten(desaturate($main-color,30%), 20%);
+    border-bottom: solid 1px $main-color;
+    vertical-align: bottom;
+  }
 }

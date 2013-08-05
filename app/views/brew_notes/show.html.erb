@@ -1,7 +1,8 @@
 <div id="show-brew-note">
 <h1>BREW NOTE FOR <%= link_to @brew_note.recipe.name, @brew_note.recipe %></h1>
 <p><%= @brew_note.body %></p>
-<table id="mash-notes">
+<h2>Mash Notes</h2>
+<table class="mash-notes">
   <thead>
     <tr>
       <th>Time</th><th>Temperature</th><th>Note</th>

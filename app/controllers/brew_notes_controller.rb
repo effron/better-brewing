@@ -21,6 +21,10 @@ class BrewNotesController < ApplicationController
 
     @brew_note = current_user.brew_notes.build(params[:brew_note])
 
+    if @brew_note.user_id != @brew_note.recipe.user_id
+      raise" That's not your recipe!"
+    end
+
     if @brew_note.save
       redirect_to @brew_note
     else

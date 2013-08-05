@@ -108,9 +108,17 @@
     </div>
   <% end %>
   <div class="buttons group">
+    <% if @recipe.user_id == current_user.id %>
     <%= link_to "BREW ME", new_recipe_brew_note_url(@recipe.id), class:"brew-me" %>
     <!-- <button class="brew-me">BREW ME</button> -->
-
+    <% else %>
+      <form action="<%= recipes_url %>" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="recipe[name]" value="<%= @recipe.name %>">
+        <input type="hidden" name="recipe[xml]" value="<%= @recipe.xml %>">
+        <input type="submit" value="Clone Me" class="clone-me">
+      </form>
+    <% end %>
     <button class="shopping-list">Shopping List</button>
     <%= link_to "Brew Notes", recipe_brew_notes_url(@recipe.id), class: "brew-notes" %>
     <button class="tasting-notes">Tasting Notes</button>

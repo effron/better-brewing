@@ -1,0 +1,19 @@
+#new-brew-note {
+  h1{
+    padding: 10px;
+  }
+  textarea{
+    display:block;
+    width: 200px;
+    min-height: 60px;
+  }
+  form {
+    padding: 10px;
+  }
+  input[type=submit]{
+    padding: 5px;
+    margin: 15px 5px 5px 5px;
+    background: lighten($main-color, 40%);
+  }
+
+}

@@ -3,7 +3,7 @@
 
   <%= form_for @brew_note, url: recipe_brew_notes_url(@brew_note.recipe_id) do |f| %>
     <%= f.label :body, "Notes" %>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, cols: 0, rows: 0 %>
 
     <%= f.hidden_field :recipe_id %>
 

@@ -5,7 +5,28 @@
     text-transform: uppercase;
   }
 
+  .recipe-link{
+    display:block;
+    padding: 20px;
+    margin: 5px 20px;
+    background: lighten($main-color, 23%);
+    width: 140px;
+    text-align: center;
+    &:hover{
+      box-shadow: 0 0 3px black;
+    };
+    &:active{
+      box-shadow: inset 0 0 3px black;
+    };
+  }
 
+  .brew-notes-header{
+    margin: 20px;
+  }
+
+  ul {
+    padding: 5px;
+  }
 
 
 }

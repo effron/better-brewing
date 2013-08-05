@@ -8,8 +8,9 @@
 
   <h1>BREW NOTES INDEX for <%= context %></h1>
   <% if params[:recipe_id] %>
-    <%= link_to "Back to recipe", recipe_url(params[:recipe_id]) %>
+    <%= link_to "Back to recipe", recipe_url(params[:recipe_id]), class: "recipe-link" %>
   <% end %>
+  <h2 class="brew-notes-header">Brew notes</h2>
   <ul>
     <%= render @brew_notes %>
   </ul>

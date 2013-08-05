@@ -1,1 +1,4 @@
-<li><%= link_to brew_note.body, brew_note %></li>
+<li class="brew-note">
+  <% recipe = params[:recipe_id] ? "" : "#{brew_note.recipe.name}: " %>
+  <%= link_to "#{recipe}#{brew_note.created_at}", brew_note %>
+</li>

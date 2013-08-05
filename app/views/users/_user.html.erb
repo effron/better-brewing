@@ -1,6 +1,7 @@
 <li class="user">
   <!-- FIGURE OUT GRAVATAR -->
-  <a href="<%= user_url(user) %>">
-    <img src="http://placekitten.com/100/100"><%= user.username %>
+  <a class="group" href="<%= user_url(user) %>">
+    <figure><img src="http://placekitten.com/100/100"></figure>
+    <h2><%= user.username %></h2>
   </a>
 </li>

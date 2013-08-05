@@ -5,9 +5,9 @@
       <ul>
         <% if user_signed_in? %>
           <li class="account-dropdown">
-            <%= link_to "My Account", current_user %>
+            <%= link_to "My Account", edit_user_registration_url %>
             <ul class="hidden-menu">
-              <li><a href="#">My Recipes</a></li>
+              <li><%= link_to "My Recipes", current_user %></li>
               <li><%= link_to "My Brew Notes", brew_notes_url %>
               <li><a href="#">My Tasting Notes</a></li>
               <li>

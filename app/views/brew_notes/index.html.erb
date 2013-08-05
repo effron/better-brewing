@@ -4,11 +4,14 @@
 <% context = current_user.username %>
 <% end %>
 
-<h1>BREW NOTES INDEX for <%= context %></h1>
-<% if params[:recipe_id] %>
-  <%= link_to "Back to recipe", recipe_url(params[:recipe_id]) %>
-<% end %>
+<div id="brew-notes-index">
 
-<% @brew_notes.each do |brew_note| %>
-  <p><%= link_to brew_note.body, brew_note %></p>
-<% end %>
+  <h1>BREW NOTES INDEX for <%= context %></h1>
+  <% if params[:recipe_id] %>
+    <%= link_to "Back to recipe", recipe_url(params[:recipe_id]) %>
+  <% end %>
+  <ul>
+    <%= render @brew_notes %>
+  </ul>
+
+</div>

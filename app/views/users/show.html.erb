@@ -1,17 +1,19 @@
-<h1><%= @user.username %></h1>
-<ul class="recipes">
-<% @user.recipes.each do |recipe| %>
-<li><%= link_to recipe.name, recipe %></li>
-<% end %>
-</ul>
+<div id="user">
+  <h1><%= @user.username %></h1>
+  <h2 class="user-recipes">Recipes</h2>
+  <ul class="recipes">
+  <%= render @user.recipes %>
+  </ul>
+  <div class="friend-button">
+  <% if user_signed_in? %>
+    <% if current_user.friends.include?(@user) %>
+    <%= button_to "Remove friend", user_friendship_url(@user),
+        method: :delete %>
+    <% elsif current_user == @user %>
 
-<% if user_signed_in? %>
-  <% if current_user.friends.include?(@user) %>
-  <%= button_to "Remove friend", user_friendship_url(@user), 
-      method: :delete %>
-  <% elsif current_user == @user %>
-
-  <% else %>
-  <%= button_to "Add friend", user_friendship_url(@user) %>
+    <% else %>
+    <%= button_to "Add friend", user_friendship_url(@user) %>
+    <% end %>
   <% end %>
-<% end %>
+  </div>
+</div>

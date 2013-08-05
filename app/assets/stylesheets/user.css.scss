@@ -1,0 +1,31 @@
+#user{
+  h1{
+    padding: 10px;
+    font-size: 40px;
+  }
+
+  .user-recipes{
+    padding: 20px;
+    font-size: 20px;
+  }
+
+  .friend-button {
+    display: block;
+    clear: both;
+    padding: 20px;
+    input{
+      padding: 10px;
+      background: lighten($main-color, 5%);
+      border: 2px solid black;
+      border-radius: 3px;
+      &:hover{
+        box-shadow: 0 0 2px black;
+      };
+      &:active{
+        box-shadow: inset 0 0 4px black;
+      };
+    }
+  }
+
+
+}

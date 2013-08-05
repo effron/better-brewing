@@ -1,9 +1,6 @@
 ##TODO
 
 Brew Notes:
-Change "BREW ME" button to "CLONE ME" button if not your recipe.
-Don't let user create notes for recipes that they don't own.
-Figure out how to make sure you can only create note for the correct recipe context
 
 Add associations to sub-notes
 

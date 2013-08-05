@@ -1,5 +1,6 @@
-<ul class="recipes group">
-  <% @recipes.each do |recipe| %>
-    <li><%= link_to recipe.name, recipe %></li>  
-  <% end %>
+<div id="recipes-index">
+<h1>All Recipes</h1>
+<ul class="recipe-tiles group">
+  <%= render @recipes %>
 </ul>
+</div>

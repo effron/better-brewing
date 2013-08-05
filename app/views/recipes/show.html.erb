@@ -108,7 +108,7 @@
     </div>
   <% end %>
   <div class="buttons group">
-    <% if @recipe.user_id == current_user.id %>
+    <% if current_user && @recipe.user_id == current_user.id %>
     <%= link_to "BREW ME", new_recipe_brew_note_url(@recipe.id), class:"brew-me" %>
     <!-- <button class="brew-me">BREW ME</button> -->
     <% else %>

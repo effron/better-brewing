@@ -12,7 +12,11 @@
   <% end %>
   <h2 class="brew-notes-header">Brew notes</h2>
   <ul>
-    <%= render @brew_notes %>
+    <% if @brew_notes.empty? %>
+      <li>No brew notes. Brew this recipe!</li>
+    <% else %>
+      <%= render @brew_notes %>
+    <% end %>
   </ul>
 
 </div>

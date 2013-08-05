@@ -4,8 +4,18 @@
     text-transform: uppercase;
   }
 
-  p {
-    padding: 200px;
+  p{
+    padding: 40px;
+  }
+
+  a{
+    color: adjust_hue($main-color, 140);
+    &:hover{
+      text-decoration: underline;
+    };
+    &:active{
+      color: darken(adjust_hue($main-color, 140), 30%);
+    };
   }
 
 }

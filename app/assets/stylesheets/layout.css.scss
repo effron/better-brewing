@@ -2,6 +2,7 @@
 $main-color: adjust-hue(#6793D0, 0);
 $header-height: 47px;
 $main-width: 1000px;
+$sidebar-height: 210px;
 
 //CSS Reset Styles
 html, body, div, header, h1, h2, h3, nav, ul, li, a, footer, button, form, input, figure, img, table, thead, tbody, tfoot, tr, th, td, textarea, p{
@@ -36,8 +37,9 @@ a {
   box-sizing: border-box;
   margin-left: $main-width * .2;
   width: $main-width * .8;
-  background: desaturate($main-color, 30%);
+  background: lighten($main-color, 35%);
   border-left: 2px solid black;
+  min-height: $sidebar-height;
 }
 
 footer {
@@ -48,6 +50,16 @@ footer {
   h2 {
     padding: 10px;
   }
+}
+
+.notice, .alert{
+  position: relative;
+  line-height: 40px;
+  top: 10px;
+  color: red;
+  font-weight: bold;
+  margin-top: 15px;
+  text-align: center;
 }
 
 /*clearfix*/

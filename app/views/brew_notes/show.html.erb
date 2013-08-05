@@ -1,4 +1,20 @@
 <div id="show-brew-note">
 <h1>BREW NOTE FOR <%= link_to @brew_note.recipe.name, @brew_note.recipe %></h1>
 <p><%= @brew_note.body %></p>
+<table id="mash-notes">
+  <thead>
+    <tr>
+      <th>Time</th><th>Temperature</th><th>Note</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @brew_note.mash_notes.each do |mash_note| %>
+    <tr>
+      <td><%= mash_note.time %></td>
+      <td><%= mash_note.temperature %></td>
+      <td><%= mash_note.body %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
 </div>

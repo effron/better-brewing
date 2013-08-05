@@ -1,0 +1,26 @@
+<% time = 60 %>
+<table>
+  <thead>
+    <tr>
+      <th>Time</th><th>Temperature</th><th>Note</th>
+    </tr>
+  </thead>
+  <tbody>
+<% 5.times do |n| %>
+  <tr>
+    <td>
+      <input type="text" name="brew_note[mash_notes_attributes][<%= n %>][time]"
+       value="<%= time - n*15 %>">
+    </td>
+    <td>
+      <input type="text"
+             name="brew_note[mash_notes_attributes][<%= n %>][temperature]">
+    </td>
+    <td>
+      <input type="text" name="brew_note[mash_notes_attributes][<%= n %>][body]">
+    </td>
+
+  </tr>
+<% end %>
+</tbody>
+</table>

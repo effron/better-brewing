@@ -4,8 +4,8 @@ class Recipe < ActiveRecord::Base
   belongs_to :user
   has_many :brew_notes
   validates :name, :xml, presence: true
-
-  before_save :convert_url_to_xml
+  validate :xml_is_valid, on: :create
+  before_validation :convert_url_to_xml
   # Add various instance methods to pull out information from parsed recipe
   # without having to store it in various db tables. Assume only one recipe
   # in each XML file
@@ -16,6 +16,14 @@ class Recipe < ActiveRecord::Base
       @recipe_object ||= Brewser.parse(xml)[0]
     rescue
       raise "Brewser could not parse XML"
+    end
+  end
+
+  def xml_is_valid
+    begin
+      Brewser.parse(xml)
+    rescue
+      errors.add(:xml, "can't be unparseable by Brewser")
     end
   end
 

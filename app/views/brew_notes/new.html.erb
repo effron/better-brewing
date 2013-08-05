@@ -5,6 +5,8 @@
     <%= f.label :body, "Notes" %>
     <%= f.text_area :body, cols: 0, rows: 0 %>
 
+    <%= render "nested_mash_notes" %>
+
     <%= f.hidden_field :recipe_id %>
 
     <%= f.submit "Save note" %>

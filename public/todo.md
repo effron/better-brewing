@@ -4,9 +4,10 @@ Brew Notes:
 
 Add associations to sub-notes
 
-Style brewnote view and index
+Add methods to recipe to calculate ABV, IBU, OG, FG
 
-Maybe give notes a title?
+Maybe move xml url parsing to controller???
 
-Create subtemplate for brew note index for current user context or recipe context.
-Something like display the recipe title and date for current user, or just the date for recipe context
+Add default nested form for creating mash notes
+
+Show mash notes in notes show page in table form?

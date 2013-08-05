@@ -108,9 +108,11 @@
     </div>
   <% end %>
   <div class="buttons group">
-    <button class="brew-me">BREW ME</button>
+    <%= link_to "BREW ME", new_recipe_brew_note_url(@recipe.id), class:"brew-me" %>
+    <!-- <button class="brew-me">BREW ME</button> -->
+
     <button class="shopping-list">Shopping List</button>
-    <button class="brew-notes">Brew Notes</button>
+    <%= link_to "Brew Notes", recipe_brew_notes_url(@recipe.id), class: "brew-notes" %>
     <button class="tasting-notes">Tasting Notes</button>
   </div>
 </div>

@@ -1,0 +1,12 @@
+<div id="new-brew-note">
+  <h1>Take some notes for <%= @brew_note.recipe.name %></h1>
+
+  <%= form_for @brew_note, url: recipe_brew_notes_url(@brew_note.recipe_id) do |f| %>
+    <%= f.label :body, "Notes" %>
+    <%= f.text_area :body %>
+
+    <%= f.hidden_field :recipe_id %>
+
+    <%= f.submit "Save note" %>
+  <% end %>
+</div>

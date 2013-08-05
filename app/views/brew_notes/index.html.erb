@@ -1,0 +1,14 @@
+<% if params[:recipe_id] %>
+<% context = Recipe.find(params[:recipe_id]).name %>
+<% else %>
+<% context = current_user.username %>
+<% end %>
+
+<h1>BREW NOTES INDEX for <%= context %></h1>
+<% if params[:recipe_id] %>
+  <%= link_to "Back to recipe", recipe_url(params[:recipe_id]) %>
+<% end %>
+
+<% @brew_notes.each do |brew_note| %>
+  <p><%= link_to brew_note.body, brew_note %></p>
+<% end %>

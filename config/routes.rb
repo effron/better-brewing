@@ -1,14 +1,18 @@
 BetterBrewing::Application.routes.draw do
-  
+
   root to: "recipes#index"
 
   devise_for :users
-  
-  resources :recipes, except: [:edit, :update]
-  
+
+  resources :recipes, except: [:edit, :update] do
+    resources :brew_notes, only: [:create, :new, :index]
+  end
+
   resources :users, only: [:show, :index] do
     resource :friendship, only: [:create, :destroy]
   end
+
+  resources :brew_notes, only: [:index, :edit, :update, :destroy, :show]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

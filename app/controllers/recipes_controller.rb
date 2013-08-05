@@ -11,6 +11,8 @@ class RecipesController < ApplicationController
   end
   
   def create
+    uploaded_recipe = params[:xml_file]
+    params[:recipe][:xml] = uploaded_recipe.read if uploaded_recipe
     @recipe = current_user.recipes.build(params[:recipe])
 
     if @recipe.save

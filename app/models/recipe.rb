@@ -15,7 +15,7 @@ class Recipe < ActiveRecord::Base
     begin
       @recipe_object ||= Brewser.parse(xml)[0]
     rescue
-      return Brewser::Recipe.new
+      raise "Brewser could not parse XML"
     end
   end
   

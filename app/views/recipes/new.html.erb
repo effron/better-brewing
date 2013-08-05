@@ -5,13 +5,16 @@
   <h3>E.g., http://www.brewtoad.com/recipes/good-brewer-ish-hefeweizen.xml</h3>
   
 
-  <%= form_for @recipe do |f| %>
+  <%= form_for @recipe, html: {enctype: "multipart/form-data"} do |f| %>
     <%= f.label :name, "Recipe Name" %>
     <%= f.text_field :name %>
   
     <%= f.label :xml, "BeerXML URL" %>
     <%= f.url_field :xml %>
-  
+
+    <label for="recipe_xml_file">Beer XML File</label>
+    <input id="recipe_xml_file" name="xml_file" type="file" />
+    
     <%= f.submit "Updload Recipe" %>
   <% end %>
 </div>

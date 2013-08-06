@@ -23,7 +23,7 @@
     <li>Pre Boil Volume: <%= @brew_note.boil_note.pre_boil_volume %></li>
     <li>Post Boil Volume: <%= @brew_note.boil_note.post_boil_volume %></li>
   </ul>
-<% if @brew_note.beer_photo %>
+<% if @brew_note.beer_photo_file_name %>
   <h2>Photo</h2>
   <%= image_tag @brew_note.beer_photo.url(:big) %>
 <% end %>

@@ -18,7 +18,11 @@
   <% end %>
   </tbody>
 </table>
-
+<h2>Boil Notes</h2>
+  <ul>
+    <li>Pre Boil Volume: <%= @brew_note.boil_note.pre_boil_volume %></li>
+    <li>Post Boil Volume: <%= @brew_note.boil_note.post_boil_volume %></li>
+  </ul>
 <% if @brew_note.beer_photo %>
   <h2>Photo</h2>
   <%= image_tag @brew_note.beer_photo.url(:big) %>

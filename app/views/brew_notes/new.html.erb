@@ -6,11 +6,11 @@
     <%= f.text_area :body, cols: 0, rows: 0 %>
 
     <%= render "nested_mash_notes" %>
-
+    <%= render "nested_boil_note" %>
     <%= f.hidden_field :recipe_id %>
-    
-    <!-- Testing paperclip photo uploading -->
 
+    <!-- Testing paperclip photo uploading -->
+    <%= f.label :beer_photo, "Beer photo" %>
     <%= f.file_field :beer_photo %>
 
     <%= f.submit "Save note" %>

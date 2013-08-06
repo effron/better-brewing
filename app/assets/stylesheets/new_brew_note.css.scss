@@ -2,6 +2,9 @@
   h1{
     padding: 10px;
   }
+  h2{
+    padding: 10px;
+  }
   textarea{
     display:block;
     width: 200px;
@@ -13,7 +16,12 @@
   form {
     padding: 10px;
   }
+  input[type=file] {
+    display: block;
+    padding: 10px;
+  }
   input[type=submit]{
+    display: block;
     padding: 10px;
     margin: 15px 5px 5px 5px;
     background: darken($main-color, 40%);
@@ -28,9 +36,16 @@
   }
   .mash-note{
     padding: 10px;
+    input[type=text]{
+      display: block;
+      float: left;
+    }
+  }
+  label{
+    display: block;
+    padding: 10px;
   }
   input[type=text]{
-    display: block;
-    float:left;
+    padding: 5px;
   }
 }

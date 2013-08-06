@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130806031425) do
+ActiveRecord::Schema.define(:version => 20130806155857) do
+
+  create_table "boil_notes", :force => true do |t|
+    t.integer  "brew_note_id"
+    t.integer  "pre_boil_volume"
+    t.integer  "post_boil_volume"
+    t.text     "body"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "brew_notes", :force => true do |t|
     t.integer  "user_id"

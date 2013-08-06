@@ -11,14 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130805202703) do
+ActiveRecord::Schema.define(:version => 20130806031425) do
 
   create_table "brew_notes", :force => true do |t|
     t.integer  "user_id"
     t.integer  "recipe_id"
     t.text     "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.string   "beer_photo_file_name"
+    t.string   "beer_photo_content_type"
+    t.integer  "beer_photo_file_size"
+    t.datetime "beer_photo_updated_at"
   end
 
   create_table "friends", :force => true do |t|

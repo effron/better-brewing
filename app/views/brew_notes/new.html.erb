@@ -8,6 +8,10 @@
     <%= render "nested_mash_notes" %>
 
     <%= f.hidden_field :recipe_id %>
+    
+    <!-- Testing paperclip photo uploading -->
+
+    <%= f.file_field :beer_photo %>
 
     <%= f.submit "Save note" %>
   <% end %>

@@ -18,4 +18,9 @@
   <% end %>
   </tbody>
 </table>
+
+<% if @brew_note.beer_photo %>
+  <h2>Photo</h2>
+  <%= image_tag @brew_note.beer_photo.url(:big) %>
+<% end %>
 </div>

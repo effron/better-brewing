@@ -47,7 +47,18 @@ BetterBrewing::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
-
+  
+  # Paperclip default configuration
+  
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => "betterbrewing-production",
+      :access_key_id => "AKIAIG7UVWR6Q3SUEXCQ",
+      :secret_access_key => "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"
+    }
+  }
+  
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 

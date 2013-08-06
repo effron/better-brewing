@@ -14,6 +14,7 @@ end
 User.create!(users)
 
 xml = File.read("./public/example.xml")
+xml2 = ""
 open("http://www.brewtoad.com/recipes/firework-cream-ale.xml") do |file|
   xml2 = file.read
 end

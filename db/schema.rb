@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130806174946) do
+ActiveRecord::Schema.define(:version => 20130806182757) do
 
   create_table "boil_notes", :force => true do |t|
     t.integer  "brew_note_id"
@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(:version => 20130806174946) do
     t.string   "beer_photo_content_type"
     t.integer  "beer_photo_file_size"
     t.datetime "beer_photo_updated_at"
+  end
+
+  create_table "fermentation_checks", :force => true do |t|
+    t.integer  "fermentation_note_id"
+    t.integer  "temperature"
+    t.integer  "specific_gravity"
+    t.text     "body"
+    t.integer  "elapsed_time"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
   create_table "fermentation_notes", :force => true do |t|

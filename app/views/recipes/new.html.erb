@@ -9,8 +9,8 @@
     <%= f.label :name, "Recipe Name" %>
     <%= f.text_field :name %>
 
-    <%= f.label :xml, "BeerXML URL" %>
-    <%= f.url_field :xml %>
+    <label for="xml_url">BeerXML URL</label>
+    <input id="xml_url" name="xml_url" type="url" size="30">
 
     <label for="recipe_xml_file">Beer XML File</label>
     <input id="recipe_xml_file" name="xml_file" type="file" />

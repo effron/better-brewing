@@ -66,4 +66,7 @@
   <h2>Photo</h2>
   <%= image_tag @brew_note.beer_photo.url(:big) %>
 <% end %>
+
+<%= link_to "Edit Brew Note", edit_brew_note_url(@brew_note) %>
+
 </div>

@@ -38,11 +38,13 @@ class BrewNotesController < ApplicationController
   end
 
   def edit
-
+    @brew_note = BrewNote.find(params[:id])
   end
 
   def update
-
+    @brew_note = BrewNote.find(params[:id])
+    @brew_note.update_attributes(params[:brew_note])
+    redirect_to @brew_note
   end
 
   def destroy

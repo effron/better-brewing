@@ -1,14 +1,27 @@
 <h2>Fermentation Notes</h2>
 <label for="fermenter_volume">Volume in Fermenter</label>
-<input type="text" id="fermenter_volume" name="brew_note[fermentation_note_attributes][volume]">
+<input type="text" id="fermenter_volume"
+       name="brew_note[fermentation_note_attributes][volume]"
+       value="<%= brew_note.fermentation_note.volume if brew_note.persisted? %>">
 
 <label for="og">Measured Original Gravity</label>
-<input type="text" id="og" name="brew_note[fermentation_note_attributes][og]">
+<input type="text" id="og"
+       name="brew_note[fermentation_note_attributes][og]"
+       value="<%= brew_note.fermentation_note.og if brew_note.persisted? %>">
 
 <label for="fg">Measured Final Gravity</label>
-<input type="text" id="fg" name="brew_note[fermentation_note_attributes][fg]">
+<input type="text" id="fg"
+       name="brew_note[fermentation_note_attributes][fg]"
+       value="<%= brew_note.fermentation_note.fg if brew_note.persisted? %>">
 
 <label for="ferm_body">Misc Notes</label>
-<input type="text" id="ferm_body" name="brew_note[fermentation_note_attributes][body]">
+<input type="text" id="ferm_body"
+       name="brew_note[fermentation_note_attributes][body]"
+       value="<%= brew_note.fermentation_note.body if brew_note.persisted? %>">
 
-<%= render "nested_fermentation_checks" %>
+<% if brew_note.persisted? %>
+<input type="hidden" name="brew_note[fermentation_note_attributes][id]"
+       value="<%= brew_note.fermentation_note.id %>">
+<% end %>
+
+<%= render partial: "nested_fermentation_checks", locals: { brew_note: brew_note } %>

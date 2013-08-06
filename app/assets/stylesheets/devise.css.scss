@@ -1,0 +1,51 @@
+.devise {
+  h2{
+    font-size: 18px;
+    padding: 10px;
+  }
+  
+  .cancel{
+    padding: 8px;
+    font-size: 14px;
+    margin-top:10px;
+  }
+  
+  #cancel-button{
+    font-size: 10px;
+    &:hover{
+      background: adjust-hue($main-color,140);
+    }
+  }
+  
+  form div {
+    padding: 12px;
+  }
+  
+  form input {
+    padding: 5px;
+  }
+  
+  form input[type=submit]{
+    padding: 10px;
+    background: lighten($main-color, 15%);
+    &:hover{
+      box-shadow: 0 0 3px black;
+    }
+    &:active{
+      box-shadow: inset 0 0 3px black;
+    }
+  }
+  
+  a{
+    display: block;
+    margin-left: 10px;
+    color: $main-color;
+    &:hover{
+      text-decoration: underline;
+    }
+    &:active{
+      color: adjust-hue($main-color, 120);
+    }
+  }
+  
+}

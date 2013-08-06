@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  brew_note_id: 1
+  volume: 1
+  priming_sugar_type: MyString
+  priming_sugar_amount: 1
+  body: MyText
+
+two:
+  brew_note_id: 1
+  volume: 1
+  priming_sugar_type: MyString
+  priming_sugar_amount: 1
+  body: MyText

@@ -54,6 +54,14 @@
   </tbody>
 </table>
 
+<h2>Bottling Notes</h2>
+<ul>
+  <li>Amount bottled: <%= @brew_note.bottling_note.volume %></li>
+  <li>Priming Sugar Type: <%= @brew_note.bottling_note.priming_sugar_type %></li>
+  <li>Priming Sugar Amount: <%= @brew_note.bottling_note.priming_sugar_amount %></li>
+  <li>General Note: <%= @brew_note.bottling_note.body %></li>
+</ul>
+
 <% if @brew_note.beer_photo_file_name %>
   <h2>Photo</h2>
   <%= image_tag @brew_note.beer_photo.url(:big) %>

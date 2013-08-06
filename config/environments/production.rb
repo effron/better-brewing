@@ -53,7 +53,7 @@ BetterBrewing::Application.configure do
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-      :bucket => "betterbrewing-production",
+      :bucket => "betterbrewing",
       :access_key_id => "AKIAIG7UVWR6Q3SUEXCQ",
       :secret_access_key => "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"
     }

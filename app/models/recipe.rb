@@ -21,7 +21,7 @@ class Recipe < ActiveRecord::Base
 
   def xml_is_valid
     begin
-      Brewser.parse(xml)
+      Beerxml.parse(xml)
     rescue
       errors.add(:xml, "can't be unparseable by Brewser")
     end

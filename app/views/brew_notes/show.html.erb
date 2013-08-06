@@ -19,10 +19,17 @@
   </tbody>
 </table>
 <h2>Boil Notes</h2>
-  <ul>
-    <li>Pre Boil Volume: <%= @brew_note.boil_note.pre_boil_volume %></li>
-    <li>Post Boil Volume: <%= @brew_note.boil_note.post_boil_volume %></li>
-  </ul>
+<ul>
+  <li>Pre Boil Volume: <%= @brew_note.boil_note.pre_boil_volume %></li>
+  <li>Post Boil Volume: <%= @brew_note.boil_note.post_boil_volume %></li>
+</ul>
+
+<h2>Fermentation Notes</h2>
+<ul>
+  <li>Volume in Fermenter: <%= @brew_note.fermentation_note.volume %></li>
+  <li>Measured Original Gravity: <%= @brew_note.fermentation_note.og %></li>
+  <li>Measured Final Gravity: <%= @brew_note.fermentation_note.fg %></li>
+</ul>
 <% if @brew_note.beer_photo_file_name %>
   <h2>Photo</h2>
   <%= image_tag @brew_note.beer_photo.url(:big) %>

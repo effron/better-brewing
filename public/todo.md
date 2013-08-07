@@ -4,11 +4,33 @@
 
 Add methods to sort ingredients 
 Add methods to get detailed information out of ingredients
+  Something like, click on ingredient name, view pops in that shows all the data on that ingredient
 
 ###Brew Notes:
 
 Move photo upload to tasting notes
 
 Add sparge notes!
+Add cooling notes?
 
-UJS the views. Maybe have a blank note created as soon as the person hits brew me, and then update it as they move through the views. 
+Refine UJS experience. 
+
+Add button to add new fermentation check on brew note show page
+  Button should add a row in place, allowing user to update the form on the spot.
+  
+Add button to add FG from note show page, also update on the spot.
+
+###Tasting notes:
+
+Add tasting notes!
+Figure out how to build radial chart out of the tasting notes
+
+
+####Friends
+
+Make add/remove friend happen Ajaxly 
+
+####Future:
+Find default beer photos of different colors, match them with the predicted colors of the brews for the tile background.
+
+apply styles using Chloe's layout

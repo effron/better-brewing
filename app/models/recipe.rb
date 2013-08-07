@@ -5,6 +5,8 @@ class Recipe < ActiveRecord::Base
   has_many :brew_notes
   validates :name, :xml, presence: true
   validate :xml_is_valid, on: :create
+
+  before_validation :cleanup_xml
   # Add various instance methods to pull out information from parsed recipe
   # without having to store it in various db tables. Assume only one recipe
   # in each XML file
@@ -80,5 +82,10 @@ class Recipe < ActiveRecord::Base
 
   def recipe_volume
     recipe_object.recipe_volume
+  end
+
+  #People are bad at beerxml. Clean up some found errors
+  def cleanup_xml
+    xml.gsub!(/<EFFICIENCY>-<\/EFFICIENCY>/, '<EFFICIENCY>0.0</EFFICIENCY>')
   end
 end

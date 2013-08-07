@@ -18,8 +18,6 @@ Add cooling notes?
 
 Refine UJS experience.
 
-Add button to add FG from note show page, also update on the spot.
-
 Brew notes index that allows you to compare two sets of notes side-by-side
 
 ###Tasting notes:

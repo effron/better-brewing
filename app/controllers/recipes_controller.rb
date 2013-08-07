@@ -16,8 +16,15 @@ class RecipesController < ApplicationController
     uploaded_recipe = params[:xml_file]
 
     if !xml_url.blank?
-      open(xml_url) do |file|
-        params[:recipe][:xml] = file.read
+      begin
+        open(xml_url) do |file|
+          params[:recipe][:xml] = file.read
+        end
+      rescue
+        flash[:notice] = "Bad url. Please double check to make sure it leads to pure BeerXML"
+        @recipe = current_user.recipes.build(params[:recipe])
+        render :new
+        return
       end
     elsif !uploaded_recipe.blank?
       params[:recipe][:xml] = uploaded_recipe.read

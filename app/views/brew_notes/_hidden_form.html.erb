@@ -1,0 +1,24 @@
+
+<%= form_for @brew_note, remote: true,
+    url: recipe_brew_notes_url(@brew_note.recipe_id) do |f| %>
+  <div class="hidden_form">
+  <%= f.text_area :body, cols: 0, rows: 0 %>
+
+  <%= render partial: "nested_mash_notes", locals: {brew_note: @brew_note} %>
+
+  <%= render partial: "nested_boil_note", locals: {brew_note: @brew_note} %>
+
+  <%= render partial: "nested_fermentation_note", locals: {brew_note: @brew_note} %>
+
+  <%= render partial: "nested_bottling_note", locals: {brew_note: @brew_note} %>
+
+  <%= f.hidden_field :recipe_id %>
+
+  <!-- Testing paperclip photo uploading -->
+  <%= f.label :beer_photo, "Beer photo" %>
+  <%= f.file_field :beer_photo %>
+  </div>
+
+  <%= f.submit "Let's Get Started" %>
+
+<% end %>

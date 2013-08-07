@@ -1,0 +1,37 @@
+<%= form_for brew_note, url: brew_note_url(brew_note.id) do |f| %>
+
+  <% time = 60 %>
+  <h2>Mash Notes</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Time</th><th>Temperature</th><th>Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% 5.times do |n| %>
+        <tr>
+          <td>
+            <input type="text" 
+             name="brew_note[mash_notes_attributes][<%= n %>][time]"
+             value="<%= brew_note.mash_notes[n].time%>">
+          </td>
+          <td>
+            <input type="text"
+             name="brew_note[mash_notes_attributes][<%= n %>][temperature]"
+             value="<%= brew_note.mash_notes[n].temperature %>">
+          </td>
+          <td>
+            <input type="text"
+             name="brew_note[mash_notes_attributes][<%= n %>][body]"
+             value="<%= brew_note.mash_notes[n].body %>">
+          </td>
+
+        </tr>
+        <input type="hidden" 
+         name="brew_note[mash_notes_attributes][<%= n %>][id]"
+         value="<%= brew_note.mash_notes[n].id %>">
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

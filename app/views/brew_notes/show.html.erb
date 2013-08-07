@@ -88,12 +88,12 @@
 $(function(){
 
   $("#new_fermentation_check").on("ajax:success", function(event, data){
-    $("#fermentation-check-row").append(data)
+    $(".fermentation-checks").append(data)
   })
 
-  $("#fermentation-check-row").on("ajax:success", ".fermentation-check-update", function(event, data){
-    console.log(data)
+  $(".fermentation-checks").on("ajax:success", ".fermentation-check-update", function(event, data){
     $(".fermentation-checks").append(data)
+    $("#check-form-row").remove()
   })
 
 })

@@ -1,0 +1,10 @@
+<tr id="editable-row-<%= mash_note.id %>">
+  <td><%= mash_note.time %></td>
+  <td><%= mash_note.temperature %></td>
+  <td><%= mash_note.body %></td>
+  <td><%= link_to "Edit mash note", edit_mash_note_url(mash_note),
+    remote: true, class: "edit-row", "data-id" => mash_note.id %></td>
+  <td><%= button_to "Destroy note", mash_note_url(mash_note),
+      method: :delete, remote: true, class: "destroy-button", form_class: "destroy-row",
+      "data-id" => mash_note.id %></td>
+</tr>

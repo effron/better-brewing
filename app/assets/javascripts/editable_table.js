@@ -1,6 +1,6 @@
 var initialize_editable_table = function(){
   $(".add-row").on("ajax:success", function(event, data){
-    $(".editable-table").append(data)
+    $(event.target).siblings(".editable-table").append(data)
   })
 
   $(".editable-table").on("ajax:success", ".update-row", function(event, data){

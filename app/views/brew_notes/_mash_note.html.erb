@@ -1,0 +1,26 @@
+<tr id="editable-row-<%= mash_note.id %>">
+<%= form_for mash_note, remote: true,
+    html:{ class: "update-row", "data-id" => mash_note.id } do |f| %>
+      <input type="hidden" name="_method" value="put">
+      <td>
+        <input type="text"
+        name="mash_note[time]"
+        value="<%= mash_note.time %>">
+      </td>
+      <td>
+        <input type="text"
+        name="mash_note[temperature]"
+        value="<%= mash_note.temperature %>">
+      </td>
+      <td>
+        <input type="text"
+        name="mash_note[body]"
+        value="<%= mash_note.body %>">
+      </td>
+      <td>
+        <input type="submit" value="Add mash note">
+      </td>
+      <td>
+      </td>
+<% end %>
+</tr>

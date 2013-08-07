@@ -1,0 +1,18 @@
+<h2>Fermentation Checks</h2>
+<table class="editable-table">
+  <thead>
+    <tr>
+      <th>Elapsed Time</th>
+      <th>Temperature</th>
+      <th>Specific Gravity</th>
+      <th>Note</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @brew_note.fermentation_note.fermentation_checks.each do |check| %>
+      <%= render partial: "fermentation_check_row", locals: {fermentation_check: check} %>
+    <% end %>
+  </tbody>
+</table>

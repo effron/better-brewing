@@ -2,22 +2,28 @@
 <h1>BREW NOTE FOR <%= link_to @brew_note.recipe.name, @brew_note.recipe %></h1>
 <p><%= @brew_note.body %></p>
 <h2>Mash Notes</h2>
-<table class="mash-notes">
+<div class=".editable-table-container">
+<table class="mash-notes editable-table">
   <thead>
     <tr>
-      <th>Time</th><th>Temperature</th><th>Note</th>
+      <th>Time</th><th>Temperature</th><th>Note</th><th>Edit</th><th>Delete</th>
     </tr>
   </thead>
   <tbody>
   <% @brew_note.mash_notes.each do |mash_note| %>
-    <tr>
-      <td><%= mash_note.time %></td>
-      <td><%= mash_note.temperature %></td>
-      <td><%= mash_note.body %></td>
-    </tr>
+    <%= render partial: "mash_note_row", locals: { mash_note: mash_note } %>
   <% end %>
   </tbody>
 </table>
+
+<%= form_for @brew_note.mash_notes.new,
+    remote: true, html: { class: "add-row" } do |f| %>
+      <input type="hidden" name="mash_note[brew_note_id]"
+      value="<%= @brew_note.id %>">
+<%= f.submit "Add new mash note" %>
+<% end %>
+</div>
+
 <h2>Boil Notes</h2>
 <ul>
   <li>Pre Boil Volume: <%= @brew_note.boil_note.pre_boil_volume %></li>
@@ -31,26 +37,9 @@
   <li>Measured Final Gravity: <%= @brew_note.fermentation_note.fg %></li>
   <li>General Note: <%= @brew_note.fermentation_note.body %>
 </ul>
-<div id="fermentation-check-list">
-<h2>Fermentation Checks</h2>
-<table class="editable-table">
-  <thead>
-    <tr>
-      <th>Elapsed Time</th>
-      <th>Temperature</th>
-      <th>Specific Gravity</th>
-      <th>Note</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @brew_note.fermentation_note.fermentation_checks.each do |check| %>
-      <%= render partial: "fermentation_check_row", locals: {fermentation_check: check} %>
-    <% end %>
-  </tbody>
-</table>
-</div>
+<div class=".editable-table-container">
+
+<%= render "fermentation_checks" %>
 
 <%= form_for @brew_note.fermentation_note.fermentation_checks.new,
     remote: true, html: { class: "add-row" } do |f| %>
@@ -59,6 +48,8 @@
 <%= f.submit "Add fermentation check" %>
 
 <% end %>
+</div>
+
 <h2>Bottling Notes</h2>
 <ul>
   <li>Amount bottled: <%= @brew_note.bottling_note.volume %></li>

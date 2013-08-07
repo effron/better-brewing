@@ -1,3 +1,9 @@
+<% if brew_note.persisted? %>
+<% mash_note_num = brew_note.mash_notes.length %>
+<% else %>
+<% mash_note_num = 5 %>
+<% end %>
+
 <% time = 60 %>
 <h2>Mash Notes</h2>
 <table>
@@ -7,7 +13,8 @@
     </tr>
   </thead>
   <tbody>
-<% 5.times do |n| %>
+
+<% mash_note_num.times do |n| %>
   <tr>
     <td>
       <input type="text" name="brew_note[mash_notes_attributes][<%= n %>][time]"

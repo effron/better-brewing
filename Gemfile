@@ -25,6 +25,7 @@ end
 # gem 'brewser', github: 'brewpoo/brewser', ref: 'ad6654981950cd046d697f974cf3d98a799c6b57'
 gem 'beerxml', github: 'codekitchen/beerxml', ref: '9a6d514085d64b7077ea0e840ffdc3c52d27923c'
 
+gem "chartkick"
 
 # Gems used only for assets and not required
 # in production environments by default.

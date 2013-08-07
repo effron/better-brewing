@@ -5,10 +5,13 @@
 Add methods to sort ingredients 
 Add methods to get detailed information out of ingredients
   Something like, click on ingredient name, view pops in that shows all the data on that ingredient
+Clean up ingredient display (round numbers, convert units(?))
 
 ###Brew Notes:
 
 Move photo upload to tasting notes
+
+Add unit information (maybe process info so that they can be stored as integers)
 
 Add sparge notes!
 Add cooling notes?

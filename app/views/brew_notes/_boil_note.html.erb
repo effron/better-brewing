@@ -1,0 +1,19 @@
+<%= form_for brew_note, url: "#{brew_note_url(brew_note.id)}?boil",
+    remote: true, html: {id: "boil-note"} do |f| %>
+  <h2>Boil Notes</h2>
+  <label for="pre_boil">Pre Boil Volume</label>
+  <input type="text" id="pre_boil"
+         name="brew_note[boil_note_attributes][pre_boil_volume]"
+         value="<%= brew_note.boil_note.pre_boil_volume %>">
+
+  <label for="post_boil">Post Boil Volume</label>
+  <input type="text" id="post_boil"
+         name="brew_note[boil_note_attributes][post_boil_volume]"
+         value="<%= brew_note.boil_note.post_boil_volume %>">
+
+  <input type="hidden" name="brew_note[boil_note_attributes][id]"
+        value="<%= brew_note.boil_note.id %>">
+  
+  <%= f.submit "On to fermenting!" %>
+  
+<% end %>

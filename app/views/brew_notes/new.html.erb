@@ -1,6 +1,34 @@
 <div id="new-brew-note">
-  <p>Welcome to your brew! We will walk you through each step as you make your beer. Take notes are you brew so that you can become a better brewer!</p>
-  
-  <%= render "hidden_form" %>
-
+  <p>Welcome to your brew! We will walk you through each step as you make your beer. Take notes as you brew so that you can become a better brewer!</p>
+  <div id="starter-form">
+    <%= render "hidden_form" %>
+  </div>
+  <section class="current-brew-view">
+    
+  </section>
 </div>
+
+<script>
+
+$(function(){
+  
+  $("#new_brew_note").on("ajax:success", function(event, data){
+    $(".current-brew-view").append(data);
+    $("#starter-form").addClass("hidden")
+  });
+  
+  $(".current-brew-view").on("ajax:success", "#mash-notes", function(event, data){
+    $(".current-brew-view").html(data);    
+  })
+  
+  $(".current-brew-view").on("ajax:success", "#boil-note", function(event, data){
+    $(".current-brew-view").html(data);    
+  })
+  
+  $(".current-brew-view").on("ajax:success", "#fermentation-note", function(event, data){
+    $("body").html(data);    
+  })
+  
+})
+
+</script>

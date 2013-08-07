@@ -1,5 +1,6 @@
-<%= form_for brew_note, url: brew_note_url(brew_note.id) do |f| %>
-
+<%= form_for brew_note, url: "#{brew_note_url(brew_note.id)}?mash", 
+    remote: true, html: {id: "mash-notes"} do |f| %>
+  <%= "#{brew_note_url(brew_note.id)}#mash-notes" %>
   <% time = 60 %>
   <h2>Mash Notes</h2>
   <table>
@@ -34,4 +35,7 @@
       <% end %>
     </tbody>
   </table>
+  
+  <%= f.submit "On to the sparge!" %>
+  
 <% end %>

@@ -22,11 +22,15 @@ class BrewNotesController < ApplicationController
     @brew_note = current_user.brew_notes.build(params[:brew_note])
 
     if @brew_note.user_id != @brew_note.recipe.user_id
-      raise" That's not your recipe!"
+      raise "That's not your recipe!"
     end
 
     if @brew_note.save
-      redirect_to @brew_note
+      if request.xhr?
+        render partial: "mash_notes", locals: { brew_note: @brew_note }
+      else
+        redirect_to @brew_note
+      end
     else
       flash[:notice] = "Could not create brew note"
       render :new
@@ -44,7 +48,14 @@ class BrewNotesController < ApplicationController
   def update
     @brew_note = BrewNote.find(params[:id])
     @brew_note.update_attributes(params[:brew_note])
-    redirect_to @brew_note
+ 
+    if request.url =~ /\?mash/ && request.xhr?
+      render partial: "boil_note", locals: { brew_note: @brew_note }
+    elsif request.url =~/\?boil/ && request.xhr?
+      render partial: "fermentation_note", locals: { brew_note: @brew_note }
+    else
+      redirect_to @brew_note
+    end
   end
 
   def destroy

@@ -19,7 +19,7 @@ Add cooling notes?
 Refine UJS experience.
 
 Brew notes index that allows you to compare two sets of notes side-by-side
-
+  Chart for mash notes
 ###Tasting notes:
 
 Add tasting notes!

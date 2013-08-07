@@ -1,4 +1,14 @@
-<li class="brew-note">
-  <% recipe = params[:recipe_id] ? "" : "#{brew_note.recipe.name}: " %>
-  <%= link_to "#{recipe}#{brew_note.created_at}", brew_note %>
+
+<li class="brew-note group">
+  <% if params[:recipe_id] %>
+  <ul class="group sub-note-ul">
+    <li><%= brew_note.created_at %></li>
+    <li><%= link_to "Left", brew_note, remote: true, class: "left" %></li>
+    <li><%= link_to "Right", brew_note, remote: true, class: "right" %></li>
+  </ul>
+  <% else %>
+
+  <%= link_to "#{brew_note.recipe.name}: #{brew_note.created_at}", brew_note %>
+
+  <% end %>
 </li>

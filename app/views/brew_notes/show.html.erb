@@ -70,16 +70,16 @@
 <script>
 
 $(function(){
-  initialize_editable_table()
+  initialize_editable_table();
 
   $(".editable-ul-container").on("ajax:success", ".edit-fermentation-note",function(event, data){
-    console.log(data)
-    $(".editable-ul-container").html(data)
-  })
+    console.log(data);
+    $(".editable-ul-container").html(data);
+  });
 
   $(".editable-ul-container").on("ajax:success", "#fermentation-note", function(event, data){
-    $(".editable-ul-container").html(data)
-  })
+    $(".editable-ul-container").html(data);
+  });
 
 })
 

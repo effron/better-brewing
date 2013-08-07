@@ -28,5 +28,30 @@
     padding: 5px;
   }
 
+  .brew-notes-list{
+    width: 20%;
+    float: left;
+    ul {
+      clear: both;
+      padding: 0;
+    }
+    .sub-note-ul li {
+      width: 33%;
+      float: left;
+      a{
+        padding: 10px 0;
+      }
+    }
+  }
+
+  .left-note{
+    width: 40%;
+    float: left;
+  }
+
+  .right-note{
+    width: 40%;
+    float: right;
+  }
 
 }

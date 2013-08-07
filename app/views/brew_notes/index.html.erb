@@ -1,10 +1,28 @@
 <% if params[:recipe_id] %>
 <% context = Recipe.find(params[:recipe_id]).name %>
+<% recipe = true %>
 <% else %>
 <% context = current_user.username %>
+<% recipe = false %>
 <% end %>
-
 <div id="brew-notes-index">
+<% if recipe %>
+<section class="brew-notes-list">
+  <ul>
+    <%= render @brew_notes %>
+  </ul>
+</section>
+
+<section class="left-note">
+
+</section>
+
+<section class="right-note">
+
+</section>
+
+<% else %>
+
 
   <h1>BREW NOTES INDEX for <%= context %></h1>
   <% if params[:recipe_id] %>
@@ -20,3 +38,22 @@
   </ul>
 
 </div>
+<% end %>
+
+
+<script>
+
+$(function(){
+
+  $(".left").on("ajax:success", function(event, data){
+    $(".left-note").html(data)
+  })
+
+  $(".right").on("ajax:success", function(event, data){
+    $(".right-note").html(data)
+  })
+
+})
+
+</script>
+

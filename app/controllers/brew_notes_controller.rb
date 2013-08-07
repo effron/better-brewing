@@ -39,6 +39,13 @@ class BrewNotesController < ApplicationController
 
   def show
     @brew_note = BrewNote.find(params[:id])
+
+    if request.xhr?
+      render partial: "brew_note_compare", locals: { brew_note: @brew_note }
+    else
+      render :show
+    end
+
   end
 
   def edit

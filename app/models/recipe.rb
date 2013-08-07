@@ -5,7 +5,6 @@ class Recipe < ActiveRecord::Base
   has_many :brew_notes
   validates :name, :xml, presence: true
   validate :xml_is_valid, on: :create
-  before_validation :convert_url_to_xml
   # Add various instance methods to pull out information from parsed recipe
   # without having to store it in various db tables. Assume only one recipe
   # in each XML file
@@ -13,7 +12,7 @@ class Recipe < ActiveRecord::Base
   def recipe_object
     #THIS NEEDS TO BE MORE ROBUST. FIGURE OUT WHAT TO DO WITH ILLEGAL BEER XML
     begin
-      @recipe_object ||= Brewser.parse(xml)[0]
+      @recipe_object ||= Beerxml.parse(xml)[0]
     rescue
       raise "Brewser could not parse XML"
     end
@@ -21,14 +20,10 @@ class Recipe < ActiveRecord::Base
 
   def xml_is_valid
     begin
-      Brewser.parse(xml)
+      Beerxml.parse(xml)
     rescue
       errors.add(:xml, "can't be unparseable by Brewser")
     end
-  end
-
-  def convert_url_to_xml
-    read_xml_from_url if xml_is_url?
   end
 
   def hops
@@ -43,8 +38,8 @@ class Recipe < ActiveRecord::Base
     recipe_object.yeasts
   end
 
-  def additives
-    recipe_object.additives
+  def miscs
+    recipe_object.miscs
   end
 
   def original_name
@@ -56,43 +51,23 @@ class Recipe < ActiveRecord::Base
   end
 
   def estimated_og
-    if recipe_object.estimated_og == 0
-      calculate_estimated_og
-    else
-      recipe_object.estimated_og
-    end
+    recipe_object.calculate_og
   end
 
   def estimated_fg
-    if recipe_object.estimated_fg == 0
-      calculate_estimated_fg
-    else
-      recipe_object.estimated_fg
-    end
+    recipe_object.calculate_fg
   end
 
   def estimated_color
-    if recipe_object.estimated_color == 0
-      calculate_estimated_color
-    else
-      recipe_object.estimated_color
-    end
+    recipe_object.color
   end
 
   def estimated_ibu
-    if recipe_object.estimated_ibu == 0
-      calculate_estimated_ibu
-    else
-      recipe_object.estimated_ibu
-    end
+    recipe_object.ibus
   end
 
   def estimated_abv
-    if recipe_object.estimated_abv == 0
-      calculate_estimated_abv
-    else
-      recipe_object.estimated_abv
-    end
+    recipe_object.abv
   end
 
   def boil_time
@@ -106,43 +81,4 @@ class Recipe < ActiveRecord::Base
   def recipe_volume
     recipe_object.recipe_volume
   end
-
-  def xml_is_url?
-    xml =~ /^https?:\/\/.*\.xml$/i
-  end
-
-  def read_xml_from_url
-    open(xml) do |file|
-      self.xml = file.read
-    end
-  end
-
-  private
-
-    def calculate_estimated_og
-      # figure out how to calculate estimated og from malts information
-      # Brewtoad can do it!
-      1.060 #placeholder for testing
-    end
-
-    def calculate_estimated_fg
-      # figure out how to calculate estimated fg from malts/yeasts information
-      # Brewtoad can do it!
-      1.010 #placeholder for testing
-    end
-
-    def calculate_estimated_color
-      # figure it out!
-      40 #placeholder
-    end
-
-    def calculate_estimated_ibu
-      # figure it out!
-      60 #placeholder
-    end
-
-    def calculate_estimated_abv
-      # figure it out!
-      8
-    end
 end

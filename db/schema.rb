@@ -11,7 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130806031425) do
+ActiveRecord::Schema.define(:version => 20130806193410) do
+
+  create_table "boil_notes", :force => true do |t|
+    t.integer  "brew_note_id"
+    t.integer  "pre_boil_volume"
+    t.integer  "post_boil_volume"
+    t.text     "body"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "bottling_notes", :force => true do |t|
+    t.integer  "brew_note_id"
+    t.integer  "volume"
+    t.string   "priming_sugar_type"
+    t.integer  "priming_sugar_amount"
+    t.text     "body"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
 
   create_table "brew_notes", :force => true do |t|
     t.integer  "user_id"
@@ -25,11 +44,24 @@ ActiveRecord::Schema.define(:version => 20130806031425) do
     t.datetime "beer_photo_updated_at"
   end
 
-  create_table "friends", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "friend_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "fermentation_checks", :force => true do |t|
+    t.integer  "fermentation_note_id"
+    t.integer  "temperature"
+    t.integer  "specific_gravity"
+    t.text     "body"
+    t.integer  "elapsed_time"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  create_table "fermentation_notes", :force => true do |t|
+    t.integer  "brew_note_id"
+    t.integer  "volume"
+    t.integer  "og"
+    t.integer  "fg"
+    t.text     "body"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "friendships", :force => true do |t|

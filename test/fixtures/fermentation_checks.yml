@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fermentation_note_id: 1
+  temperature: 1
+  specific_gravity: 1
+  body: MyText
+  elapsed_time: 1
+
+two:
+  fermentation_note_id: 1
+  temperature: 1
+  specific_gravity: 1
+  body: MyText
+  elapsed_time: 1

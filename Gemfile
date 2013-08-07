@@ -11,7 +11,7 @@ group :production do
   gem 'pg'
 end
 
-group :development do 
+group :development do
   gem 'letter_opener'
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -19,7 +19,12 @@ group :development do
   gem 'sqlite3'
 end
 
-gem 'brewser', github: 'brewpoo/brewser', ref: 'ad6654981950cd046d697f974cf3d98a799c6b57' 
+# gem 'dm-core'
+# gem 'dm-validations', '~> 1.1.0'
+
+# gem 'brewser', github: 'brewpoo/brewser', ref: 'ad6654981950cd046d697f974cf3d98a799c6b57'
+gem 'beerxml', github: 'codekitchen/beerxml', ref: '9a6d514085d64b7077ea0e840ffdc3c52d27923c'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

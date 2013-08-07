@@ -18,9 +18,55 @@
   <% end %>
   </tbody>
 </table>
+<h2>Boil Notes</h2>
+<ul>
+  <li>Pre Boil Volume: <%= @brew_note.boil_note.pre_boil_volume %></li>
+  <li>Post Boil Volume: <%= @brew_note.boil_note.post_boil_volume %></li>
+</ul>
 
-<% if @brew_note.beer_photo %>
+<h2>Fermentation Notes</h2>
+<ul>
+  <li>Volume in Fermenter: <%= @brew_note.fermentation_note.volume %></li>
+  <li>Measured Original Gravity: <%= @brew_note.fermentation_note.og %></li>
+  <li>Measured Final Gravity: <%= @brew_note.fermentation_note.fg %></li>
+  <li>General Note: <%= @brew_note.fermentation_note.body %>
+</ul>
+
+<h2>Fermentation Checks</h2>
+<table class="fermentation-checks">
+  <thead>
+    <tr>
+      <th>Elapsed Time</th>
+      <th>Temperature</th>
+      <th>Specific Gravity</th>
+      <th>Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @brew_note.fermentation_note.fermentation_checks.each do |check| %>
+      <tr>
+        <td><%= check.elapsed_time %></td>
+        <td><%= check.temperature %></td>
+        <td><%= check.specific_gravity %></td>
+        <td><%= check.body %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Bottling Notes</h2>
+<ul>
+  <li>Amount bottled: <%= @brew_note.bottling_note.volume %></li>
+  <li>Priming Sugar Type: <%= @brew_note.bottling_note.priming_sugar_type %></li>
+  <li>Priming Sugar Amount: <%= @brew_note.bottling_note.priming_sugar_amount %></li>
+  <li>General Note: <%= @brew_note.bottling_note.body %></li>
+</ul>
+
+<% if @brew_note.beer_photo_file_name %>
   <h2>Photo</h2>
   <%= image_tag @brew_note.beer_photo.url(:big) %>
 <% end %>
+
+<%= link_to "Edit Brew Note", edit_brew_note_url(@brew_note) %>
+
 </div>

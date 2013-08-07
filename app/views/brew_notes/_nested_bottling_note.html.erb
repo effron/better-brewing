@@ -1,0 +1,25 @@
+<h2>Bottling Notes</h2>
+<label for="bottling_volume">Volume Bottled</label>
+<input type="text" id="bottling_volume"
+       name="brew_note[bottling_note_attributes][volume]"
+       value="<%= brew_note.bottling_note.volume if brew_note.persisted? %>">
+
+<label for="priming_sugar_type">Priming Sugar Type</label>
+<input type="text" id="priming_sugar_type"
+       name="brew_note[bottling_note_attributes][priming_sugar_type]"
+       value="<%= brew_note.bottling_note.priming_sugar_type if brew_note.persisted? %>">
+
+<label for="priming_sugar_amount">Priming Sugar Amount</label>
+<input type="text" id="priming_sugar_amount"
+       name="brew_note[bottling_note_attributes][priming_sugar_amount]"
+       value="<%= brew_note.bottling_note.priming_sugar_amount if brew_note.persisted? %>">
+
+<label for="bottling_body">Misc Notes</label>
+<input type="text" id="bottling_body"
+       name="brew_note[bottling_note_attributes][body]"
+       value="<%= brew_note.bottling_note.body if brew_note.persisted? %>">
+
+<% if brew_note.persisted? %>
+<input type="hidden" name="brew_note[bottling_note_attributes][id]"
+       value="<%= brew_note.bottling_note.id %>">
+<% end %>

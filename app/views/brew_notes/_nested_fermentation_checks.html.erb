@@ -1,0 +1,42 @@
+<!-- Will increment when new fermentation check added -->
+<% n = 0 %>
+
+<h2>Fermentation Checks</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Days</th>
+      <th>Temperature</th>
+      <th>Specific Gravity</th>
+      <th>Misc Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <input type="text"
+        name="brew_note[fermentation_note_attributes][fermentation_checks_attributes][<%= n %>][elapsed_time]"
+        value="<%= brew_note.fermentation_note.fermentation_checks[n].elapsed_time if brew_note.persisted? %>">
+      </td>
+      <td>
+        <input type="text"
+        name="brew_note[fermentation_note_attributes][fermentation_checks_attributes][<%= n %>][temperature]"
+        value="<%= brew_note.fermentation_note.fermentation_checks[n].temperature if brew_note.persisted? %>">
+      </td>
+      <td>
+        <input type="text"
+        name="brew_note[fermentation_note_attributes][fermentation_checks_attributes][<%= n %>][specific_gravity]"
+        value="<%= brew_note.fermentation_note.fermentation_checks[n].specific_gravity if brew_note.persisted? %>">
+      </td>
+      <td>
+        <input type="text"
+        name="brew_note[fermentation_note_attributes][fermentation_checks_attributes][<%= n %>][body]"
+        value="<%= brew_note.fermentation_note.fermentation_checks[n].body if brew_note.persisted? %>">
+      </td>
+    </tr>
+</tbody>
+</table>
+<% if brew_note.persisted? %>
+<input type="hidden" name="brew_note[fermentation_note_attributes][fermentation_checks_attributes][<%= n %>][id]"
+       value="<%= brew_note.fermentation_note.fermentation_checks[n].id %>">
+<% end %>

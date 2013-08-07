@@ -6,6 +6,34 @@
     </h2>
   </header>
 
+  <div class="properties ingredients">
+    <h2>Predicted Recipe Properties</h2>
+    <table>
+      <thead>
+        <tr class="properties-head">
+          <th>Property</th>
+          <th>Estimated Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% properties_array =
+          [
+            ['OG', 'estimated_og'],
+            ['FG', 'estimated_fg'],
+            ['IBU', 'estimated_ibu'],
+            ['ABV', 'estimated_abv'],
+            ['color', 'estimated_color']
+          ]
+        %>
+        <% properties_array.each do |name, estimated| %>
+        <tr class="properties-row">
+          <td><%= name %></td><td><%= @recipe.send(estimated) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
   <div class="fermentables ingredients">
   <h2>Fermentables</h2>
     <table class="fermentables-table">
@@ -21,7 +49,7 @@
         <% @recipe.fermentables.each do |fermentable| %>
           <tr class="fermentables-row">
             <td><%= fermentable.name %></td>
-            <td><%= fermentable.amount %></td>
+            <td><%= fermentable.amount.to_f %> <%= fermentable.amount.unit %></td>
             <td><%= fermentable.type %></td>
             <td><%= fermentable.color %></td>
           </tr>
@@ -47,11 +75,11 @@
         <% @recipe.hops.each do |hop| %>
           <tr class="hops-row">
             <td><%= hop.name %></td>
-            <td><%= hop.amount %></td>
-            <td><%= hop.time %></td>
-            <td><%= hop.added_when %></td>
+            <td><%= hop.amount.to_f %> <%= hop.amount.unit %></td>
+            <td><%= hop.time.to_f %> <%= hop.time.unit %></td>
+            <td><%= hop.use %></td>
             <td><%= hop.form %></td>
-            <td><%= hop.alpha_acids %></td>
+            <td><%= hop.alpha %></td>
           </tr>
         <% end %>
       </tbody>
@@ -73,7 +101,7 @@
         <% @recipe.yeasts.each do |yeast| %>
           <tr class="yeasts-row">
             <td><%= yeast.name %></td>
-            <td><%= yeast.supplier %></td>
+            <td><%= yeast.laboratory %></td>
             <td><%= yeast.form %></td>
             <td><%= yeast.attenuation %>%</td>
           </tr>
@@ -82,7 +110,7 @@
     </table>
   </div>
 
-  <% unless @recipe.additives.empty? %>
+  <% unless @recipe.miscs.empty? %>
     <div class="additives ingredients">
       <h2>Additives</h2>
       <table class="additives-table">
@@ -95,12 +123,12 @@
           </tr>
         </thead>
         <tbody>
-          <% @recipe.additives.each do |additive| %>
+          <% @recipe.miscs.each do |additive| %>
             <tr class="additives-row">
               <td><%= additive.name %></td>
-              <td><%= additive.amount %></td>
-              <td><%= additive.time %></td>
-              <td><%= additive.added_when %></td>
+              <td><%= additive.amount.to_f %> <%= additive.amount.unit %></td>
+              <td><%= additive.time.to_f %> <%= additive.time.unit %></td>
+              <td><%= additive.use %></td>
             </tr>
           <% end %>
         </tbody>

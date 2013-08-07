@@ -1,5 +1,7 @@
 class MashNotesController < ApplicationController
 
+  before_filter :authenticate_user!
+
   def create
     @mash_note = MashNote.new(params[:mash_note])
     @mash_note.save!

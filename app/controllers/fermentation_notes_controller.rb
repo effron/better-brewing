@@ -1,5 +1,7 @@
 class FermentationNotesController < ApplicationController
 
+  before_filter :authenticate_user!
+
   def update
     @fermentation_note = FermentationNote.find(params[:id])
     @fermentation_note.update_attributes(params[:fermentation_note])

@@ -1,5 +1,7 @@
 class FermentationChecksController < ApplicationController
 
+  before_filter :authenticate_user!
+
   def create
     @fermentation_check = FermentationCheck.new(params[:fermentation_check])
     @fermentation_check.save!

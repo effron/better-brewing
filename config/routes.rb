@@ -14,9 +14,13 @@ BetterBrewing::Application.routes.draw do
 
   resources :brew_notes, only: [:index, :edit, :update, :destroy, :show]
 
+  resources :fermentation_notes, only: [:edit, :update]
+
   resources :fermentation_checks, except: [:new, :show, :index]
 
   resources :mash_notes, except: [:new, :show, :index]
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

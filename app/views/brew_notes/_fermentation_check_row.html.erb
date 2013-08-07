@@ -3,7 +3,7 @@
   <td><%= fermentation_check.temperature %></td>
   <td><%= fermentation_check.specific_gravity %></td>
   <td><%= fermentation_check.body %></td>
-  <td><%= link_to "Edit check", edit_fermentation_check_url(fermentation_check),
+  <td><%= link_to "Edit fermentation check", edit_fermentation_check_url(fermentation_check),
     remote: true, class: "edit-row", "data-id" => fermentation_check.id %></td>
   <td><%= button_to "Destroy check", fermentation_check_url(fermentation_check),
       method: :delete, remote: true, class: "destroy-button", form_class: "destroy-row",

@@ -48,11 +48,11 @@ class BrewNotesController < ApplicationController
   def update
     @brew_note = BrewNote.find(params[:id])
     @brew_note.update_attributes(params[:brew_note])
- 
+
     if request.url =~ /\?mash/ && request.xhr?
       render partial: "boil_note", locals: { brew_note: @brew_note }
     elsif request.url =~/\?boil/ && request.xhr?
-      render partial: "fermentation_note", locals: { brew_note: @brew_note }
+      render partial: "brew_day_fermentation_note", locals: { brew_note: @brew_note }
     else
       redirect_to @brew_note
     end

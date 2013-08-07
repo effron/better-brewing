@@ -2,7 +2,7 @@
 <h1>BREW NOTE FOR <%= link_to @brew_note.recipe.name, @brew_note.recipe %></h1>
 <p><%= @brew_note.body %></p>
 <h2>Mash Notes</h2>
-<div class=".editable-table-container">
+<div class="editable-table-container">
 <table class="mash-notes editable-table">
   <thead>
     <tr>
@@ -30,14 +30,13 @@
   <li>Post Boil Volume: <%= @brew_note.boil_note.post_boil_volume %></li>
 </ul>
 
-<h2>Fermentation Notes</h2>
-<ul>
-  <li>Volume in Fermenter: <%= @brew_note.fermentation_note.volume %></li>
-  <li>Measured Original Gravity: <%= @brew_note.fermentation_note.og %></li>
-  <li>Measured Final Gravity: <%= @brew_note.fermentation_note.fg %></li>
-  <li>General Note: <%= @brew_note.fermentation_note.body %>
-</ul>
-<div class=".editable-table-container">
+<div class="editable-ul-container">
+<%= render partial: "fermentation_note",
+           locals: { fermentation_note: @brew_note.fermentation_note } %>
+
+</div>
+
+<div class="editable-table-container">
 
 <%= render "fermentation_checks" %>
 
@@ -72,6 +71,16 @@
 
 $(function(){
   initialize_editable_table()
+
+  $(".editable-ul-container").on("ajax:success", ".edit-fermentation-note",function(event, data){
+    console.log(data)
+    $(".editable-ul-container").html(data)
+  })
+
+  $(".editable-ul-container").on("ajax:success", "#fermentation-note", function(event, data){
+    $(".editable-ul-container").html(data)
+  })
+
 })
 
 </script>

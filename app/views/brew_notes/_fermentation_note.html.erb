@@ -1,25 +1,13 @@
-<%= form_for brew_note, url: "#{brew_note_url(brew_note.id)}?fermentation",
-    remote: true, html: {id: "fermentation-note"} do |f| %>
-
+<div id="fermentation-note">
 <h2>Fermentation Notes</h2>
-<label for="fermenter_volume">Volume in Fermenter</label>
-<input type="text" id="fermenter_volume"
-       name="brew_note[fermentation_note_attributes][volume]"
-       value="<%= brew_note.fermentation_note.volume %>">
+<ul>
+  <li>Volume in Fermenter: <%= fermentation_note.volume %></li>
+  <li>Measured Original Gravity: <%= fermentation_note.og %></li>
+  <li>Measured Final Gravity: <%= fermentation_note.fg %></li>
+  <li>General Note: <%= fermentation_note.body %>
+</ul>
 
-<label for="og">Measured Original Gravity</label>
-<input type="text" id="og"
-       name="brew_note[fermentation_note_attributes][og]"
-       value="<%= brew_note.fermentation_note.og %>">
-
-<label for="ferm_body">Misc Notes</label>
-<input type="text" id="ferm_body"
-       name="brew_note[fermentation_note_attributes][body]"
-       value="<%= brew_note.fermentation_note.body if brew_note.persisted? %>">
-
-<input type="hidden" name="brew_note[fermentation_note_attributes][id]"
-       value="<%= brew_note.fermentation_note.id %>">
-  
-  <%= f.submit "Done brewing! Set up reminders" %>
-  
-<% end %>
+<%= link_to "Edit fermentation notes",
+            edit_fermentation_note_url(fermentation_note.id),
+            remote: true, class: "edit-fermentation-note" %>
+</div>

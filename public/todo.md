@@ -18,9 +18,6 @@ Add cooling notes?
 
 Refine UJS experience.
 
-Add button to add new fermentation check on brew note show page
-  Button should add a row in place, allowing user to update the form on the spot.
-
 Add button to add FG from note show page, also update on the spot.
 
 Brew notes index that allows you to compare two sets of notes side-by-side

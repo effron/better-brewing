@@ -61,6 +61,15 @@
     padding: 10px 0;
   }
 
+  form {
+    margin: 10px;
+  }
+  form input, form label {
+    margin: 10px;
+    display: block;
+    padding: 5px;
+  }
+
   #edit-note{
     margin-left: 10%;
     display: block;
@@ -74,6 +83,13 @@
     &:active{
       box-shadow: inset 0 0 3px black;
     };
+  }
+
+  #fermentation-note{
+    a{
+      display: block;
+      margin: 10px 20px 20px 20px;
+    }
   }
 
   .beer-photo{

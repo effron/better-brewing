@@ -1,0 +1,30 @@
+<%= form_for fermentation_note,
+    remote: true, html: {id: "fermentation-note"} do |f| %>
+
+<h2>Fermentation Notes</h2>
+<label for="fermenter_volume">Volume in Fermenter</label>
+<input type="text" id="fermenter_volume"
+       name="fermentation_note[volume]"
+       value="<%= fermentation_note.volume %>">
+
+<label for="og">Measured Original Gravity</label>
+<input type="text" id="og"
+       name="fermentation_note[og]"
+       value="<%= fermentation_note.og %>">
+
+ <label for="fg">Measured Final Gravity</label>
+ <input type="text" id="fg"
+        name="fermentation_note[fg]"
+        value="<%= fermentation_note.fg %>">
+
+<label for="ferm_body">Misc Notes</label>
+<input type="text" id="ferm_body"
+       name="fermentation_note[body]"
+       value="<%= fermentation_note.body %>">
+
+<input type="hidden" name="fermentation_note[id]"
+       value="<%= fermentation_note.id %>">
+
+  <%= f.submit "Update Fermentation Notes" %>
+
+<% end %>

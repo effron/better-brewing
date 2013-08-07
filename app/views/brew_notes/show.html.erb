@@ -33,13 +33,14 @@
 </ul>
 <div id="fermentation-check-list">
 <h2>Fermentation Checks</h2>
-<table class="fermentation-checks">
+<table class="editable-table">
   <thead>
     <tr>
       <th>Elapsed Time</th>
       <th>Temperature</th>
       <th>Specific Gravity</th>
       <th>Note</th>
+      <th></th>
       <th></th>
     </tr>
   </thead>
@@ -50,10 +51,9 @@
   </tbody>
 </table>
 </div>
-<div id="fermentation-check-row">
-</div>
+
 <%= form_for @brew_note.fermentation_note.fermentation_checks.new,
-    remote: true do |f| %>
+    remote: true, html: { class: "add-row" } do |f| %>
       <input type="hidden" name="fermentation_check[fermentation_note_id]"
       value="<%= @brew_note.fermentation_note.id %>">
 <%= f.submit "Add fermentation check" %>
@@ -80,21 +80,7 @@
 <script>
 
 $(function(){
-
-  $("#new_fermentation_check").on("ajax:success", function(event, data){
-    $(".fermentation-checks").append(data)
-  })
-
-  $(".fermentation-checks").on("ajax:success", ".fermentation-check-update", function(event, data){
-    // $(".fermentation-checks").append(data)
-    $("#check-form-row").replaceWith(data)
-  })
-
-  $(".fermentation-checks").on("ajax:success", ".edit-check", function(event, data){
-    var id = $(event.target).data("id")
-    $("#check-row-" + id).replaceWith(data)
-  })
-
+  initialize_editable_table()
 })
 
 </script>

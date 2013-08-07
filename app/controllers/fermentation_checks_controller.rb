@@ -30,6 +30,12 @@ class FermentationChecksController < ApplicationController
   end
 
   def destroy
-
+    @fermentation_check = FermentationCheck.find(params[:id])
+    @fermentation_check.destroy
+    if request.xhr?
+      render partial: "brew_notes/fermentation_check", locals: {fermentation_check: @fermentation_check}
+    else
+      redirect_to @fermentation_check.fermentation_note.brew_note
+    end
   end
 end

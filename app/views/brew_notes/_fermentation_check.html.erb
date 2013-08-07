@@ -1,6 +1,6 @@
-<tr id="check-form-row">
+<tr id="editable-row-<%= fermentation_check.id %>">
 <%= form_for fermentation_check, remote: true,
-    html:{ class: "fermentation-check-update" } do |f| %>
+    html:{ class: "update-row", "data-id" => fermentation_check.id } do |f| %>
       <input type="hidden" name="_method" value="put">
       <td>
         <input type="text"

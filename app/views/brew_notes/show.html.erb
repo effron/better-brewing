@@ -45,13 +45,7 @@
   </thead>
   <tbody>
     <% @brew_note.fermentation_note.fermentation_checks.each do |check| %>
-      <tr>
-        <td><%= check.elapsed_time %></td>
-        <td><%= check.temperature %></td>
-        <td><%= check.specific_gravity %></td>
-        <td><%= check.body %></td>
-        <td><button>Edit check</button></td>
-      </tr>
+      <%= render partial: "fermentation_check_row", locals: {fermentation_check: check} %>
     <% end %>
   </tbody>
 </table>
@@ -92,8 +86,13 @@ $(function(){
   })
 
   $(".fermentation-checks").on("ajax:success", ".fermentation-check-update", function(event, data){
-    $(".fermentation-checks").append(data)
-    $("#check-form-row").remove()
+    // $(".fermentation-checks").append(data)
+    $("#check-form-row").replaceWith(data)
+  })
+
+  $(".fermentation-checks").on("ajax:success", ".edit-check", function(event, data){
+    var id = $(event.target).data("id")
+    $("#check-row-" + id).replaceWith(data)
   })
 
 })

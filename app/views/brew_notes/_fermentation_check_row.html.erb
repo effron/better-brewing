@@ -1,7 +1,8 @@
-<tr>
+<tr id="check-row-<%= fermentation_check.id %>">
   <td><%= fermentation_check.elapsed_time %></td>
   <td><%= fermentation_check.temperature %></td>
   <td><%= fermentation_check.specific_gravity %></td>
   <td><%= fermentation_check.body %></td>
-  <td><button>Edit check</button></td>
+  <td><%= link_to "Edit check", edit_fermentation_check_url(fermentation_check),
+    remote: true, class: "edit-check", "data-id" => fermentation_check.id %></td>
 </tr>

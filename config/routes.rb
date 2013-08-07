@@ -13,6 +13,9 @@ BetterBrewing::Application.routes.draw do
   end
 
   resources :brew_notes, only: [:index, :edit, :update, :destroy, :show]
+
+  resources :fermentation_checks, only: [:create, :update, :destroy]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

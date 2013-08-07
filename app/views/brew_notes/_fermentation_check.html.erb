@@ -1,0 +1,44 @@
+<!-- Will increment when new fermentation check added -->
+
+<h2>Fermentation Checks</h2>
+<%= form_for fermentation_check, remote: true,
+    html:{ class: "fermentation-check-update" } do |f| %>
+<table>
+  <thead>
+    <tr>
+      <th>Days</th>
+      <th>Temperature</th>
+      <th>Specific Gravity</th>
+      <th>Misc Notes</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <input type="text"
+        name="fermentation_check[elapsed_time]"
+        value="<%= fermentation_check.elapsed_time %>">
+      </td>
+      <td>
+        <input type="text"
+        name="fermentation_check[temperature]"
+        value="<%= fermentation_check.temperature %>">
+      </td>
+      <td>
+        <input type="text"
+        name="fermentation_check[specific_gravity]"
+        value="<%= fermentation_check.specific_gravity %>">
+      </td>
+      <td>
+        <input type="text"
+        name="fermentation_check[body]"
+        value="<%= fermentation_check.body %>">
+      </td>
+      <td>
+        <input type="submit" value="Add fermentation check">
+      </td>
+    </tr>
+  </tbody>
+</table>
+<% end %>

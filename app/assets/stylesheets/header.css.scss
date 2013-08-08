@@ -10,6 +10,7 @@
 
 .main-header{
   width: $main-width;
+  min-width: $main-min-width;
   margin:auto;
   background-color: $main-color;
 }

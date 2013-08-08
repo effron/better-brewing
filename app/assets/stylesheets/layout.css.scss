@@ -2,6 +2,7 @@
 $main-color: adjust-hue(#6793D0, 0);
 $header-height: 47px;
 $main-width: 100%;
+$main-min-width: 1000px;
 $sidebar-height: 210px;
 
 //CSS Reset Styles
@@ -30,6 +31,7 @@ a {
 
 .main-body {
   width: $main-width;
+  min-width: $main-min-width;
   margin: $header-height auto;
 }
 
@@ -37,6 +39,7 @@ a {
   box-sizing: border-box;
   margin-left: $main-width * .2;
   width: $main-width * .8;
+  min-width: $main-min-width * .8;
   background: lighten($main-color, 35%);
   border-left: 2px solid black;
   min-height: $sidebar-height;

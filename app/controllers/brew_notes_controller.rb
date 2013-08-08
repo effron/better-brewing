@@ -45,7 +45,6 @@ class BrewNotesController < ApplicationController
     else
       render :show
     end
-
   end
 
   def edit

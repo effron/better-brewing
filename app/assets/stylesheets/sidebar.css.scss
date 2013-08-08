@@ -1,6 +1,7 @@
 .sidebar {
   box-sizing: border-box;
   width: $main-width * .2;
+  min-width: $main-min-width * .2;
   position:fixed;
   background-color: lighten($main-color, 30%);
 }

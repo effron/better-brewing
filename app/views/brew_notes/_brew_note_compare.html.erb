@@ -23,16 +23,22 @@
   $(function(){
     var noteData = JSON.parse($("#bootstrapped_mash_notes_json_<%= brew_note.id %>").html());
 
+    // parse noteData to be used by google's arrayToDataTable
     noteData = _.map(noteData, function(mash_note){
       return [mash_note.time, mash_note.temperature]
     });
+    // filter out undefined points
+    noteData = _.select(noteData, function(note){
+      return note[0] != undefined && note[1] != undefined
+    })
 
+    //sort by time
+    noteData = _.sortBy(noteData, function(note){
+      return note[0]
+    })
+    // Add first row
     noteData.unshift(["Time", "Temperature"])
-    // var data = google.visualization.arrayToDataTable(noteData);
-    // var fakeData1 = google.visualization.arrayToDataTable(noteData.slice(0,2))
-    // var fakeData2 = google.visualization.arrayToDataTable(noteData.slice(0,3))
-    // var fakeData3 = google.visualization.arrayToDataTable(noteData.slice(0,4))
-    // var fakeData4 = google.visualization.arrayToDataTable(noteData.slice(0,5))
+
     var options = {
       title: 'Age vs. Weight comparison',
       hAxis: {title: 'Time (minutes)', minValue: 0, maxValue: 70},
@@ -44,23 +50,7 @@
 
     var chart = new google.visualization.ScatterChart(document.getElementById('chart-div-<%= brew_note.id %>'));
     animateChart(noteData, options, chart, 300)
-    //
-    // chart.draw(fakeData1, options)
-    // chart.draw(fakeData2, options)
-    //
-    // setTimeout(function(){
-    //   chart.draw(fakeData3, options)
-    // }, 200)
-    //
-    // setTimeout(function(){
-    //   chart.draw(fakeData4, options)
-    // }, 400)
-    //
-    // setTimeout(function(){
-    //   chart.draw(data, options)
-    // }, 600)
-    //
-    // console.log("I was called")
+
   });
 
 </script>

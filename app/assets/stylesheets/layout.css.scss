@@ -1,8 +1,11 @@
 //$main-color: #6793D0;
-$main-color: adjust-hue(#6793D0, 0);
-$header-height: 47px;
+$main-color: #53895d;
+$dropdown-color: #a9c4ae;
+$sidebar-light: #4e4e4e;
+$sidebar-dark: #393939;
+$header-height: 68px;
 $main-width: 100%;
-$main-min-width: 1000px;
+$main-min-width: 1200px;
 $sidebar-height: 210px;
 
 //CSS Reset Styles
@@ -16,8 +19,8 @@ html, body, div, header, h1, h2, h3, nav, ul, li, a, footer, button, form, input
 
 body{
   line-height:1;
-  font-family: sans-serif;
-  background-color: lighten(desaturate($main-color, 40%), 40%)
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: $sidebar-light
 }
 
 ul {
@@ -40,15 +43,15 @@ a {
   margin-left: $main-width * .2;
   width: $main-width * .8;
   min-width: $main-min-width * .8;
-  background: lighten($main-color, 35%);
-  border-left: 2px solid black;
+  background: white;
   min-height: $sidebar-height;
 }
 
 footer {
   clear:both;
   width: $main-width;
-  border-top: 5px solid darken($main-color, 10%);
+  background: white;
+  border-top: 4px solid $main-color;
   margin: auto;
   h2 {
     padding: 10px;

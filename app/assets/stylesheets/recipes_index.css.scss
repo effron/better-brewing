@@ -1,7 +1,24 @@
 #recipes-index{
 
-  h1{
-    padding: 10px;
-    font-size: 28px;
+  h1 {
+      position: relative;
+      font-size: 40px;
+      z-index: 1;
+      overflow: hidden;
+      text-align: center;
+      top: 11px;
+  }
+  h1:before, h1:after {
+      position: absolute;
+      top: 51%;
+      overflow: hidden;
+      width: 50%;
+      height: 1px;
+      content: '\a0';
+      background-color: black;
+  }
+  h1:before {
+      margin-left: -50%;
+      text-align: right;
   }
 }

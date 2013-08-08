@@ -5,43 +5,52 @@
   top:0;
   left:0;
   width: 100%;
-  border-bottom: 2px solid black;
 }
 
 .main-header{
+  position: relative;
   width: $main-width;
   min-width: $main-min-width;
   margin:auto;
   background-color: $main-color;
 }
 
-.main-header h1{
+.main-header .decal{
+  position: absolute;
+  top: 8px;
+  left: 10%;
+  pointer-events: none;
+}
+
+.main-header .main-logo{
+  width: 550px;
   float: left;
-  font-weight: bold;
-  font-size: 20px;
-  border-left: 2px solid black;
-  padding: 12px 10px 15px 10px;
-  margin-left: $main-width * .2;
+  margin-left: 20%;
+  position: relative;
+  top: 13px;
+  left: 0px;
+  img{
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 }
 
 .main-header nav{
   float: right;
-  border-left: 2px solid black;
+  margin-right: 20%;
+  margin-top: 19px;
+  font-size: 18px;
+  background: $dropdown-color;
 }
-
-.main-header nav ul li{
-  float: left;
-  &:hover{
-    background-color: lighten($main-color, 10%);
-  }
-}
-
 
 .main-header nav ul li a{
+  color: white;
   display:block;
   padding:16px 20px 15px 10px;
+  font-size: 20px;
   &:hover{
-    background-color: lighten($main-color, 10%);
+    background-color: $dropdown-color;
   }
 }
 
@@ -50,7 +59,7 @@
   .hidden-menu{
     display: none;
     position: absolute;
-    background: lighten($main-color, 15%);
+    background: $dropdown-color;
   }
 }
 
@@ -70,10 +79,12 @@
   display: block;
   width: 100%;
   padding: 10px;
-  background: lighten($main-color, 15%);
   text-align: left;
+  background: $dropdown-color;
+  color: white;
   &:hover{
     background: lighten($main-color, 20%);
     cursor: pointer;
+    box-shadow: none;
   }
 }

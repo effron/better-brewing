@@ -46,10 +46,15 @@ $(function(){
 
   $(".left").on("ajax:success", function(event, data){
     $(".left-note").html(data);
+    $(event.target).parent().parent().parent().addClass("selected-left");
+    $(event.target).parent().parent().parent().siblings().removeClass("selected-left")
   });
 
   $(".right").on("ajax:success", function(event, data){
     $(".right-note").html(data);
+    $(event.target).parent().parent().parent().addClass("selected-right");
+    $(event.target).parent().parent().parent().siblings().removeClass("selected-right")
+
   });
 
 })

@@ -5,11 +5,9 @@
 <h1><%= brew_note.created_at %></h1>
 <h2>Mash Notes</h2>
 
-<%# scatter_chart brew_note.mash_notes.select {|note| note.time && note.temperature }.map{
-  |note| [note.time, note.temperature]
-}, id: "mash-chart-#{brew_note.id}", library: {title: "Mash Chart", hAxis: {}} %>
 <div id="chart-div-<%= brew_note.id %>"></div>
 <h2>Boil Notes</h2>
+
 <p>Boil notes will go here</p>
 
 <h2>Fermenting Notes</h2>
@@ -40,7 +38,7 @@
     noteData.unshift(["Time", "Temperature"])
 
     var options = {
-      title: 'Age vs. Weight comparison',
+      title: 'Time vs. Temperature',
       hAxis: {title: 'Time (minutes)', minValue: 0, maxValue: 70},
       vAxis: {title: 'Temperature (Fahrenheit)', minValue: 130, maxValue: 200},
       legend: 'none',

@@ -1,6 +1,6 @@
 <style>
 #recipe-<%= recipe.id %>{
-  background: url("/beer_pictures/<%= rand(8) + 1 %>.png") no-repeat;
+  background: url(<%= asset_path "beer_pictures/#{rand(8)+1}.png" %>) no-repeat;
   background-size: cover;
 }
 </style>

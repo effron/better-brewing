@@ -20,6 +20,7 @@ Refine UJS experience.
 
 Brew notes index that allows you to compare two sets of notes side-by-side
   Chart for mash notes
+  TOGGLE BUTTONS SO THAT IT CAN EITHER BE ON LEFT OR RIGHT. IF IT IS ON RIGHT AND LEFT IS CLICKED, REMOVE IT FROM RIGHT AND ADD TO LEFT. IT IS BROKEN WITHOUT THIS
 ###Tasting notes:
 
 Add tasting notes!

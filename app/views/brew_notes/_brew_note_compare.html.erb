@@ -1,6 +1,9 @@
 <h1><%= brew_note.created_at %>
 <h2>Mash Notes</h2>
-<%= line_chart [[0,3],[15, 4], [30, 12], [45, 20], [60, 30]] %>
+
+<%= line_chart brew_note.mash_notes.select {|note| note.time && note.temperature }.map{
+  |note| [note.time, note.temperature]
+}, id: "mash-chart-#{brew_note.id}" %>
 
 <h2>Boil Notes</h2>
 <p>Boil notes will go here</p>

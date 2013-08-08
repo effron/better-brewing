@@ -35,3 +35,5 @@ Make add/remove friend happen Ajaxly
 Find default beer photos of different colors, match them with the predicted colors of the brews for the tile background.
 
 apply styles using Chloe's layout
+
+Share on facebook and twitter

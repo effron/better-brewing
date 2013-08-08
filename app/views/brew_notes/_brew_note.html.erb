@@ -2,9 +2,9 @@
 <li class="brew-note group">
   <% if params[:recipe_id] %>
   <ul class="group sub-note-ul">
-    <li><%= brew_note.created_at %></li>
-    <li><%= link_to "Left", brew_note, remote: true, class: "left" %></li>
-    <li><%= link_to "Right", brew_note, remote: true, class: "right" %></li>
+    <li><%= link_to brew_note.created_at, brew_note %></li>
+    <li><%= link_to "Left", brew_note, remote: true, class: "left", "data-id"=> brew_note.id %></li>
+    <li><%= link_to "Right", brew_note, remote: true, class: "right","data-id"=> brew_note.id %></li>
   </ul>
   <% else %>
 

@@ -37,23 +37,21 @@
     <% end %>
   </ul>
 
-</div>
 <% end %>
-
+</div>
 
 <script>
 
 $(function(){
 
   $(".left").on("ajax:success", function(event, data){
-    $(".left-note").html(data)
-  })
+    $(".left-note").html(data);
+  });
 
   $(".right").on("ajax:success", function(event, data){
-    $(".right-note").html(data)
-  })
+    $(".right-note").html(data);
+  });
 
 })
 
 </script>
-

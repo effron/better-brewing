@@ -1,6 +1,13 @@
-<li class="recipe-tile">
+<style>
+#recipe-<%= recipe.id %>{
+  background: url("/beer_pictures/<%= rand(8) + 1 %>.png") no-repeat;
+  background-size: cover;
+}
+</style>
+
+<li class="recipe-tile" id="recipe-<%= recipe.id %>">
   <a class="group" href="<%= recipe_url(recipe) %>">
-    <figure><img src="http://placerabbit.com/60/60"></figure>
     <h2><%= recipe.name %></h2>
+    <h3>By <%= recipe.user.username %></h3>
   </a>
 </li>

@@ -74,6 +74,7 @@ GEM
       addressable (~> 2.2.4)
     dm-validations (1.1.0)
       dm-core (~> 1.1.0)
+    ejs (1.1.1)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -167,6 +168,7 @@ DEPENDENCIES
   chartkick
   coffee-rails (~> 3.2.1)
   devise
+  ejs
   figaro
   jquery-rails
   letter_opener

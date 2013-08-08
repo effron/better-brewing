@@ -2,12 +2,32 @@
 
   float: left;
   margin: 15px;
-  background: adjust-hue($main-color, -30);
+  position: relative;
+
+  h2{
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    width: 100%;
+    top: 65px;
+    font-weight: 600;
+    text-align: left;
+    letter-spacing: 1px;
+    margin-left: 2px;
+    white-space:nowrap;
+  }
+  h3{
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    top: 110px;
+    text-align: left;
+    margin-left: 2px;
+  }
 
   a{
     display: block;
     box-sizing: border-box;
-    padding: 40px;
     width: 235px;
     height: 150px;
     text-align: center;

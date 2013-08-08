@@ -1,10 +1,14 @@
-<h1><%= brew_note.created_at %>
+<script type="application/json" id="bootstrapped_mash_notes_json_<%= brew_note.id %>">
+<%= brew_note.mash_notes.to_json.html_safe %>
+
+</script>
+<h1><%= brew_note.created_at %></h1>
 <h2>Mash Notes</h2>
 
-<%= line_chart brew_note.mash_notes.select {|note| note.time && note.temperature }.map{
+<%# scatter_chart brew_note.mash_notes.select {|note| note.time && note.temperature }.map{
   |note| [note.time, note.temperature]
-}, id: "mash-chart-#{brew_note.id}" %>
-
+}, id: "mash-chart-#{brew_note.id}", library: {title: "Mash Chart", hAxis: {}} %>
+<div id="chart-div-<%= brew_note.id %>"></div>
 <h2>Boil Notes</h2>
 <p>Boil notes will go here</p>
 
@@ -14,8 +18,49 @@
 <h2>Tasting Notes</h2>
 <p>Tasting chart will go here</p>
 
-
 <script>
+  google.load("visualization", "1", {packages:["corechart"]});
+  $(function(){
+    var noteData = JSON.parse($("#bootstrapped_mash_notes_json_<%= brew_note.id %>").html());
 
+    noteData = _.map(noteData, function(mash_note){
+      return [mash_note.time, mash_note.temperature]
+    });
+
+    noteData.unshift(["Time", "Temperature"])
+    // var data = google.visualization.arrayToDataTable(noteData);
+    // var fakeData1 = google.visualization.arrayToDataTable(noteData.slice(0,2))
+    // var fakeData2 = google.visualization.arrayToDataTable(noteData.slice(0,3))
+    // var fakeData3 = google.visualization.arrayToDataTable(noteData.slice(0,4))
+    // var fakeData4 = google.visualization.arrayToDataTable(noteData.slice(0,5))
+    var options = {
+      title: 'Age vs. Weight comparison',
+      hAxis: {title: 'Time (minutes)', minValue: 0, maxValue: 70},
+      vAxis: {title: 'Temperature (Fahrenheit)', minValue: 130, maxValue: 200},
+      legend: 'none',
+      lineWidth: 1,
+      animation: {duration: 250, easing: "linear"}
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart-div-<%= brew_note.id %>'));
+    animateChart(noteData, options, chart, 300)
+    //
+    // chart.draw(fakeData1, options)
+    // chart.draw(fakeData2, options)
+    //
+    // setTimeout(function(){
+    //   chart.draw(fakeData3, options)
+    // }, 200)
+    //
+    // setTimeout(function(){
+    //   chart.draw(fakeData4, options)
+    // }, 400)
+    //
+    // setTimeout(function(){
+    //   chart.draw(data, options)
+    // }, 600)
+    //
+    // console.log("I was called")
+  });
 
 </script>

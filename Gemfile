@@ -26,7 +26,7 @@ end
 gem 'beerxml', github: 'codekitchen/beerxml', ref: '9a6d514085d64b7077ea0e840ffdc3c52d27923c'
 
 gem "chartkick"
-
+gem "ejs"
 gem "figaro"
 # Gems used only for assets and not required
 # in production environments by default.

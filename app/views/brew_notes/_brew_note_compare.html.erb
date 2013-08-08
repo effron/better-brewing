@@ -2,7 +2,7 @@
 <%= brew_note.mash_notes.to_json.html_safe %>
 
 </script>
-<h1><%= brew_note.created_at %></h1>
+<h1><%= brew_note.created_at.to_datetime.strftime('%d/%m/%y %l:%M') %></h1>
 <h2>Mash Notes</h2>
 
 <div id="chart-div-<%= brew_note.id %>"></div>
@@ -40,7 +40,7 @@
     var options = {
       title: 'Time vs. Temperature',
       hAxis: {title: 'Time (minutes)', minValue: 0, maxValue: 70},
-      vAxis: {title: 'Temperature (Fahrenheit)', minValue: 130, maxValue: 200},
+      vAxis: {title: 'Temperature (Fahrenheit)', minValue: 100, maxValue: 200},
       legend: 'none',
       lineWidth: 1,
       animation: {duration: 250, easing: "linear"}

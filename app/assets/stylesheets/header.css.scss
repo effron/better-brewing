@@ -82,6 +82,7 @@
   text-align: left;
   background: $dropdown-color;
   color: white;
+  border: 0;
   &:hover{
     background: lighten($main-color, 20%);
     cursor: pointer;

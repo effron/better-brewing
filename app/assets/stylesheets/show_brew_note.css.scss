@@ -5,9 +5,9 @@
   }
 
   p{
-    padding: 40px;
+    padding: 15px;
+    margin-left: 10px;
   }
-
   a{
     color: adjust_hue($main-color, 140);
     &:hover{
@@ -85,6 +85,21 @@
     };
   }
 
+ .edit-fermentation-note{
+   border: 1px solid black;
+   width: 200px;
+   padding: 10px;
+   background: $main-color;
+   color: white;
+   &:hover{
+     text-decoration: none;
+     box-shadow: 0 0 3px black;
+   };
+   &:active {
+     box-shadow: inset 0 0 3px black;
+   };
+ }
+
   #fermentation-note{
     a{
       display: block;
@@ -101,5 +116,23 @@
       width: 100%;
       height: auto;
     }
+  }
+
+  .compare-notes{
+    display: block;
+    background: lighten($main-color, 15%);
+    padding: 10px;
+    color: white;
+    width: 20%;
+    margin-left: 15px;
+    text-align: center;
+    &:hover{
+      text-decoration: none;
+      box-shadow: 0 0 3px black;
+    };
+    &:active{
+      box-shadow: inset 0 0 3px black;
+      color: white;
+    };
   }
 }

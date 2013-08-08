@@ -8,6 +8,7 @@
 <div id="brew-notes-index">
 <% if recipe %>
 <section class="brew-notes-list">
+<%= link_to "Back to recipe", recipe_url(params[:recipe_id]), class: "recipe-link" %>
   <ul>
     <%= render @brew_notes %>
   </ul>

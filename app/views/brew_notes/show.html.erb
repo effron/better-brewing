@@ -1,7 +1,13 @@
 <div id="show-brew-note">
+
 <h1>BREW NOTE FOR <%= link_to @brew_note.recipe.name, @brew_note.recipe %></h1>
+<%= link_to "Compare Notes", recipe_brew_notes_url(@brew_note.recipe_id), class: "compare-notes" %>
+
+<h2>General Notes</h2>
 <p><%= @brew_note.body %></p>
+
 <h2>Mash Notes</h2>
+
 <div class="editable-table-container">
 <table class="mash-notes editable-table">
   <thead>

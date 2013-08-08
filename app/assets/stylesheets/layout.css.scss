@@ -21,6 +21,7 @@ body{
   line-height:1;
   font-family: 'Josefin Sans', sans-serif;
   background-color: $sidebar-light;
+  font-size: 20px;
 }
 
 ul {
@@ -84,6 +85,11 @@ footer {
   font-weight: bold;
   margin-top: 15px;
   text-align: center;
+}
+
+input {
+  border: 1px solid black;
+  padding: 5px;
 }
 
 /*clearfix*/

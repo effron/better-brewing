@@ -8,9 +8,8 @@
   .recipe-link{
     display:block;
     padding: 20px;
-    margin: 5px 20px;
+    margin: 5px 10px;
     background: lighten($main-color, 23%);
-    width: 140px;
     text-align: center;
     &:hover{
       box-shadow: 0 0 3px black;
@@ -36,11 +35,8 @@
       padding: 0;
     }
     .sub-note-ul li {
-      width: 33%;
+      width: 50%;
       float: left;
-      a{
-        padding: 10px;
-      }
     }
   }
 
@@ -54,26 +50,5 @@
     float: right;
   }
 
-  .left, .right{
-    display: block;
-    height: 60px;
-    margin: 2px;
-    border: 0;
-    text-align: center;
-    &:hover{
-      box-shadow: 0 0 3px black;
-    };
-  }
-
-  .selected-left .right, .selected-right .left{
-    pointer-events: none;
-    cursor: default;
-    background: lighten(desaturate($main-color, 50%), 30%);
-  }
-
-  .selected-left .left, .selected-right .right{
-    background: adjust_hue($main-color,80);
-    color: white;
-  }
 
 }

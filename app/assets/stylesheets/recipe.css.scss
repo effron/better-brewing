@@ -1,6 +1,6 @@
 #recipe {
   padding-left: 20px;
-  background: lighten($main-color,35%);
+  background: white;
   position: relative;
 
   a{
@@ -87,7 +87,8 @@
       top:55px;
       left: 600px;
       z-index: 10;
-      background: adjust-hue($main-color,-90);
+      color: white;
+      background: adjust_hue($main-color, 140);
     }
   }
 

@@ -2,7 +2,8 @@
 
   .ui-slider{
     width: 300px;
-    margin: 10px 10px;
+    margin: 10px 20px;
+    float:left;
   }
 
   .ui-slider-handle{
@@ -10,6 +11,20 @@
     &:focus{
       outline: none;
     };
+  }
+
+  .flavor-input{
+    float:left;
+    margin: 5px;
+  }
+
+  .flavor-label{
+    float:left;
+    clear:both;
+    width: 120px;
+    text-align: right;
+    margin: 5px;
+    text-transform: capitalize;
   }
 
 }

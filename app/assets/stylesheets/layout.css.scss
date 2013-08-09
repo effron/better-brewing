@@ -36,7 +36,7 @@ a {
 .main-body {
   width: $main-width;
   min-width: $main-min-width;
-  margin: $header-height auto;
+  margin: $header-height auto 0 auto;
 }
 
 .main-content {

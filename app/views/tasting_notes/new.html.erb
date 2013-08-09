@@ -5,9 +5,9 @@
 <%= form_for @tasting_note, url: brew_note_tasting_notes_url(@tasting_note.brew_note.id) do |f| %>
 
 <% @tasting_note.flavor_attribute_names.each do |name| %>
-  <label for="<%= name %>"><%= name %></label>
-  <input type="number" id="<%= name %>" name="tasting_note[<%= name %>]"
-         min="0" max="5" value="0">
+  <label for="<%= name %>" class="flavor-label"><%= name.gsub("_", " ") %></label>
+  <input type="number" id="<%= name %>" class="flavor-input"
+   name="tasting_note[<%= name %>]" min="0" max="5" value="0">
 <% end %>
 
 <select class="chosen-menu" name="tasting_note[consumption_vessel_id]">

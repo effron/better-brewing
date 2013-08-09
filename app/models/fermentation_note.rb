@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: fermentation_notes
+#
+#  id           :integer          not null, primary key
+#  brew_note_id :integer
+#  volume       :integer
+#  og           :integer
+#  fg           :integer
+#  body         :text
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
 class FermentationNote < ActiveRecord::Base
   attr_accessible :body, :brew_note_id, :fg, :og, :volume,
                   :fermentation_checks_attributes

@@ -19,8 +19,8 @@ Add cooling notes?
 Refine UJS experience.
 
 Brew notes index that allows you to compare two sets of notes side-by-side
-  Chart for mash notes
-  TOGGLE BUTTONS SO THAT IT CAN EITHER BE ON LEFT OR RIGHT. IF IT IS ON RIGHT AND LEFT IS CLICKED, REMOVE IT FROM RIGHT AND ADD TO LEFT. IT IS BROKEN WITHOUT THIS
+Chart for fermenting notes
+
 ###Tasting notes:
 
 Add tasting notes!
@@ -32,8 +32,5 @@ Figure out how to build radial chart out of the tasting notes
 Make add/remove friend happen Ajaxly
 
 ####Future:
-Find default beer photos of different colors, match them with the predicted colors of the brews for the tile background.
-
-apply styles using Chloe's layout
 
 Share on facebook and twitter

@@ -17,6 +17,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'quiet_assets'
   gem 'sqlite3'
+  gem 'annotate'
 end
 
 # gem 'dm-core'

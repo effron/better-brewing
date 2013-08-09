@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130806193410) do
+ActiveRecord::Schema.define(:version => 20130809014237) do
 
   create_table "boil_notes", :force => true do |t|
     t.integer  "brew_note_id"
@@ -42,6 +42,13 @@ ActiveRecord::Schema.define(:version => 20130806193410) do
     t.string   "beer_photo_content_type"
     t.integer  "beer_photo_file_size"
     t.datetime "beer_photo_updated_at"
+  end
+
+  create_table "consumption_vessels", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "fermentation_checks", :force => true do |t|
@@ -93,6 +100,42 @@ ActiveRecord::Schema.define(:version => 20130806193410) do
     t.text     "xml"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "serving_vessels", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "tasting_notes", :force => true do |t|
+    t.integer  "brew_note_id"
+    t.integer  "alcohol"
+    t.integer  "dark_fruit"
+    t.integer  "citrus_fruit"
+    t.integer  "hoppy"
+    t.integer  "floral"
+    t.integer  "spicy"
+    t.integer  "herbal"
+    t.integer  "malty"
+    t.integer  "toffee"
+    t.integer  "burnt"
+    t.integer  "sweet"
+    t.integer  "sour"
+    t.integer  "bitter"
+    t.integer  "dry"
+    t.integer  "body"
+    t.integer  "linger"
+    t.integer  "serving_vessel_id"
+    t.integer  "consumption_vessel_id"
+    t.integer  "rating"
+    t.text     "misc"
+    t.text     "appearance"
+    t.text     "aroma"
+    t.text     "flavor"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
   end
 
   create_table "users", :force => true do |t|

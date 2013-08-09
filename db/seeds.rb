@@ -21,3 +21,33 @@ end
 
 Recipe.create!({name: "test_recipe", user_id: 1, xml: xml })
 Recipe.create!({name: "hopville_recipe", user_id: 2, xml: xml2})
+
+consumption_vessels = [
+  {name: "Shaker Pint"},
+  {name: "Tulip Pint"},
+  {name: "Nonic Pint"},
+  {name: "Snifter"},
+  {name: "Tulip"},
+  {name: "Goblet"},
+  {name: "Pilsner Glass"},
+  {name: "Weizen Vase"},
+  {name: "Flute"},
+  {name: "Stein"},
+  {name: "Seidel"},
+  {name: "Schnitt Glass"},
+  {name: "Pokal Glass"},
+  {name: "Stange Glass"},
+  {name: "Dwarf Glass"}
+]
+
+ConsumptionVessel.create!(consumption_vessels)
+
+serving_vessels = [
+ {name: "Draft"},
+ {name: "Cask"},
+ {name: "Bottle"},
+ {name: "Can"},
+ {name: "Growler"}   
+]
+
+ServingVessel.create!(serving_vessels)

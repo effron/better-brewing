@@ -33,12 +33,25 @@
 
 class TastingNote < ActiveRecord::Base
   attr_accessible :alcohol, :bitter, :body, :burnt, :citrus_fruit, :dark_fruit,
-                  :dry, :floral, :herbal, :hoppy, :linger, :malty, :rating, 
-                  :sour, :spicy, :sweet, :toffee, :misc, :appearance, :aroma, 
-                  :flavor, :serving_vessel_id, :consumption_vessel_id, 
+                  :dry, :floral, :herbal, :hoppy, :linger, :malty, :rating,
+                  :sour, :spicy, :sweet, :toffee, :misc, :appearance, :aroma,
+                  :flavor, :serving_vessel_id, :consumption_vessel_id,
                   :brew_note_id
-                  
+
   belongs_to :brew_note
   belongs_to :serving_vessel
   belongs_to :consumption_vessel
+
+  def flavor_attribute_names
+    ["alcohol", "bitter", "body", "burnt", "citrus_fruit", "dark_fruit","dry",
+      "floral", "herbal", "hoppy", "linger", "malty", "sour", "spicy",
+      "sweet", "toffee"]
+  end
+
+  def flavor_attribute_values
+    values = [alcohol, bitter, body, burnt, citrus_fruit, dark_fruit, dry, floral,
+      herbal, hoppy, linger, malty, sour, spicy, sweet, toffee]
+
+    values.map { |value| value || 0 }
+  end
 end

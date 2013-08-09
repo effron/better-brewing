@@ -1,0 +1,6 @@
+<h1>WELCOME TO TASTING NOTES FOR <%= @tasting_note.brew_note.recipe.name %></h1>
+
+<%= form_for @tasting_note, url: brew_note_tasting_notes_url(@tasting_note.brew_note.id) do |f| %>
+
+<%= f.submit %>
+<% end %>

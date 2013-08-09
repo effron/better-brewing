@@ -63,6 +63,8 @@
   <li>General Note: <%= @brew_note.bottling_note.body %></li>
 </ul>
 
+<%= link_to "Add tasting note", new_brew_note_tasting_note_url(@brew_note.id) %>
+
 <% if @brew_note.beer_photo_file_name %>
   <h2>Photo</h2>
   <figure class="beer-photo"><%= image_tag @brew_note.beer_photo.url(:big) %></figure>
@@ -76,7 +78,7 @@
 <script>
 
 $(function(){
-  initialize_editable_table();
+  initializeEditableTable();
 
   $(".editable-ul-container").on("ajax:success", ".edit-fermentation-note",function(event, data){
     console.log(data);

@@ -1,4 +1,5 @@
 var initializeEditableTable = function(){
+
   $(".add-row").on("ajax:success", function(event, data){
     $(event.target).siblings(".editable-table").append(data);
   });

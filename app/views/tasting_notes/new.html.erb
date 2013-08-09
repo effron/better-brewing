@@ -1,6 +1,40 @@
+<div id="new-tasting-note">
+
 <h1>WELCOME TO TASTING NOTES FOR <%= @tasting_note.brew_note.recipe.name %></h1>
 
 <%= form_for @tasting_note, url: brew_note_tasting_notes_url(@tasting_note.brew_note.id) do |f| %>
 
+<input type="number" id="alcohol" name="tasting_note[alcohol]" min="0" max="5" value="0">
+
+<select class="chosen-menu" name="tasting_note[consumption_vessel_id]">
+  <option value=""></option>
+  <% ConsumptionVessel.all.each do |vessel| %>
+    <option value="vessel.id"><%= vessel.name %></option>
+  <% end %>
+</select>
+
 <%= f.submit %>
 <% end %>
+
+</div>
+<script>
+$(function(){
+  $(".chosen-menu").chosen({width: "200px"});
+
+  var input = $( "#alcohol" );
+
+  var slider = $( "<div id='alcohol-slider'></div>" ).insertAfter( input ).slider({
+    min: 1,
+    max: 6,
+    range: "min",
+    value: input.val(),
+    slide: function( event, ui ) {
+      input.val(ui.value - 1);
+    }
+  });
+  $( "#alcohol").change(function() {
+    slider.slider( "value", $(this).val() - -1);
+  });
+
+})
+</script>

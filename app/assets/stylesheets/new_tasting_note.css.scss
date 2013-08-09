@@ -1,0 +1,15 @@
+#new-tasting-note{
+
+  .ui-slider{
+    width: 300px;
+    margin: 10px 10px;
+  }
+
+  .ui-slider-handle{
+    width: 15%;
+    &:focus{
+      outline: none;
+    };
+  }
+
+}

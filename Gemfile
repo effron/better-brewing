@@ -23,6 +23,8 @@ end
 gem 'beerxml', github: 'codekitchen/beerxml', ref: '9a6d514085d64b7077ea0e840ffdc3c52d27923c'
 
 gem "chartkick"
+gem "chosen-rails"
+
 gem "ejs"
 gem "figaro"
 # Gems used only for assets and not required
@@ -40,7 +42,7 @@ end
 require 'open-uri'
 gem 'devise'
 gem 'jquery-rails'
-
+gem 'jquery-ui-rails'
 
 gem 'paperclip'
 gem 'aws-sdk'

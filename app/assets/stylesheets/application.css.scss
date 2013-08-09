@@ -7,7 +7,8 @@
  *
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
- *
+ *= require chosen
+ *= require jquery.ui.all
  *= require_self
  */
 @import "layout.css.scss";
@@ -24,3 +25,4 @@
 @import "new_brew_note.css.scss";
 @import "show_brew_note.css.scss";
 @import "devise.css.scss";
+@import "new_tasting_note.css.scss"

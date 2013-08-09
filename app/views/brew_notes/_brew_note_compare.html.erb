@@ -14,7 +14,7 @@
 <p>Fermenting chart will go here</p>
 
 <h2>Tasting Notes</h2>
-<p>Tasting chart will go here</p>
+<%= render partial: "tasting_notes/flavor_wheel", locals: {tasting_note: brew_note.tasting_notes.first} %>
 
 <script>
   google.load("visualization", "1", {packages:["corechart"]});

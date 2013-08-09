@@ -4,7 +4,11 @@
 
 <%= form_for @tasting_note, url: brew_note_tasting_notes_url(@tasting_note.brew_note.id) do |f| %>
 
-<input type="number" id="alcohol" name="tasting_note[alcohol]" min="0" max="5" value="0">
+<% @tasting_note.flavor_attribute_names.each do |name| %>
+  <label for="<%= name %>"><%= name %></label>
+  <input type="number" id="<%= name %>" name="tasting_note[<%= name %>]"
+         min="0" max="5" value="0">
+<% end %>
 
 <select class="chosen-menu" name="tasting_note[consumption_vessel_id]">
   <option value=""></option>
@@ -21,27 +25,31 @@
 $(function(){
   $(".chosen-menu").chosen({width: "200px"});
 
-  var input = $( "#alcohol" );
+  <% selectors = @tasting_note.flavor_attribute_names.map {|name| "##{name}"} %>
 
-  var slider = $( "<div id='alcohol-slider'></div>" ).insertAfter( input ).slider({
-    min: 1,
-    max: 6,
-    range: "min",
-    value: input.val(),
-    slide: function( event, ui ) {
-      input.val(ui.value - 1);
-    }
-  });
+  FlavorSlider.init(<%= selectors.to_json.html_safe %>)
 
-  $( "#alcohol").on("change", function() {
-    console.log("fired")
-    $(this).val(parseInt($(this).val() || 0));
-    slider.slider( "value", parseInt($(this).val()) + 1 );
-  });
-
-  $( "#alcohol").on("keyup", function() {
-    slider.slider( "value", parseInt($(this).val() || 0) + 1 );
-  });
+  // var input = $( "#alcohol" );
+  //
+  // var slider = $( "<div id='alcohol-slider'></div>" ).insertAfter( input ).slider({
+  //   min: 1,
+  //   max: 6,
+  //   range: "min",
+  //   value: input.val(),
+  //   slide: function( event, ui ) {
+  //     input.val(ui.value - 1);
+  //   }
+  // });
+  //
+  // $( "#alcohol").on("change", function() {
+  //   console.log("fired")
+  //   $(this).val(parseInt($(this).val() || 0));
+  //   slider.slider( "value", parseInt($(this).val()) + 1 );
+  // });
+  //
+  // $( "#alcohol").on("keyup", function() {
+  //   slider.slider( "value", parseInt($(this).val() || 0) + 1 );
+  // });
 
 })
 </script>

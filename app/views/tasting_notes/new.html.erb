@@ -32,8 +32,15 @@ $(function(){
       input.val(ui.value - 1);
     }
   });
-  $( "#alcohol").change(function() {
-    slider.slider( "value", $(this).val() - -1);
+
+  $( "#alcohol").on("change", function() {
+    console.log("fired")
+    $(this).val(parseInt($(this).val() || 0));
+    slider.slider( "value", parseInt($(this).val()) + 1 );
+  });
+
+  $( "#alcohol").on("keyup", function() {
+    slider.slider( "value", parseInt($(this).val() || 0) + 1 );
   });
 
 })

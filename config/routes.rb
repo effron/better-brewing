@@ -12,7 +12,11 @@ BetterBrewing::Application.routes.draw do
     resource :friendship, only: [:create, :destroy]
   end
 
-  resources :brew_notes, only: [:index, :edit, :update, :destroy, :show]
+  resources :brew_notes, only: [:index, :edit, :update, :destroy, :show] do
+    resources :tasting_notes, only: [:create, :new, :index]
+  end
+
+  resources :tasting_notes, only: [:index, :edit, :update, :destroy, :show]
 
   resources :fermentation_notes, only: [:edit, :update]
 

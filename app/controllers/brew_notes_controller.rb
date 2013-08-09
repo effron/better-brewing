@@ -65,7 +65,14 @@ class BrewNotesController < ApplicationController
   end
 
   def destroy
-
+    @brew_note = BrewNote.find(params[:id])
+    raise "NOT YOUR NOTE" unless current_user.brew_notes.include?(@brew_note)
+    
+    @brew_note.destroy
+    
+    flash[:notice] = "Deleted brew note for #{@brew_note.recipe.name}"
+    
+    redirect_to brew_notes_url
   end
 
 end

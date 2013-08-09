@@ -42,6 +42,8 @@ class User < ActiveRecord::Base
   attr_accessor :login
   has_many :recipes
   has_many :brew_notes
+  has_many :tasting_notes, through: :brew_notes
+  
   has_many :friendships
   has_many :friends, through: :friendships
 

@@ -1,7 +1,3 @@
-<script type="application/json" id="bootstrapped_mash_notes_json_<%= brew_note.id %>">
-<%= brew_note.mash_notes.to_json.html_safe %>
-
-</script>
 <h1><%= brew_note.created_at.to_datetime.strftime('%d/%m/%y %l:%M') %></h1>
 <h2>Mash Notes</h2>
 
@@ -14,12 +10,15 @@
 <p>Fermenting chart will go here</p>
 
 <h2>Tasting Notes</h2>
-<%= render partial: "tasting_notes/flavor_wheel", locals: {tasting_note: brew_note.tasting_notes.first} %>
-
+<% if brew_note.tasting_notes.first %>
+  <%= render partial: "tasting_notes/flavor_wheel",
+             locals: {tasting_note: brew_note.tasting_notes.first} %>
+<% else %>
+<p>Take some tasting notes!</p>
+<% end %>
 <script>
-  google.load("visualization", "1", {packages:["corechart"]});
   $(function(){
-    var noteData = JSON.parse($("#bootstrapped_mash_notes_json_<%= brew_note.id %>").html());
+    var noteData = <%= brew_note.mash_notes.to_json.html_safe %>;
 
     // parse noteData to be used by google's arrayToDataTable
     noteData = _.map(noteData, function(mash_note){
@@ -39,15 +38,22 @@
 
     var options = {
       title: 'Time vs. Temperature',
-      hAxis: {title: 'Time (minutes)', minValue: 0, maxValue: 70},
+      hAxis: {title: 'Time (minutes)', minValue: 0, maxValue: 60 },
       vAxis: {title: 'Temperature (Fahrenheit)', minValue: 100, maxValue: 200},
       legend: 'none',
       lineWidth: 1,
       animation: {duration: 250, easing: "linear"}
     };
 
-    var chart = new google.visualization.ScatterChart(document.getElementById('chart-div-<%= brew_note.id %>'));
-    animateChart(noteData, options, chart, 300)
+    var chart = new google.visualization.
+                    ScatterChart($('#chart-div-<%= brew_note.id %>')[0]);
+    if (noteData.length > 1){
+      animateChart(noteData, options, chart, 300)
+    }
+    else {
+      $("#chart-div-<%= brew_note.id %>").append("<p>Add some mash notes</p>")
+    }
+
 
   });
 

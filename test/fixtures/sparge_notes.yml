@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  brew_note_id: 1
+  temperature: 1
+  volume: 1
+  body: MyText
+
+two:
+  brew_note_id: 1
+  temperature: 1
+  volume: 1
+  body: MyText

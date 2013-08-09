@@ -17,11 +17,12 @@
 class BrewNote < ActiveRecord::Base
   attr_accessible :body, :recipe_id, :user_id, :fermentation_note_attributes,
                   :beer_photo, :boil_note_attributes, :mash_notes_attributes,
-                  :bottling_note_attributes
+                  :bottling_note_attributes, :mash_volume
 
   belongs_to :user
   belongs_to :recipe
   has_many :mash_notes
+  has_one :sparge_note
   has_one :boil_note
   has_one :fermentation_note
   has_one :bottling_note

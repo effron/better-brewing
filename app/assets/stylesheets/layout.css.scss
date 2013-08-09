@@ -92,6 +92,10 @@ input {
   padding: 5px;
 }
 
+.ajax-waiting:after {
+  content: image-url("ajax-loader.gif");
+}
+
 /*clearfix*/
 .group:after{
   content:"";

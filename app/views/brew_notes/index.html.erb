@@ -54,7 +54,7 @@ $(function(){
   });
   
   $(".left, .right").on("ajax:before", function(event){
-    $(even.target).addClass("ajax-waiting");
+    $(event.target).addClass("ajax-waiting");
   })
 
   $(".right").on("ajax:success", function(event, data){

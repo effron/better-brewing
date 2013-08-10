@@ -1,0 +1,11 @@
+<div id="fermentation-chart-div-<%= brew_note.id %>"></div>
+
+<script>
+  $(function(){
+    var noteData = 
+      <%= brew_note.fermentation_note.fermentation_checks.to_json.html_safe %>;
+
+    FermentationChart.init(noteData, "#fermentation-chart-div-<%= brew_note.id %>")
+  });
+
+</script>

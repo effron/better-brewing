@@ -1,14 +1,15 @@
 <h1><%= brew_note.created_at.to_datetime.strftime('%d/%m/%y %l:%M') %></h1>
 <h2>Mash Notes</h2>
-<%= render partial: "mash_notes/mash_chart", locals:{  brew_note: brew_note } %>
+<%= render partial: "mash_notes/mash_chart", locals: { brew_note: brew_note } %>
 
 <h2>Boil Notes</h2>
 
 <p>Boil notes will go here</p>
 
 <h2>Fermenting Notes</h2>
-<p>Fermenting chart will go here</p>
-
+<%= render partial: "fermentation_checks/fermentation_chart", 
+           locals: { brew_note: brew_note} %>
+           
 <h2>Tasting Notes</h2>
 <% if brew_note.tasting_notes.first %>
   <%= render partial: "tasting_notes/flavor_wheel",

@@ -84,16 +84,16 @@ class Recipe < ActiveRecord::Base
     recipe_object.abv
   end
 
+  def efficiency
+    recipe_object.efficiency
+  end
+  
   def boil_time
     recipe_object.boil_time
   end
 
-  def method
-    recipe_object.method
-  end
-
-  def recipe_volume
-    recipe_object.recipe_volume
+  def batch_size
+    recipe_object.batch_size
   end
 
   #People are bad at beerxml. Clean up some found errors

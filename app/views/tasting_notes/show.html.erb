@@ -1,3 +1,4 @@
 <h1>Tasting Note for   <%= @tasting_note.brew_note.recipe.name %></h1>
-
+<div class="chart-container">
 <%= render partial: "flavor_wheel", locals: {tasting_note: @tasting_note} %>
+</div>

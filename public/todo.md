@@ -2,9 +2,7 @@
 
 ###Tasting notes:
 
-Add views for tasting notes!
-  Start with form for filling out ratings only (save notes for later)
-  Use ratings to build radial chart, display on side-by-side page
+Add more fields to tasting notes view
 
 ###Recipes:
 
@@ -24,8 +22,7 @@ Add mash volume to walkthrough experience, show form, and edit form!!
 
 Refine UJS experience.
 
-Brew notes index that allows you to compare two sets of notes side-by-side
-Chart for fermenting notes
+Brew notes overlay chart: combine all charts to more easily compare brews!
 
 
 ####Friends

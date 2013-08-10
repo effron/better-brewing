@@ -17,6 +17,7 @@ class BoilNote < ActiveRecord::Base
   belongs_to :brew_note
   
   def average_volume
+    return 0 unless post_boil_volume && pre_boil_volume
     (post_boil_volume + pre_boil_volume) / 2
   end
 end

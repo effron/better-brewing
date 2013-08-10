@@ -19,11 +19,11 @@ $(function(){
     canvas.width = width;
     canvas.height = width;
 
-    flavorWheel("#tasting-chart-<%= tasting_note.id %>", names, values, false)
+    FlavorWheel.init("#tasting-chart-<%= tasting_note.id %>", names, values, false)
   };
   
   resizeCanvas();
-  flavorWheel("#tasting-chart-<%= tasting_note.id %>", names, values, true)
+  FlavorWheel.init("#tasting-chart-<%= tasting_note.id %>", names, values, true)
 
   $(window).on('resize', resizeCanvas)
 })

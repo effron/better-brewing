@@ -1,7 +1,7 @@
 <h1><%= brew_note.created_at.to_datetime.strftime('%d/%m/%y %l:%M') %></h1>
 <h2>Mash Notes</h2>
+<%= render partial: "mash_notes/mash_chart", locals:{  brew_note: brew_note } %>
 
-<div id="chart-div-<%= brew_note.id %>"></div>
 <h2>Boil Notes</h2>
 
 <p>Boil notes will go here</p>
@@ -16,11 +16,3 @@
 <% else %>
 <%= link_to "Take some tasting notes!", new_brew_note_tasting_note_url(brew_note.id) %>
 <% end %>
-<script>
-  $(function(){
-    var noteData = <%= brew_note.mash_notes.to_json.html_safe %>;
-
-    MashChart.init(noteData, "#chart-div-<%= brew_note.id %>")
-  });
-
-</script>

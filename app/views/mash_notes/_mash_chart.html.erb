@@ -1,0 +1,10 @@
+<div id="chart-div-<%= brew_note.id %>"></div>
+
+<script>
+  $(function(){
+    var noteData = <%= brew_note.mash_notes.to_json.html_safe %>;
+
+    MashChart.init(noteData, "#chart-div-<%= brew_note.id %>")
+  });
+
+</script>

@@ -12,6 +12,7 @@
 #  beer_photo_content_type :string(255)
 #  beer_photo_file_size    :integer
 #  beer_photo_updated_at   :datetime
+#  mash_volume             :integer
 #
 
 class BrewNote < ActiveRecord::Base

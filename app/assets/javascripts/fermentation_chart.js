@@ -5,7 +5,7 @@ var FermentationChart = (function(){
   var init = function(noteData, chartId){
     options = {
       title: 'Time vs. Temperature',
-      hAxis: {title: 'Time (days)', minValue: 0, maxValue: 15 },
+      hAxis: {title: 'Time (days)', minValue: 0 },
       vAxis: {title: 'Temperature (Fahrenheit)', minValue: 30, maxValue: 100},
       legend: 'none',
       lineWidth: 1,

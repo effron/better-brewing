@@ -2,13 +2,12 @@
 <h2>Mash Notes</h2>
 <%= render partial: "mash_notes/mash_chart", locals: { brew_note: brew_note } %>
 
-<h2>Boil Notes</h2>
-
-<p>Boil notes will go here</p>
-
-<h2>Fermenting Notes</h2>
+<h2>Fermentation Notes</h2>
 <%= render partial: "fermentation_checks/fermentation_chart", 
            locals: { brew_note: brew_note} %>
+
+<h2>General notes</h2>
+<%= render partial: "high_level_notes", locals: { brew_note: brew_note } %>
            
 <h2>Tasting Notes</h2>
 <% if brew_note.tasting_notes.first %>

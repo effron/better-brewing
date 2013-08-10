@@ -1,0 +1,39 @@
+<h3>Values normalized for easy comparison between recipes</h3>
+<canvas id="high-level-notes-<%= brew_note.id %>" width="400" height="400"></canvas>
+
+<script>
+
+var ctx = $("#high-level-notes-<%= brew_note.id %>").get(0).getContext("2d");
+//This will get the first returned node in the jQuery collection.
+
+var data = {
+	labels : ["Mash Volume","Avg Boil Volume", "Fermentation Volume", "OG", "FG","Bottling Sugar Amount"],
+	datasets : [
+		{
+			fillColor : "rgba(22,12,22,0.5)",
+			strokeColor : "rgba(220,220,220,1)",
+			data : [
+        <%= brew_note.mash_volume %>,
+        <%= brew_note.boil_note.average_volume %>,
+        <%= brew_note.fermentation_note.volume %>,
+        <%= (brew_note.fermentation_note.og - 1000) / 10 %>,
+        <%= ((brew_note.fermentation_note.fg || 0) - 1000) / 10 %>,
+        <%= brew_note.bottling_note.priming_sugar_amount %>
+      ]
+		}
+	]
+}
+
+var options = {
+  scaleOverlay: true,
+  scaleOverride: true,
+  scaleSteps: 100,
+  scaleStepWidth: .1,
+  scaleStartValue: 0,
+  scaleShowLabels : false
+  
+}
+
+new Chart(ctx).Bar(data,options);
+
+</script>

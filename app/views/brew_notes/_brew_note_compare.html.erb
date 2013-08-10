@@ -20,41 +20,7 @@
   $(function(){
     var noteData = <%= brew_note.mash_notes.to_json.html_safe %>;
 
-    // parse noteData to be used by google's arrayToDataTable
-    noteData = _.map(noteData, function(mash_note){
-      return [mash_note.time, mash_note.temperature]
-    });
-    // filter out undefined points
-    noteData = _.select(noteData, function(note){
-      return note[0] != undefined && note[1] != undefined
-    })
-
-    //sort by time
-    noteData = _.sortBy(noteData, function(note){
-      return note[0]
-    })
-    // Add first row
-    noteData.unshift(["Time", "Temperature"])
-
-    var options = {
-      title: 'Time vs. Temperature',
-      hAxis: {title: 'Time (minutes)', minValue: 0, maxValue: 60 },
-      vAxis: {title: 'Temperature (Fahrenheit)', minValue: 100, maxValue: 200},
-      legend: 'none',
-      lineWidth: 1,
-      animation: {duration: 250, easing: "linear"}
-    };
-
-    var chart = new google.visualization.
-                    ScatterChart($('#chart-div-<%= brew_note.id %>')[0]);
-    if (noteData.length > 1){
-      animateChart(noteData, options, chart, 300)
-    }
-    else {
-      $("#chart-div-<%= brew_note.id %>").append("<p>Add some mash notes</p>")
-    }
-
-
+    MashChart.init(noteData, "#chart-div-<%= brew_note.id %>")
   });
 
 </script>

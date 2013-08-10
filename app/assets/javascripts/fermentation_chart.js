@@ -21,7 +21,7 @@ var FermentationChart = (function(){
       animateChart(data, options, chart, 300)
     }
     else {
-      $(chartId).append("<p>Add some mash notes</p>")
+      $(chartId).append("<p>Add some fermentation notes</p>")
     }
 
   }

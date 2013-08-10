@@ -8,8 +8,24 @@ $(function(){
   var names = <%= tasting_note.flavor_attribute_names.to_json.html_safe %>
   var values = <%= tasting_note.flavor_attribute_values.to_json %>
 
-  flavorWheel("#tasting-chart-<%= tasting_note.id %>", names, values)
+ 
 
+  var resizeCanvas = function(){
+    var con = $("#tasting-chart-<%= tasting_note.id %>").parent();
+    var canvas = $("#tasting-chart-<%= tasting_note.id %>")[0];
+    var aspect = canvas.height/canvas.width;
+    var width = con.width();
+    
+    canvas.width = width;
+    canvas.height = width;
+
+    flavorWheel("#tasting-chart-<%= tasting_note.id %>", names, values, false)
+  };
+  
+  resizeCanvas();
+  flavorWheel("#tasting-chart-<%= tasting_note.id %>", names, values, true)
+
+  $(window).on('resize', resizeCanvas)
 })
 
 

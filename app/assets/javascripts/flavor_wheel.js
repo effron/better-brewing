@@ -1,4 +1,4 @@
-var flavorWheel = function(id, names, values){
+var flavorWheel = function(id, names, values, animation){
 
   var ctx = $(id).get(0).getContext("2d");
 
@@ -6,8 +6,8 @@ var flavorWheel = function(id, names, values){
     labels: names,
     datasets: [
       {
-        fillColor : "rgba(214,224,255,0.5)",
-  			strokeColor : "rgba(220,220,220,1)",
+        fillColor : "rgba(17,15,46,.5)",
+  			strokeColor : "rgba(23,22,39,1)",
         data: values
       }
     ]
@@ -19,6 +19,7 @@ var flavorWheel = function(id, names, values){
     scaleStepWidth: 1,
     scaleStartValue: 0,
     scaleShowLabels: true,
+    animation: animation,
     animationSteps: 45,
     animationEasing: "easeOutBounce"
   }

@@ -5,7 +5,7 @@ $sidebar-light: #4e4e4e;
 $sidebar-dark: #393939;
 $header-height: 70px;
 $main-width: 100%;
-$main-min-width: 1200px;
+$main-min-width: 1140px;
 $sidebar-height: 220px;
 
 //CSS Reset Styles
@@ -22,6 +22,7 @@ body{
   font-family: 'Josefin Sans', sans-serif;
   background-color: $sidebar-light;
   font-size: 20px;
+  overflow-x: hidden;
 }
 
 ul {

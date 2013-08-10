@@ -14,7 +14,7 @@
   <%= render partial: "tasting_notes/flavor_wheel",
              locals: {tasting_note: brew_note.tasting_notes.first} %>
 <% else %>
-<p>Take some tasting notes!</p>
+<%= link_to "Take some tasting notes!", new_brew_note_tasting_note_url(brew_note.id) %>
 <% end %>
 <script>
   $(function(){

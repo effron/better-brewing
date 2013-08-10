@@ -16,7 +16,7 @@ var data = {
         <%= brew_note.mash_volume %>,
         <%= brew_note.boil_note.average_volume %>,
         <%= brew_note.fermentation_note.volume %>,
-        <%= (brew_note.fermentation_note.og - 1000) / 10 %>,
+        <%= ((brew_note.fermentation_note.og || 0) - 1000) / 10 %>,
         <%= ((brew_note.fermentation_note.fg || 0) - 1000) / 10 %>,
         <%= brew_note.bottling_note.priming_sugar_amount %>
       ]

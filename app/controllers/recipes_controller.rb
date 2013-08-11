@@ -3,15 +3,7 @@ class RecipesController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :destroy]
 
   def index
-    if params[:search]
-      @recipes = Recipe.search { fulltext params[:search] }.results
-    else
-      @recipes = Recipe.all
-    end
-  
-    if request.xhr?
-      render partial: "search_results", locals: { recipes: @recipes }
-    end      
+    @recipes = Recipe.all
   end
 
   def show

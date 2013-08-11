@@ -7,7 +7,6 @@
       overflow: hidden;
       text-align: center;
       top: 11px;
-      pointer-events: none;
   }
   h1:before, h1:after {
       position: absolute;
@@ -21,15 +20,5 @@
   h1:before {
       margin-left: -50%;
       text-align: right;
-  }
-  
-  a{
-    color: blue;
-    &:hover{
-      text-decoration: underline;
-    }
-    &:active{
-      color: $main-color;
-    }
   }
 }

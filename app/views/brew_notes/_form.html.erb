@@ -8,13 +8,17 @@
   <%= f.label :body, "Notes" %>
   <%= f.text_area :body, cols: 0, rows: 0 %>
 
-  <%= render partial: "nested_mash_notes", locals: {brew_note: @brew_note} %>
+  <%= render partial: "nested_mash_notes", locals: { brew_note: @brew_note } %>
 
-  <%= render partial: "nested_boil_note", locals: {brew_note: @brew_note} %>
+  <%= render partial: "nested_sparge_note", locals: { brew_note: @brew_note } %>
 
-  <%= render partial: "nested_fermentation_note", locals: {brew_note: @brew_note} %>
+  <%= render partial: "nested_boil_note", locals: { brew_note: @brew_note } %>
 
-  <%= render partial: "nested_bottling_note", locals: {brew_note: @brew_note} %>
+  <%= render partial: "nested_fermentation_note", 
+             locals: { brew_note: @brew_note } %>
+
+  <%= render partial: "nested_bottling_note", 
+             locals: { brew_note: @brew_note } %>
 
   <%= f.hidden_field :recipe_id %>
 

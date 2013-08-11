@@ -18,7 +18,8 @@
 class BrewNote < ActiveRecord::Base
   attr_accessible :body, :recipe_id, :user_id, :fermentation_note_attributes,
                   :beer_photo, :boil_note_attributes, :mash_notes_attributes,
-                  :bottling_note_attributes, :mash_volume
+                  :bottling_note_attributes, :mash_volume, 
+                  :sparge_note_attributes
 
   belongs_to :user
   belongs_to :recipe
@@ -29,7 +30,7 @@ class BrewNote < ActiveRecord::Base
   has_one :bottling_note
   has_many :tasting_notes
   accepts_nested_attributes_for :mash_notes, :boil_note, :fermentation_note,
-                                :bottling_note
+                                :bottling_note, :sparge_note
 
   has_attached_file :beer_photo, styles: {
     big: "600x600>",

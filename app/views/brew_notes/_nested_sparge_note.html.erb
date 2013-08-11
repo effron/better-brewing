@@ -1,0 +1,19 @@
+<h2>Sparge Notes</h2>
+<label for="sparge_volume">Sparge Volume</label>
+<input type="text" id="sparge_volume"
+       name="brew_note[sparge_note_attributes][volume]"
+       value="<%= brew_note.sparge_note.volume if brew_note.persisted? %>">
+
+<label for="sparge_temperature">Sparge Temperature</label>
+<input type="text" id="sparge_temperature"
+       name="brew_note[sparge_note_attributes][temperature]"
+       value="<%= brew_note.sparge_note.volume if brew_note.persisted? %>">
+
+<label for="sparge_body">Misc Sparge Notes</label>
+<textarea id="sparge_body" name="brew_note[sparge_note_attributes][body]"
+          value="<%= brew_note.sparge_note.body if brew_note.persisted? %>"></textarea>
+
+<% if brew_note.persisted? %>
+<input type="hidden" name="brew_note[sparge_note_attributes][id]"
+      value="<%= brew_note.sparge_note.id %>">
+<% end %>

@@ -3,6 +3,7 @@
 ###Tasting notes:
 
 Add more fields to tasting notes view
+Maybe link to some sort of tasting guide (popup in front??)
 
 ###Recipes:
 
@@ -12,17 +13,22 @@ Add methods to get detailed information out of ingredients
     
 Clean up ingredient display (round numbers, convert units(?))
 
+###brew day experience
+Add timers
+Add checklists
+Add helpful hints
+
+###brew note compare
+Brew notes overlay chart: combine all charts to more easily compare brews!
+
+Add sparge notes and mash volume
+
+Link the messages to add mash and fermenting notes to somewhere to actially do it
+
 ###Brew Notes:
 
 Add unit information (maybe process info so that they can be stored as integers)
   Make it so that unit is greyed out in background of input?
-  
-Add sparge notes and mash volume to compare notes page?
-
-Refine UJS experience.
-
-Brew notes overlay chart: combine all charts to more easily compare brews!
-
 
 ####Friends
 

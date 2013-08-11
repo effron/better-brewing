@@ -19,6 +19,8 @@ class Recipe < ActiveRecord::Base
   validate :xml_is_valid, on: :create
 
   before_validation :cleanup_xml
+  
+  fuzzily_searchable :name
   # Add various instance methods to pull out information from parsed recipe
   # without having to store it in various db tables. Assume only one recipe
   # in each XML file

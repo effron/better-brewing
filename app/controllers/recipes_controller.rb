@@ -3,7 +3,15 @@ class RecipesController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :destroy]
 
   def index
-    @recipes = Recipe.all
+    if params[:search]
+      @recipes = Recipe.find_by_fuzzy_name(params[:search])
+    else
+      @recipes = Recipe.all
+    end
+    
+    if request.xhr?
+      render partial: "search_results", locals: { recipes: @recipes }
+    end
   end
 
   def show

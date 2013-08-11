@@ -1,6 +1,25 @@
 <div id="recipes-index">
-<h1>All Recipes</h1>
-<ul class="recipe-tiles group">
-  <%= render @recipes %>
-</ul>
+  <div id="search-field">
+    <%= form_tag recipes_url, method: "get", remote: true do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", name: nil %>
+    <% end %>
+  </div>
+  <div id="recipe-list">
+    <h1>All Recipes</h1>
+    <ul class="recipe-tiles group">
+      <%= render @recipes %>
+    </ul>
+  </div>
 </div>
+
+<script>
+$(function(){
+  $(document).on("ajax:success", function(event, data){
+    $("#recipe-list").html(data)
+    
+  })  
+})
+
+
+</script>

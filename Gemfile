@@ -27,6 +27,8 @@ gem "chosen-rails"
 
 gem "ejs"
 gem "figaro"
+gem "fuzzily"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

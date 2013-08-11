@@ -96,6 +96,8 @@ GEM
       bundler (~> 1.0)
       rails (>= 3, < 5)
     fssm (0.2.10)
+    fuzzily (0.2.3)
+      activerecord (>= 2.3.17)
     hike (1.2.3)
     i18n (0.6.1)
     journey (1.0.4)
@@ -190,6 +192,7 @@ DEPENDENCIES
   devise
   ejs
   figaro
+  fuzzily
   jquery-rails
   jquery-ui-rails
   letter_opener

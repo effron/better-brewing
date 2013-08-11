@@ -10,8 +10,7 @@
        value="<%= brew_note.sparge_note.volume if brew_note.persisted? %>">
 
 <label for="sparge_body">Misc Sparge Notes</label>
-<textarea id="sparge_body" name="brew_note[sparge_note_attributes][body]"
-          value="<%= brew_note.sparge_note.body if brew_note.persisted? %>"></textarea>
+<textarea id="sparge_body" name="brew_note[sparge_note_attributes][body]"><%= brew_note.sparge_note.body if brew_note.persisted? %></textarea>
 
 <% if brew_note.persisted? %>
 <input type="hidden" name="brew_note[sparge_note_attributes][id]"

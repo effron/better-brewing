@@ -30,6 +30,13 @@
 <% end %>
 </div>
 
+<h2>Sparge Notes</h2>
+<ul>
+  <li>Sparge Volume: <%= @brew_note.sparge_note.volume %></li>
+  <li>Sparge Temperature: <%= @brew_note.sparge_note.temperature %></li>
+  <li>Misc Sparge Notes: <%= @brew_note.sparge_note.body %>
+</ul>
+
 <h2>Boil Notes</h2>
 <ul>
   <li>Pre Boil Volume: <%= @brew_note.boil_note.pre_boil_volume %></li>

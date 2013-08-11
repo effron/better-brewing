@@ -6,6 +6,10 @@
 
 <% time = 60 %>
 <h2>Mash Notes</h2>
+<label for="mash_volume">Mash Volume</label>
+<input type="text" name="brew_note[mash_volume]" 
+       value="<%= brew_note.mash_volume if brew_note.persisted? %>">
+
 <table>
   <thead>
     <tr>

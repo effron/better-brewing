@@ -17,8 +17,7 @@ Clean up ingredient display (round numbers, convert units(?))
 Add unit information (maybe process info so that they can be stored as integers)
   Make it so that unit is greyed out in background of input?
   
-Add sparge notes to walkthrough experience, show form, and edit form!
-Add mash volume to walkthrough experience, show form, and edit form!!
+Add sparge notes and mash volume to compare notes page?
 
 Refine UJS experience.
 

@@ -19,12 +19,17 @@ class Recipe < ActiveRecord::Base
   validate :xml_is_valid, on: :create
 
   before_validation :cleanup_xml
+  
+  searchable do
+    text :name
+    text :xml
+  end
+  
   # Add various instance methods to pull out information from parsed recipe
   # without having to store it in various db tables. Assume only one recipe
   # in each XML file
 
   def recipe_object
-    #THIS NEEDS TO BE MORE ROBUST. FIGURE OUT WHAT TO DO WITH ILLEGAL BEER XML
     begin
       @recipe_object ||= Beerxml.parse(xml)[0]
     rescue

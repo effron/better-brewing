@@ -1,0 +1,8 @@
+<h1>Search Results</h1>
+<ul class="recipe-tiles group">
+  <% if recipes.empty? %>
+  <li>No results. <%= link_to "Back to all recipes", recipes_url %>
+  <% else %>
+    <%= render recipes %>
+  <% end %>
+</ul>

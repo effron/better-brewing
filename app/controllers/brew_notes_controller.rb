@@ -56,6 +56,8 @@ class BrewNotesController < ApplicationController
     @brew_note.update_attributes(params[:brew_note])
 
     if request.url =~ /\?mash/ && request.xhr?
+      render partial: "sparge_note", locals: { brew_note: @brew_note }
+    elsif request.url =~ /\?sparge/ && request.xhr?
       render partial: "boil_note", locals: { brew_note: @brew_note }
     elsif request.url =~/\?boil/ && request.xhr?
       render partial: "brew_day_fermentation_note", locals: { brew_note: @brew_note }

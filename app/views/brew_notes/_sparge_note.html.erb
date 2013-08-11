@@ -1,0 +1,24 @@
+<%= form_for brew_note, url: "#{brew_note_url(brew_note.id)}?sparge",
+    remote: true, html: {id: "sparge-note"} do |f| %>
+  <h2>Sparge Notes</h2>
+  <label for="sparge_volume">Sparge Volume</label>
+  <input type="text" id="sparge_volume"
+         name="brew_note[sparge_note_attributes][volume]"
+         value="<%= brew_note.sparge_note.volume %>">
+
+  <label for="sparge_temperature">Sparge Temperature</label>
+  <input type="text" id="sparge_temperature"
+         name="brew_note[sparge_note_attributes][temperature]"
+         value="<%= brew_note.sparge_note.temperature %>">
+
+  <label for="sparge_body">Misc. Sparge Note</label>
+  <textarea id="sparge_body"
+            name="brew_note[sparge_note_attributes][body]"
+            ><%= brew_note.sparge_note.body %></textarea>
+
+  <input type="hidden" name="brew_note[sparge_note_attributes][id]"
+        value="<%= brew_note.sparge_note.id %>">
+  
+  <%= f.submit "On to fermenting!" %>
+  
+<% end %>

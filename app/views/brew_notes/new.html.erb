@@ -21,6 +21,10 @@ $(function(){
     $(".current-brew-view").html(data);    
   })
   
+  $(".current-brew-view").on("ajax:success", "#sparge-note", function(event, data){
+    $(".current-brew-view").html(data);    
+  })
+  
   $(".current-brew-view").on("ajax:success", "#boil-note", function(event, data){
     $(".current-brew-view").html(data);    
   })

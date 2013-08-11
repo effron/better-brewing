@@ -61,6 +61,7 @@ BetterBrewing::Application.configure do
   
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
+  
   # set host to better-brewing
   config.action_mailer.default_url_options = { :host => 'better-brewing.herokuapp.com' }
 

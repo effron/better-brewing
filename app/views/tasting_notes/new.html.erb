@@ -3,24 +3,32 @@
 <h1>Create a new tasting note for <%= @tasting_note.brew_note.recipe.name %></h1>
 
 <%= form_for @tasting_note, url: brew_note_tasting_notes_url(@tasting_note.brew_note.id) do |f| %>
-<h3>Flavor attributes (rate 1-5)</h3>
-<ul class="flavor-attribute-list">
-<% @tasting_note.flavor_attribute_names.each do |name| %>
-  <li class="group">
-    <label for="<%= name %>" class="flavor-label"><%= name.gsub("_", " ") %></label>
-  <input type="number" id="<%= name %>" class="flavor-input"
-   name="tasting_note[<%= name %>]" min="0" max="5" value="0">
-   </li>
-<% end %>
-</ul>
-<label>What did you enjoy this beer in?
-<select class="chosen-menu" name="tasting_note[consumption_vessel_id]">
-  <option value=""></option>
-  <% ConsumptionVessel.all.each do |vessel| %>
-    <option value="vessel.id"><%= vessel.name %></option>
+  <h3>Flavor attributes (rate 1-5)</h3>
+  <ul class="flavor-attribute-list">
+  <% @tasting_note.flavor_attribute_names.each do |name| %>
+    <li class="group">
+      <label for="<%= name %>" class="flavor-label"><%= name.gsub("_", " ") %></label>
+    <input type="number" id="<%= name %>" class="flavor-input"
+     name="tasting_note[<%= name %>]" min="0" max="5" value="0">
+     </li>
   <% end %>
-</select>
-</label>
+  </ul>
+  <label>What did you pour this beer out of?
+  <select class="chosen-menu" name="tasting_note[serving_vessel_id]">
+    <option value=""></option>
+    <% ServingVessel.all.each do |vessel| %>
+      <option value="<%= vessel.id %>"><%= vessel.name %></option>
+    <% end %>
+  </select>
+  </label>
+  <label>What did you enjoy this beer in?
+  <select class="chosen-menu" name="tasting_note[consumption_vessel_id]">
+    <option value=""></option>
+    <% ConsumptionVessel.all.each do |vessel| %>
+      <option value="<%= vessel.id %>"><%= vessel.name %></option>
+    <% end %>
+  </select>
+  </label>
 
   <% %w(appearance aroma flavor misc).each do |note| %>
     <label for="<%= note %>-text"><%= note.capitalize %></label>
@@ -29,7 +37,7 @@
 
   <% end %>
 
-<%= f.submit %>
+  <%= f.submit %>
 
 <% end %>
 

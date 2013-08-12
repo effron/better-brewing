@@ -3,6 +3,15 @@
   <div class="chart-container">
   <%= render partial: "flavor_wheel", locals: {tasting_note: @tasting_note} %>
   </div>
+
+  <div class="serving">
+    <h2>Serving:</h2>
+    <ul>
+      <li>Poured from: <%= @tasting_note.serving_vessel.name %></li>
+      <li>Drank from: <%= @tasting_note.consumption_vessel.name %></li>
+    </ul>
+  </div>
+
   <div class="notes">
   <h2>Notes:</h2>
   <ul>

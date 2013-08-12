@@ -15,11 +15,11 @@ html, body, div, header, h1, h2, h3, nav, ul, li, a, footer, button, form, input
   border:0;
   font-size:100%;
   vertical-align: baseline;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 body{
   line-height:1;
-  font-family: 'Josefin Sans', sans-serif;
   background-color: $sidebar-light;
   font-size: 20px;
   overflow-x: hidden;

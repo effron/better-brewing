@@ -2,12 +2,12 @@
     html: {id: "fermentation-note"} do |f| %>
 
 <h2>Fermentation Notes</h2>
-<label for="fermenter_volume">Volume in Fermenter</label>
+<label for="fermenter_volume">Volume in Fermenter (gallons)</label>
 <input type="text" id="fermenter_volume"
        name="brew_note[fermentation_note_attributes][volume]"
        value="<%= brew_note.fermentation_note.volume %>">
 
-<label for="og">Measured Original Gravity</label>
+<label for="og">Measured Original Gravity (eg. 1060)</label>
 <input type="text" id="og"
        name="brew_note[fermentation_note_attributes][og]"
        value="<%= brew_note.fermentation_note.og %>">

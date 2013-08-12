@@ -16,9 +16,12 @@
 #
 
 class BrewNote < ActiveRecord::Base
+
+  include UnitConversion
+
   attr_accessible :body, :recipe_id, :user_id, :fermentation_note_attributes,
                   :beer_photo, :boil_note_attributes, :mash_notes_attributes,
-                  :bottling_note_attributes, :mash_volume, 
+                  :bottling_note_attributes, :mash_volume, :mash_volume_gallons,
                   :sparge_note_attributes
 
   belongs_to :user
@@ -36,5 +39,7 @@ class BrewNote < ActiveRecord::Base
     big: "600x600>",
     small: "50x50#"
   }
+
+
 
 end

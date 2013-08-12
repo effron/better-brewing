@@ -1,39 +1,32 @@
-<% if params[:recipe_id] %>
-<% context = Recipe.find(params[:recipe_id]).name %>
-<% recipe = true %>
-<% else %>
-<% context = current_user.username %>
-<% recipe = false %>
-<% end %>
 <div id="brew-notes-index">
-<% if recipe %>
-<section class="brew-notes-list">
-<%= link_to "Back to recipe", recipe_url(params[:recipe_id]), 
-            class: "recipe-link" %>
-  <ul>
-    <%= render @brew_notes %>
-  </ul>
-</section>
 
-<section class="left-note">
+<% if params[:recipe_id] %>
+  <section class="brew-notes-list">
+    <%= link_to "Back to recipe", recipe_url(params[:recipe_id]),
+                class: "recipe-link" %>
+    <ul>
+      <% if @brew_notes.empty? %>
+        <li>No brew notes. Brew this recipe!</li>
+      <% else %>
+        <%= render @brew_notes %>
+      <% end %>
+    </ul>
+  </section>
 
-</section>
+  <section class="left-note">
 
-<section class="right-note">
+  </section>
 
-</section>
+  <section class="right-note">
+
+  </section>
 
 <% else %>
 
-
-  <h1>BREW NOTES INDEX for <%= context %></h1>
-  <% if params[:recipe_id] %>
-    <%= link_to "Back to recipe", recipe_url(params[:recipe_id]), class: "recipe-link" %>
-  <% end %>
-  <h2 class="brew-notes-header">Brew notes</h2>
+  <h1>Brew notes index for <%= link_to current_user.username, current_user %></h1>
   <ul>
     <% if @brew_notes.empty? %>
-      <li>No brew notes. Brew this recipe!</li>
+      <li>No brew notes. Brew some beer first!</li>
     <% else %>
       <%= render @brew_notes %>
     <% end %>
@@ -53,7 +46,7 @@ $(function(){
                     siblings().removeClass("selected-left");
     $(event.target).removeClass("ajax-waiting");
   });
-  
+
   $(".left, .right").on("ajax:before", function(event){
     $(event.target).addClass("ajax-waiting");
   })

@@ -16,7 +16,7 @@ module BetterBrewing
     # -- all .rb files in that directory are automatically loaded.
 
     # Custom directories with classes and modules you want to be autoloadable.
-    # config.autoload_paths += %W(#{config.root}/extras)
+    config.autoload_paths += %W(#{config.root}/app/concerns)
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
@@ -52,10 +52,10 @@ module BetterBrewing
     # in your app. As such, your models will need to explicitly whitelist or blacklist accessible
     # parameters by using an attr_accessible or attr_protected declaration.
     config.active_record.whitelist_attributes = true
-    
+
     # Necessary in order to deploy to Heroku
     config.assets.initialize_on_precompile = false
-    
+
     # Enable the asset pipeline
     config.assets.enabled = true
 

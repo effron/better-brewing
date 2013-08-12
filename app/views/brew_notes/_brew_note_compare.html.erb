@@ -15,6 +15,8 @@
     <%= render partial: "tasting_notes/flavor_wheel",
                locals: {tasting_note: tasting_note} %>
   <% end %>
-<% else %>
+<% elsif current_user.brew_notes.include?(brew_note) %>
 <%= link_to "Take some tasting notes!", new_brew_note_tasting_note_url(brew_note.id) %>
+<% else %>
+<p>No tasting notes entered for this brew note</p>
 <% end %>

@@ -6,8 +6,9 @@
   <li>Measured Final Gravity: <%= fermentation_note.fg %></li>
   <li>General Note: <%= fermentation_note.body %>
 </ul>
-
+<% if current_user.brew_notes.include?(fermentation_note.brew_note) %>
 <%= link_to "Edit fermentation notes",
             edit_fermentation_note_url(fermentation_note.id),
             remote: true, class: "edit-fermentation-note" %>
+<% end %>
 </div>

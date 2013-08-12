@@ -9,6 +9,8 @@
 
 <h2>Mash Notes</h2>
 <p>Mash volume: <%= @brew_note.mash_volume %>
+
+<% if current_user.brew_notes.include?(@brew_note) %>
 <div class="editable-table-container">
 <table class="mash-notes editable-table">
   <thead>
@@ -31,6 +33,27 @@
 <% end %>
 </div>
 
+<% else %>
+
+<table class="mash-notes">
+  <thead>
+    <tr>
+      <th>Time</th><th>Temperature</th><th>Note</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @brew_note.mash_notes.each do |mash_note| %>
+    <tr>
+      <td><%= mash_note.time %></td>
+      <td><%= mash_note.temperature %></td>
+      <td><%= mash_note.body %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<% end %>
+
+
 <h2>Sparge Notes</h2>
 <ul>
   <li>Sparge Volume: <%= @brew_note.sparge_note.volume %></li>
@@ -47,19 +70,20 @@
 <div class="editable-ul-container">
 <%= render partial: "fermentation_note",
            locals: { fermentation_note: @brew_note.fermentation_note } %>
-
 </div>
+
 
 <div class="editable-table-container">
 
 <%= render "fermentation_checks" %>
 
-<%= form_for @brew_note.fermentation_note.fermentation_checks.new,
-    remote: true, html: { class: "add-row" } do |f| %>
-      <input type="hidden" name="fermentation_check[fermentation_note_id]"
-      value="<%= @brew_note.fermentation_note.id %>">
-<%= f.submit "Add fermentation check" %>
-
+<% if current_user.brew_notes.include?(@brew_note) %>
+  <%= form_for @brew_note.fermentation_note.fermentation_checks.new,
+      remote: true, html: { class: "add-row" } do |f| %>
+        <input type="hidden" name="fermentation_check[fermentation_note_id]"
+        value="<%= @brew_note.fermentation_note.id %>">
+    <%= f.submit "Add fermentation check" %>
+  <% end %>
 <% end %>
 </div>
 
@@ -71,7 +95,9 @@
   <li>General Note: <%= @brew_note.bottling_note.body %></li>
 </ul>
 
+<% if current_user.brew_notes.include?(@brew_note) %>
 <%= link_to "Add tasting note", new_brew_note_tasting_note_url(@brew_note.id) %>
+<% end %>
 
 <% if @brew_note.beer_photo_file_name %>
   <h2>Photo</h2>
@@ -80,8 +106,9 @@
   </figure>
 <% end %>
 
+<% if current_user.brew_notes.include?(@brew_note) %>
 <%= link_to "Edit Brew Note", edit_brew_note_url(@brew_note), id: "edit-note" %>
-
+<% end %>
 </div>
 
 

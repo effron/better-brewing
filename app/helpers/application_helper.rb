@@ -6,7 +6,7 @@ module ApplicationHelper
     "http://gravatar.com/avatar/#{gravatar_id}.png?d=#{CGI.escape(default_url)}"
   end
 
-  def round_or_nil(number, decimals)
+  def round_or_nil(number, decimals = 0)
     if number.nil?
       nil
     else

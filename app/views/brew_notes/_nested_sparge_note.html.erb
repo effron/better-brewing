@@ -2,9 +2,9 @@
 <label for="sparge_volume">Sparge Volume (gallons)</label>
 <input type="text" id="sparge_volume"
        name="brew_note[sparge_note_attributes][volume_gallons]"
-       value="<%= brew_note.sparge_note.volume_gallons if brew_note.persisted? %>">
+       value="<%= round_or_nil(brew_note.sparge_note.volume_gallons, 2) if brew_note.persisted? %>">
 
-<label for="sparge_temperature">Sparge Temperature</label>
+<label for="sparge_temperature">Sparge Temperature (˚F)</label>
 <input type="text" id="sparge_temperature"
        name="brew_note[sparge_note_attributes][temperature]"
        value="<%= brew_note.sparge_note.volume if brew_note.persisted? %>">

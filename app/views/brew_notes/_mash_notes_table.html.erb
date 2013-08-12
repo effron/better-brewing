@@ -1,5 +1,5 @@
 
-<p>Mash volume (gallons): <%= @brew_note.mash_volume_gallons %>
+<p>Mash volume (gallons): <%= round_or_nil(@brew_note.mash_volume_gallons,2) %>
 
   <table class="mash-notes editable-table">
   <thead>

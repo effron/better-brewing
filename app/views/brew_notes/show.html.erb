@@ -15,15 +15,17 @@
 
 <h2>Sparge Notes</h2>
 <ul>
-  <li>Sparge Volume (gallons): <%= @brew_note.sparge_note.volume_gallons %></li>
+  <li>Sparge Volume (gallons): <%= round_or_nil(@brew_note.sparge_note.volume_gallons, 2) %></li>
   <li>Sparge Temperature: <%= @brew_note.sparge_note.temperature %></li>
   <li>Misc Sparge Notes: <%= @brew_note.sparge_note.body %>
 </ul>
 
 <h2>Boil Notes</h2>
 <ul>
-  <li>Pre Boil Volume (gallons): <%= @brew_note.boil_note.pre_boil_volume_gallons %></li>
-  <li>Post Boil Volume (gallons): <%= @brew_note.boil_note.post_boil_volume_gallons %></li>
+  <li>Pre Boil Volume (gallons):
+    <%= round_or_nil(@brew_note.boil_note.pre_boil_volume_gallons, 2) %></li>
+  <li>Post Boil Volume (gallons):
+    <%= round_or_nil(@brew_note.boil_note.post_boil_volume_gallons, 2) %></li>
 </ul>
 
 <div class="editable-ul-container">
@@ -40,7 +42,8 @@
 
 <h2>Bottling Notes</h2>
 <ul>
-  <li>Amount bottled (gallons): <%= @brew_note.bottling_note.volume_gallons %></li>
+  <li>Amount bottled (gallons):
+    <%= round_or_nil(@brew_note.bottling_note.volume_gallons, 2) %></li>
   <li>Priming Sugar Type: <%= @brew_note.bottling_note.priming_sugar_type %></li>
   <li>Priming Sugar Amount: <%= @brew_note.bottling_note.priming_sugar_amount %></li>
   <li>General Note: <%= @brew_note.bottling_note.body %></li>

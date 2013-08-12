@@ -8,12 +8,12 @@
 <h2>Mash Notes</h2>
 <label for="mash_volume">Mash Volume (gallons)</label>
 <input type="text" name="brew_note[mash_volume_gallons]"
-       value="<%= brew_note.mash_volume_gallons if brew_note.persisted? %>">
+       value="<%= round_or_nil(brew_note.mash_volume_gallons, 2) if brew_note.persisted? %>">
 
 <table>
   <thead>
     <tr>
-      <th>Time</th><th>Temperature</th><th>Comment</th>
+      <th>Time (minutes)</th><th>Temperature (˚F)</th><th>Comment</th>
     </tr>
   </thead>
   <tbody>

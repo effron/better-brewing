@@ -2,12 +2,12 @@
 <label for="pre_boil">Pre Boil Volume (gallons)</label>
 <input type="text" id="pre_boil"
        name="brew_note[boil_note_attributes][pre_boil_volume_gallons]"
-       value="<%= brew_note.boil_note.pre_boil_volume_gallons if brew_note.persisted? %>">
+       value="<%= round_or_nil(brew_note.boil_note.pre_boil_volume_gallons, 2) if brew_note.persisted? %>">
 
 <label for="post_boil">Post Boil Volume (gallons)</label>
 <input type="text" id="post_boil"
        name="brew_note[boil_note_attributes][post_boil_volume_gallons]"
-       value="<%= brew_note.boil_note.post_boil_volume_gallons if brew_note.persisted? %>">
+       value="<%= round_or_nil(brew_note.boil_note.post_boil_volume_gallons, 2) if brew_note.persisted? %>">
 
 <% if brew_note.persisted? %>
 <input type="hidden" name="brew_note[boil_note_attributes][id]"

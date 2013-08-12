@@ -4,9 +4,14 @@ module UnitConversion
   module InstanceMethods
     def method_missing(name, *args, &block)
       if name.to_s =~ /_gallons=$/
-        self.send("#{name.to_s[0..-10]}=", (args[0].to_f * 128).to_i)
+        if !args[0].blank?
+          self.send("#{name.to_s[0..-10]}=", (args[0].to_f * 128).to_i)
+        else
+          self.send("#{name.to_s[0..-10]}=", nil)
+        end
       elsif name.to_s =~/_gallons$/
-        (self.send(name.to_s[0..-9]) || 0) / 128.0
+        vol = self.send(name.to_s[0..-9])
+        vol ? vol / 128.0 : nil
       else
         super(name, *args, &block)
       end

@@ -20,14 +20,27 @@ group :development do
   gem 'annotate'
 end
 
+
+# For pagination
+gem 'dm-aggregates'
+gem 'kaminari'
+
 gem 'beerxml', github: 'codekitchen/beerxml', ref: '9a6d514085d64b7077ea0e840ffdc3c52d27923c'
 
 gem "chartkick"
+
+# For cool select menus
 gem "chosen-rails"
 
 gem "ejs"
+
+# For secret API keys
 gem "figaro"
+
+# For search
 gem "fuzzily"
+
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -42,12 +55,17 @@ group :assets do
 end
 
 require 'open-uri'
+
+# For user login and session management
 gem 'devise'
+
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
+# For picture uploads
 gem 'paperclip'
 gem 'aws-sdk'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

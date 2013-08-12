@@ -7,9 +7,11 @@
   </div>
   <div id="recipe-list">
     <h1>All Recipes</h1>
+    <%= paginate @recipes %>
     <ul class="recipe-tiles group">
       <%= render @recipes %>
     </ul>
+    <%= paginate @recipes %>
   </div>
 </div>
 

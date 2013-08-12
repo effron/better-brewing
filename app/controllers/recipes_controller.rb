@@ -5,8 +5,9 @@ class RecipesController < ApplicationController
   def index
     if params[:search]
       @recipes = Recipe.find_by_fuzzy_name(params[:search])
+      @recipes = Kaminari.paginate_array(@recipes).page(params[:page])
     else
-      @recipes = Recipe.all
+      @recipes = Recipe.page(params[:page])
     end
     
     if request.xhr?

@@ -27,7 +27,7 @@
         %>
         <% properties_array.each do |name, estimated| %>
         <tr class="properties-row">
-          <td><%= name %></td><td><%= @recipe.send(estimated) %></td>
+          <td><%= name %></td><td><%= @recipe.send(estimated).round(3) %></td>
         </tr>
         <% end %>
       </tbody>
@@ -49,7 +49,7 @@
         <% @recipe.fermentables.each do |fermentable| %>
           <tr class="fermentables-row">
             <td><%= fermentable.name %></td>
-            <td><%= fermentable.amount.to_f %> <%= fermentable.amount.unit %></td>
+            <td><%= fermentable.amount.to_lb.to_f.round(2) %> lbs</td>
             <td><%= fermentable.type %></td>
             <td><%= fermentable.color %></td>
           </tr>
@@ -72,11 +72,11 @@
         </tr>
       </thead>
       <tbody>
-        <% @recipe.hops.each do |hop| %>
+        <% @recipe.hops.sort_by {|hop| hop.time.to_f }.reverse.each do |hop| %>
           <tr class="hops-row">
             <td><%= hop.name %></td>
-            <td><%= hop.amount.to_f %> <%= hop.amount.unit %></td>
-            <td><%= hop.time.to_f %> <%= hop.time.unit %></td>
+            <td><%= hop.amount.to_oz.to_f.round(2) %> oz</td>
+            <td><%= hop.time.to_f.to_i %> <%= hop.time.unit %></td>
             <td><%= hop.use %></td>
             <td><%= hop.form %></td>
             <td><%= hop.alpha %></td>
@@ -123,11 +123,19 @@
           </tr>
         </thead>
         <tbody>
-          <% @recipe.miscs.each do |additive| %>
+          <% @recipe.miscs.sort_by {|misc| misc.time.to_f }.reverse.each do |additive| %>
             <tr class="additives-row">
               <td><%= additive.name %></td>
-              <td><%= additive.amount.to_f %> <%= additive.amount.unit %></td>
-              <td><%= additive.time.to_f %> <%= additive.time.unit %></td>
+              <% if additive.amount.unit == "kilograms" %>
+              <td><%= additive.amount.to_oz.to_f.round(2) %> oz</td>
+              <% else %>
+              <td><%= additive.amount.to_f.round(3) %> <%= additive.amount.unit %></td>
+              <% end %>
+              <% if additive.time.to_f.to_i % 1440 == 0 %>
+              <td><%= additive.time.to_days.to_f.to_i %> days</td>
+              <% else %>
+              <td><%= additive.time.to_f.to_i %> <%= additive.time.unit %></td>
+              <% end %>
               <td><%= additive.use %></td>
             </tr>
           <% end %>

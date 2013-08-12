@@ -3,11 +3,10 @@ module UnitConversion
 
   module InstanceMethods
     def method_missing(name, *args, &block)
-      puts "METHOD MISSING CALLED"
       if name.to_s =~ /_gallons=$/
-        self.send("#{name.to_s[0..-10]}=", (args[0]* 128).to_i)
+        self.send("#{name.to_s[0..-10]}=", (args[0].to_f * 128).to_i)
       elsif name.to_s =~/_gallons$/
-        self.send(name.to_s[0..-9]) / 128
+        (self.send(name.to_s[0..-9]) || 0) / 128.0
       else
         super(name, *args, &block)
       end

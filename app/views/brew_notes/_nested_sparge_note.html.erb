@@ -1,8 +1,8 @@
 <h2>Sparge Notes</h2>
-<label for="sparge_volume">Sparge Volume</label>
+<label for="sparge_volume">Sparge Volume (gallons)</label>
 <input type="text" id="sparge_volume"
-       name="brew_note[sparge_note_attributes][volume]"
-       value="<%= brew_note.sparge_note.volume if brew_note.persisted? %>">
+       name="brew_note[sparge_note_attributes][volume_gallons]"
+       value="<%= brew_note.sparge_note.volume_gallons if brew_note.persisted? %>">
 
 <label for="sparge_temperature">Sparge Temperature</label>
 <input type="text" id="sparge_temperature"

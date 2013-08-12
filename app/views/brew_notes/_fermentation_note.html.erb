@@ -1,7 +1,7 @@
 <div id="fermentation-note">
 <h2>Fermentation Notes</h2>
 <ul>
-  <li>Volume in Fermenter: <%= fermentation_note.volume %></li>
+  <li>Volume in Fermenter (gallons): <%= fermentation_note.volume_gallons.round(2) %></li>
   <li>Measured Original Gravity: <%= fermentation_note.og %></li>
   <li>Measured Final Gravity: <%= fermentation_note.fg %></li>
   <li>General Note: <%= fermentation_note.body %>

@@ -4,8 +4,8 @@
 <h2>Fermentation Notes</h2>
 <label for="fermenter_volume">Volume in Fermenter (gallons)</label>
 <input type="text" id="fermenter_volume"
-       name="brew_note[fermentation_note_attributes][volume]"
-       value="<%= brew_note.fermentation_note.volume %>">
+       name="brew_note[fermentation_note_attributes][volume_gallons]"
+       value="<%= brew_note.fermentation_note.volume_gallons %>">
 
 <label for="og">Measured Original Gravity (eg. 1060)</label>
 <input type="text" id="og"
@@ -13,9 +13,9 @@
        value="<%= brew_note.fermentation_note.og %>">
 
 <label for="ferm_body">Misc Notes</label>
-<input type="text" id="ferm_body"
+<textarea id="ferm_body"
        name="brew_note[fermentation_note_attributes][body]"
-       value="<%= brew_note.fermentation_note.body %>">
+       ><%= brew_note.fermentation_note.body %></textarea>
 
 <input type="hidden" name="brew_note[fermentation_note_attributes][id]"
        value="<%= brew_note.fermentation_note.id %>">

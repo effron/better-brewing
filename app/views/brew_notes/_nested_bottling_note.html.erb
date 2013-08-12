@@ -1,8 +1,8 @@
 <h2>Bottling Notes</h2>
-<label for="bottling_volume">Volume Bottled</label>
+<label for="bottling_volume">Volume Bottled (gallons)</label>
 <input type="text" id="bottling_volume"
-       name="brew_note[bottling_note_attributes][volume]"
-       value="<%= brew_note.bottling_note.volume if brew_note.persisted? %>">
+       name="brew_note[bottling_note_attributes][volume_gallons]"
+       value="<%= brew_note.bottling_note.volume_gallons.round(2) if brew_note.persisted? %>">
 
 <label for="priming_sugar_type">Priming Sugar Type</label>
 <input type="text" id="priming_sugar_type"

@@ -12,10 +12,13 @@
 #
 
 class BoilNote < ActiveRecord::Base
-  attr_accessible :body, :brew_note_id, :post_boil_volume, :pre_boil_volume
+  include UnitConversion
+
+  attr_accessible :body, :brew_note_id, :post_boil_volume, :pre_boil_volume,
+                  :post_boil_volume_gallons, :pre_boil_volume_gallons
 
   belongs_to :brew_note
-  
+
   def average_volume
     return 0 unless post_boil_volume && pre_boil_volume
     (post_boil_volume + pre_boil_volume) / 2

@@ -1,0 +1,57 @@
+<% if @tasting_note.persisted? %>
+<% url = tasting_note_url(@tasting_note.id) %>
+<% else %>
+<% url = brew_note_tasting_notes_url(@tasting_note.brew_note.id) %>
+<% end %>
+
+<%= form_for @tasting_note, url: url do |f| %>
+  <h3>Flavor attributes (rate 1-5)</h3>
+  <ul class="flavor-attribute-list">
+  <% @tasting_note.flavor_attribute_names.each do |name| %>
+    <li class="group">
+      <label for="<%= name %>" class="flavor-label">
+        <%= name.gsub("_", " ") %>
+      </label>
+    <input type="number" id="<%= name %>" class="flavor-input"
+     name="tasting_note[<%= name %>]" min="0" max="5"
+     value="<%= @tasting_note.send(name) %>">
+     </li>
+  <% end %>
+  </ul>
+  <label>What did you pour this beer out of?
+  <select class="chosen-menu" name="tasting_note[serving_vessel_id]">
+    <option value=""></option>
+    <% ServingVessel.all.each do |vessel| %>
+      <option value="<%= vessel.id %>"
+        <%= "selected" if vessel == @tasting_note.serving_vessel %>>
+        <%= vessel.name %>
+      </option>
+    <% end %>
+  </select>
+  </label>
+  <label>What did you enjoy this beer in?
+  <select class="chosen-menu" name="tasting_note[consumption_vessel_id]">
+    <option value=""></option>
+    <% ConsumptionVessel.all.each do |vessel| %>
+      <option value="<%= vessel.id %>"
+        <%= "selected" if vessel == @tasting_note.consumption_vessel %>>
+        <%= vessel.name %>
+      </option>
+    <% end %>
+  </select>
+  </label>
+
+  <% %w(appearance aroma flavor misc).each do |note| %>
+    <label for="<%= note %>-text"><%= note.capitalize %></label>
+    <textarea id="<%= note %>-text" name="tasting_note[<%= note %>]"
+      ><%= @tasting_note.send(note) %></textarea>
+
+  <% end %>
+
+  <label for="overall">Overall rating (0-10)</label>
+  <input type="number" min="0" max="10" name="tasting_note[rating]"
+         value="<%= @tasting_note.rating %>">
+
+  <%= f.submit %>
+
+<% end %>

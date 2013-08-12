@@ -46,9 +46,20 @@
   <li>General Note: <%= @brew_note.bottling_note.body %></li>
 </ul>
 
+<div class="tasting-notes">
+<% unless @brew_note.tasting_notes.empty? %>
+  <h2>Tasting Notes</h2>
+  <ul>
+  <% @brew_note.tasting_notes.each do |tasting_note| %>
+    <li><%= link_to tasting_note.created_at.to_datetime.strftime('%d-%m-%y %l:%M'), tasting_note %></li>
+  <% end %>
+  </ul>
+<% end %>
+
 <% if current_user.brew_notes.include?(@brew_note) %>
 <%= link_to "Add tasting note", new_brew_note_tasting_note_url(@brew_note.id) %>
 <% end %>
+</div>
 
 <% if @brew_note.beer_photo_file_name %>
   <h2>Photo</h2>

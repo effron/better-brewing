@@ -1,5 +1,10 @@
 <div id="tasting-note-show">
-  <h1>Tasting Note for   <%= @tasting_note.brew_note.recipe.name %></h1>
+  <header>
+  <h1>Tasting Note for <%= link_to @tasting_note.brew_note.recipe.name, @tasting_note.brew_note.recipe %></h1>
+  <h2><%= link_to "Back to brew note", @tasting_note.brew_note %></h2>
+  </header>
+  <h2>Overall Rating: <%= @tasting_note.rating %></h2>
+
   <div class="chart-container">
   <%= render partial: "flavor_wheel", locals: {tasting_note: @tasting_note} %>
   </div>
@@ -7,8 +12,8 @@
   <div class="serving">
     <h2>Serving:</h2>
     <ul>
-      <li>Poured from: <%= @tasting_note.serving_vessel.name %></li>
-      <li>Drank from: <%= @tasting_note.consumption_vessel.name %></li>
+      <li>Poured from: <%= @tasting_note.serving_vessel.name if @tasting_note.serving_vessel%></li>
+      <li>Drank from: <%= @tasting_note.consumption_vessel.name if @tasting_note.consumption_vessel%></li>
     </ul>
   </div>
 
@@ -20,4 +25,9 @@
     <% end %>
   </ul>
   </div>
+
+  <% if current_user.brew_notes.include?(@tasting_note.brew_note) %>
+  <%= link_to "Edit tasting note", edit_tasting_note_url(@tasting_note) %>
+<%= button_to "Destroy tasting note", tasting_note_url(@tasting_note), method: "delete" %>
+  <% end %>
 </div>

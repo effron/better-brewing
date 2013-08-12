@@ -1,9 +1,9 @@
 <div id="tasting-note-form">
-
-<h1>Create a new tasting note for <%= @tasting_note.brew_note.recipe.name %></h1>
-
+<h1>Edit tasting note for <%= @tasting_note.brew_note.recipe.name %></h1>
 <%= render "form" %>
+
 </div>
+
 <script>
 $(function(){
   $(".chosen-menu").chosen({width: "200px"});

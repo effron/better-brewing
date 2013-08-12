@@ -40,7 +40,7 @@
             ['FG', 'estimated_fg'],
             ['IBU', 'estimated_ibu'],
             ['ABV', 'estimated_abv'],
-            ['color (SRM)', 'estimated_color']
+            ['Color (SRM)', 'estimated_color']
           ]
         %>
         <% properties_array.each do |name, estimated| %>
@@ -66,7 +66,7 @@
       <tbody>
         <% @recipe.fermentables.each do |fermentable| %>
           <tr class="fermentables-row">
-            <td><%= fermentable.name %></td>
+            <td title="<%= fermentable.notes %>"><%= fermentable.name %></td>
             <td><%= fermentable.amount.to_lb.to_f.round(2) %> lbs</td>
             <td><%= fermentable.type %></td>
             <td><%= fermentable.color %></td>
@@ -92,7 +92,7 @@
       <tbody>
         <% @recipe.hops.sort_by {|hop| hop.time.to_f }.reverse.each do |hop| %>
           <tr class="hops-row">
-            <td><%= hop.name %></td>
+            <td title="<%= hop.notes %>"><%= hop.name %></td>
             <td><%= hop.amount.to_oz.to_f.round(2) %> oz</td>
             <td><%= hop.time.to_f.to_i %> <%= hop.time.unit %></td>
             <td><%= hop.use %></td>
@@ -118,7 +118,7 @@
       <tbody>
         <% @recipe.yeasts.each do |yeast| %>
           <tr class="yeasts-row">
-            <td><%= yeast.name %></td>
+            <td title="<%= yeast.notes %>"><%= yeast.name %></td>
             <td><%= yeast.laboratory %></td>
             <td><%= yeast.form %></td>
             <td><%= yeast.attenuation %>%</td>
@@ -143,7 +143,7 @@
         <tbody>
           <% @recipe.miscs.sort_by {|misc| misc.time.to_f }.reverse.each do |additive| %>
             <tr class="additives-row">
-              <td><%= additive.name %></td>
+              <td title="<%= additive.notes %>"><%= additive.name %></td>
               <% if additive.amount.unit == "kilograms" %>
               <td><%= additive.amount.to_oz.to_f.round(2) %> oz</td>
               <% else %>
@@ -161,5 +161,10 @@
       </table>
     </div>
   <% end %>
-
 </div>
+
+<script>
+$(function(){
+  $(document).tooltip();
+})
+</script>

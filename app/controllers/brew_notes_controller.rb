@@ -49,10 +49,15 @@ class BrewNotesController < ApplicationController
 
   def edit
     @brew_note = BrewNote.find(params[:id])
+    
+    raise "NOT YOUR NOTE" unless current_user.brew_notes.include?(@brew_note)
   end
 
   def update
     @brew_note = BrewNote.find(params[:id])
+    
+    raise "NOT YOUR NOTE" unless current_user.brew_notes.include?(@brew_note)
+
     @brew_note.update_attributes(params[:brew_note])
 
     if request.url =~ /\?mash/ && request.xhr?

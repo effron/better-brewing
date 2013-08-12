@@ -4,6 +4,10 @@ class FermentationChecksController < ApplicationController
 
   def create
     @fermentation_check = FermentationCheck.new(params[:fermentation_check])
+    unless current_user.brew_notes.include?(@fermentation_check.fermentation_note.brew_note)
+      raise "NOT YOUR NOTE" 
+    end
+    
     @fermentation_check.save!
     if request.xhr?
       render partial: "brew_notes/fermentation_check", locals: {fermentation_check: @fermentation_check}
@@ -14,6 +18,10 @@ class FermentationChecksController < ApplicationController
 
   def update
     @fermentation_check = FermentationCheck.find(params[:id])
+    unless current_user.brew_notes.include?(@fermentation_check.fermentation_note.brew_note)
+      raise "NOT YOUR NOTE" 
+    end
+    
     @fermentation_check.update_attributes(params[:fermentation_check])
     if request.xhr?
       render partial: "brew_notes/fermentation_check_row", locals: {fermentation_check: @fermentation_check}
@@ -24,6 +32,11 @@ class FermentationChecksController < ApplicationController
 
   def edit
     @fermentation_check = FermentationCheck.find(params[:id])
+    
+    unless current_user.brew_notes.include?(@fermentation_check.fermentation_note.brew_note)
+      raise "NOT YOUR NOTE" 
+    end
+    
     if request.xhr?
       render partial: "brew_notes/fermentation_check", locals: {fermentation_check: @fermentation_check}
     else
@@ -33,6 +46,12 @@ class FermentationChecksController < ApplicationController
 
   def destroy
     @fermentation_check = FermentationCheck.find(params[:id])
+    
+    
+    unless current_user.brew_notes.include?(@fermentation_check.fermentation_note.brew_note)
+      raise "NOT YOUR NOTE" 
+    end
+    
     @fermentation_check.destroy
     if request.xhr?
       render partial: "brew_notes/fermentation_check", locals: {fermentation_check: @fermentation_check}

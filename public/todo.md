@@ -1,5 +1,8 @@
 ##TODO
 
+##
+Fix brew_note show page so that users dont see edit links if it isn't theirs
+
 ###Tasting notes:
 
 Add more fields to tasting notes view

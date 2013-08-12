@@ -18,3 +18,12 @@
     <% end %>
   </tbody>
 </table>
+
+<% if current_user.brew_notes.include?(@brew_note) %>
+  <%= form_for @brew_note.fermentation_note.fermentation_checks.new,
+      remote: true, html: { class: "add-row" } do |f| %>
+        <input type="hidden" name="fermentation_check[fermentation_note_id]"
+        value="<%= @brew_note.fermentation_note.id %>">
+    <%= f.submit "Add fermentation check" %>
+  <% end %>
+<% end %>

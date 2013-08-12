@@ -8,51 +8,10 @@
 <p><%= @brew_note.body %></p>
 
 <h2>Mash Notes</h2>
-<p>Mash volume: <%= @brew_note.mash_volume %>
 
-<% if current_user.brew_notes.include?(@brew_note) %>
 <div class="editable-table-container">
-<table class="mash-notes editable-table">
-  <thead>
-    <tr>
-      <th>Time</th><th>Temperature</th><th>Note</th><th>Edit</th><th>Delete</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @brew_note.mash_notes.each do |mash_note| %>
-    <%= render partial: "mash_note_row", locals: { mash_note: mash_note } %>
-  <% end %>
-  </tbody>
-</table>
-
-<%= form_for @brew_note.mash_notes.new,
-    remote: true, html: { class: "add-row" } do |f| %>
-      <input type="hidden" name="mash_note[brew_note_id]"
-      value="<%= @brew_note.id %>">
-<%= f.submit "Add new mash note" %>
-<% end %>
+  <%= render "mash_notes_table" %>
 </div>
-
-<% else %>
-
-<table class="mash-notes">
-  <thead>
-    <tr>
-      <th>Time</th><th>Temperature</th><th>Note</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @brew_note.mash_notes.each do |mash_note| %>
-    <tr>
-      <td><%= mash_note.time %></td>
-      <td><%= mash_note.temperature %></td>
-      <td><%= mash_note.body %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-<% end %>
-
 
 <h2>Sparge Notes</h2>
 <ul>
@@ -77,14 +36,6 @@
 
 <%= render "fermentation_checks" %>
 
-<% if current_user.brew_notes.include?(@brew_note) %>
-  <%= form_for @brew_note.fermentation_note.fermentation_checks.new,
-      remote: true, html: { class: "add-row" } do |f| %>
-        <input type="hidden" name="fermentation_check[fermentation_note_id]"
-        value="<%= @brew_note.fermentation_note.id %>">
-    <%= f.submit "Add fermentation check" %>
-  <% end %>
-<% end %>
 </div>
 
 <h2>Bottling Notes</h2>

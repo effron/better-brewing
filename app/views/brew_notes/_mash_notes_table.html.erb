@@ -1,0 +1,32 @@
+
+<p>Mash volume: <%= @brew_note.mash_volume %>
+
+  <table class="mash-notes editable-table">
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>Temperature</th>
+      <th>Note</th>
+      <% if current_user.brew_notes.include?(@brew_note) %>
+      <th>Edit</th>
+      <th>Delete</th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @brew_note.mash_notes.each do |mash_note| %>
+      <%= render partial: "mash_note_row", locals: { mash_note: mash_note } %>
+    <% end %>
+  </tbody>
+</table>
+
+<% if current_user.brew_notes.include?(@brew_note) %>
+
+  <%= form_for @brew_note.mash_notes.new,
+      remote: true, html: { class: "add-row" } do |f| %>
+        <input type="hidden" name="mash_note[brew_note_id]"
+        value="<%= @brew_note.id %>">
+    <%= f.submit "Add new mash note" %>
+  <% end %>
+
+<% end %>

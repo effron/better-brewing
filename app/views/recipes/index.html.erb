@@ -17,9 +17,13 @@
 
 <script>
 $(function(){
-  $(document).on("ajax:success", function(event, data){
-    $("#recipe-list").html(data)
-    
+  $("#search-field").on("ajax:success", function(event, data){
+    $(event.target).removeClass("ajax-waiting")
+    $("#recipe-list").html(data)  
+  })
+  
+  $("#search-field").on("ajax:before", function(event, data){
+    $(event.target).addClass("ajax-waiting")
   })  
 })
 

@@ -35,5 +35,5 @@ Add unit information (maybe process info so that they can be stored as integers)
 Make add/remove friend happen Ajaxly
 
 ####Future:
-
+Ajaxy pagination
 Share on facebook and twitter

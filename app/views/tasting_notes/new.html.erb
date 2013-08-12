@@ -1,23 +1,36 @@
 <div id="new-tasting-note">
 
-<h1>WELCOME TO TASTING NOTES FOR <%= @tasting_note.brew_note.recipe.name %></h1>
+<h1>Create a new tasting note for <%= @tasting_note.brew_note.recipe.name %></h1>
 
 <%= form_for @tasting_note, url: brew_note_tasting_notes_url(@tasting_note.brew_note.id) do |f| %>
-
+<h3>Flavor attributes (rate 1-5)</h3>
+<ul class="flavor-attribute-list">
 <% @tasting_note.flavor_attribute_names.each do |name| %>
-  <label for="<%= name %>" class="flavor-label"><%= name.gsub("_", " ") %></label>
+  <li class="group">
+    <label for="<%= name %>" class="flavor-label"><%= name.gsub("_", " ") %></label>
   <input type="number" id="<%= name %>" class="flavor-input"
    name="tasting_note[<%= name %>]" min="0" max="5" value="0">
+   </li>
 <% end %>
-
+</ul>
+<label>What did you enjoy this beer in?
 <select class="chosen-menu" name="tasting_note[consumption_vessel_id]">
   <option value=""></option>
   <% ConsumptionVessel.all.each do |vessel| %>
     <option value="vessel.id"><%= vessel.name %></option>
   <% end %>
 </select>
+</label>
+
+  <% %w(appearance aroma flavor misc).each do |note| %>
+    <label for="<%= note %>-text"><%= note.capitalize %></label>
+    <textarea id="<%= note %>-text" name="tasting_note[<%= note %>]"
+      ><%= @tasting_note.send(note) %></textarea>
+
+  <% end %>
 
 <%= f.submit %>
+
 <% end %>
 
 </div>
@@ -28,28 +41,6 @@ $(function(){
   <% selectors = @tasting_note.flavor_attribute_names.map {|name| "##{name}"} %>
 
   FlavorSlider.init(<%= selectors.to_json.html_safe %>)
-
-  // var input = $( "#alcohol" );
-  //
-  // var slider = $( "<div id='alcohol-slider'></div>" ).insertAfter( input ).slider({
-  //   min: 1,
-  //   max: 6,
-  //   range: "min",
-  //   value: input.val(),
-  //   slide: function( event, ui ) {
-  //     input.val(ui.value - 1);
-  //   }
-  // });
-  //
-  // $( "#alcohol").on("change", function() {
-  //   console.log("fired")
-  //   $(this).val(parseInt($(this).val() || 0));
-  //   slider.slider( "value", parseInt($(this).val()) + 1 );
-  // });
-  //
-  // $( "#alcohol").on("keyup", function() {
-  //   slider.slider( "value", parseInt($(this).val() || 0) + 1 );
-  // });
 
 })
 </script>

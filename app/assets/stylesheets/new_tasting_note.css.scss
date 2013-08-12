@@ -1,5 +1,26 @@
 #new-tasting-note{
 
+  textarea{
+    border: 1px solid black;
+    display: block;
+    padding: 5px;
+    margin: 5px;
+  }
+  
+  label{
+    display: block;
+    margin: 5px;
+  }
+  
+  h1{
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  h3{
+    padding: 10px;
+  }
   .ui-slider{
     width: 300px;
     margin: 10px 20px;
@@ -12,19 +33,24 @@
       outline: none;
     };
   }
-
-  .flavor-input{
+  .flavor-attribute-list{
     float:left;
+    margin-right: 50px;
+  }
+  
+  .flavor-input{
     margin: 5px;
+    float:left;
   }
 
   .flavor-label{
     float:left;
-    clear:both;
     width: 120px;
     text-align: right;
     margin: 5px;
     text-transform: capitalize;
   }
+  
+
 
 }

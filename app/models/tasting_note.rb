@@ -34,8 +34,8 @@
 class TastingNote < ActiveRecord::Base
   attr_accessible :alcohol, :bitter, :body, :burnt, :citrus_fruit, :dark_fruit,
                   :dry, :floral, :herbal, :hoppy, :linger, :malty, :rating,
-                  :sour, :spicy, :sweet, :toffee, :misc, :appearance, :aroma,
-                  :flavor, :serving_vessel_id, :consumption_vessel_id,
+                  :sour, :spicy, :sweet, :toffee, :appearance, :aroma, :flavor,
+                  :misc, :serving_vessel_id, :consumption_vessel_id,
                   :brew_note_id
 
   belongs_to :brew_note

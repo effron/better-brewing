@@ -100,6 +100,10 @@ class Recipe < ActiveRecord::Base
     recipe_object.batch_size
   end
 
+  def closest_styles
+    recipe_object.closest_styles(Beerxml::Style.predefined(:bjcp))[0...5]
+  end
+
   #People are bad at beerxml. Clean up some found errors
   def cleanup_xml
     xml.gsub!(/<EFFICIENCY>-<\/EFFICIENCY>/, '<EFFICIENCY>0.0</EFFICIENCY>')

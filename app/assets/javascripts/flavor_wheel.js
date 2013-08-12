@@ -26,8 +26,8 @@ var FlavorWheel = (function(){
       labels: names,
       datasets: [
         {
-          fillColor : "rgba(17,15,46,.5)",
-    			strokeColor : "rgba(23,22,39,1)",
+          fillColor : "rgba(0,57,143,.5)",
+    			strokeColor : "rgba(22,39,65,1)",
           data: values
         }
       ]

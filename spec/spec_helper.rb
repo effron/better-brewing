@@ -56,3 +56,8 @@ def upload_recipe
   fill_in "xml_url", with: "http://www.brewtoad.com/recipes/good-brewer-ish-hefeweizen.xml"
   click_button "Upload Recipe"
 end
+
+def brew_recipe
+  click_link "Brew Me!"
+  click_button "Let's Get Started"
+end

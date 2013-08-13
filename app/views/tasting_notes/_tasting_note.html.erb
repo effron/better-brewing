@@ -1,4 +1,4 @@
 <li data-id="<%= tasting_note.id %>">
-  <%= link_to tasting_note.created_at.to_datetime.strftime('%d-%m-%y %l:%M'),
-              tasting_note, remote: true %>
+  <% date = tasting_note.created_at.to_datetime.strftime('%d-%m-%y %l:%M') %>
+  <%= link_to "Tasting note: #{date}", tasting_note, remote: true %>
 </li>

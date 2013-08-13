@@ -101,6 +101,10 @@ input {
   content: image-url("ajax-loader.gif");
 }
 
+.highlighted {
+  background: yellow;
+}
+
 /*clearfix*/
 .group:after{
   content:"";

@@ -27,8 +27,9 @@ $(function(){
 
   $("#brew-note-<%= brew_note.id %>-tasting-notes").on("ajax:success", "li", function(event, data){
     $("#displayed-note-<%= brew_note.id %>").html(data)
-    $(window).off("resize","#displayed-note-<%= brew_note.id %>" )
-    console.log($("#displayed-note-<%= brew_note.id %>"))
+    $(this).addClass("highlighted")
+    $(this).siblings().removeClass("highlighted")
+    $(window).off("resize","#displayed-note-<%= brew_note.id %>")
   })
 
 })

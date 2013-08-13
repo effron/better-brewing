@@ -5,20 +5,24 @@
       <td>
         <input type="text"
         name="mash_note[time]"
-        value="<%= mash_note.time %>">
+        value="<%= mash_note.time %>"
+        form="edit_mash_note_<%= mash_note.id %>">
       </td>
       <td>
         <input type="text"
         name="mash_note[temperature]"
-        value="<%= mash_note.temperature %>">
+        value="<%= mash_note.temperature %>"
+        form="edit_mash_note_<%= mash_note.id %>">
       </td>
       <td>
         <input type="text"
         name="mash_note[body]"
-        value="<%= mash_note.body %>">
+        value="<%= mash_note.body %>"
+        form="edit_mash_note_<%= mash_note.id %>">
       </td>
       <td>
-        <input type="submit" value="Add mash note">
+        <input type="submit" value="Add mash note"
+        form="edit_mash_note_<%= mash_note.id %>">
       </td>
       <td>
       </td>

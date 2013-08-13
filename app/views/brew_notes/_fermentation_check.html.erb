@@ -5,25 +5,30 @@
       <td>
         <input type="text"
         name="fermentation_check[elapsed_time]"
-        value="<%= fermentation_check.elapsed_time %>">
+        value="<%= fermentation_check.elapsed_time %>"
+        form="edit_fermentation_check_<%= fermentation_check.id %>">
       </td>
       <td>
         <input type="text"
         name="fermentation_check[temperature]"
-        value="<%= fermentation_check.temperature %>">
+        value="<%= fermentation_check.temperature %>"
+        form="edit_fermentation_check_<%= fermentation_check.id %>">
       </td>
       <td>
         <input type="text"
         name="fermentation_check[specific_gravity]"
-        value="<%= fermentation_check.specific_gravity %>">
+        value="<%= fermentation_check.specific_gravity %>"
+        form="edit_fermentation_check_<%= fermentation_check.id %>">
       </td>
       <td>
         <input type="text"
         name="fermentation_check[body]"
-        value="<%= fermentation_check.body %>">
+        value="<%= fermentation_check.body %>"
+        form="edit_fermentation_check_<%= fermentation_check.id %>">
       </td>
       <td>
-        <input type="submit" value="Add fermentation check">
+        <input type="submit" value="Add fermentation check"
+        form="edit_fermentation_check_<%= fermentation_check.id %>">
       </td>
       <td>
       </td>

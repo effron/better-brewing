@@ -1,24 +1,24 @@
 #new-recipe{
   padding: 10px;
-  background: lighten($main-color, 24%);
+  background: white;
   h1 {
     line-height: 38px;
     font-size: 30px;
     margin-bottom: 10px;
   }
-  
+
   h2 {
     line-height: 20px;
     font-size: 18px;
   }
-  
+
   h3 {
     line-height: 16px;
     font-size: 14px;
     font-weight: normal;
     margin-top: 4px;
   }
-  
+
   form{
     padding-top: 20px;
     label {
@@ -44,5 +44,5 @@
       }
     }
   }
-  
+
 }

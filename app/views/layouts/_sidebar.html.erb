@@ -1,9 +1,17 @@
 <div class="sidebar">
   <ul>
     <li><%= link_to "Recipes", recipes_url %></li>
-    <li><%= link_to "Brewers", users_url %>
-    <li><a href="#">Style Guide</a></li>
-    <li><a href="#">Tasting Guide</a></li>
-    <li><%= link_to "Upload BeerXML", new_recipe_url %></li>
+    <li><%= link_to "Brewers", users_url %></li>
+    <li><%= link_to "Upload Recipe", new_recipe_url %></li>
+    <li>
+      <a href="http://www.bjcp.org/2008styles/catdex.php" target="_blank">
+        Style Guide<%= image_tag "light_grey_link.png" %>
+      </a>
+    </li>
+    <li>
+      <a href="http://beeradvocate.com/beer/101/taste" target="_blank">
+        Tasting Guide<%= image_tag "light_grey_link.png" %>
+      </a>
+    </li>
   </ul>
 </div>

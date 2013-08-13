@@ -2,7 +2,6 @@
 
 ###Tasting notes:
 
-Add more fields to tasting notes view
 Maybe link to some sort of tasting guide (popup in front??)
 
 ###Recipes:
@@ -18,8 +17,6 @@ Add helpful hints
 
 ###brew note compare
 Brew notes overlay chart: combine all charts to more easily compare brews!
-
-Add sparge notes
 
 Link the messages to add mash and fermenting notes to somewhere to actially do it
 

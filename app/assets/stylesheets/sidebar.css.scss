@@ -4,7 +4,11 @@
   min-width: $main-min-width * .2;
   position:fixed;
   background-color: $sidebar-light;
+}
 
+.sidebar img{
+  padding: 0 10px;
+  height: auto;
 }
 
 .sidebar li {

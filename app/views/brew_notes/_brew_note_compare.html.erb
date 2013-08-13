@@ -9,14 +9,40 @@
 <h2>General notes</h2>
 <%= render partial: "high_level_notes", locals: { brew_note: brew_note } %>
 
-<h2>Tasting Notes</h2>
+<h2>Tasting Notes (click to expand)</h2>
 <% if !brew_note.tasting_notes.empty? %>
-  <% brew_note.tasting_notes.each do |tasting_note| %>
-    <%= render partial: "tasting_notes/flavor_wheel",
+  <ul id="brew-note-<%= brew_note.id %>-tasting-notes">
+    <li></li>
+    <%= render brew_note.tasting_notes %>
+  </ul>
+
+
+  <%# brew_note.tasting_notes.each do |tasting_note| %>
+    <%#= render partial: "tasting_notes/flavor_wheel",
                locals: {tasting_note: tasting_note} %>
-  <% end %>
+  <%# end %>
 <% elsif current_user.brew_notes.include?(brew_note) %>
-<%= link_to "Take some tasting notes!", new_brew_note_tasting_note_url(brew_note.id) %>
+  <%= link_to "Take some tasting notes!", new_brew_note_tasting_note_url(brew_note.id) %>
 <% else %>
-<p>No tasting notes entered for this brew note</p>
+  <p>No tasting notes entered for this brew note</p>
 <% end %>
+
+<script>
+$(function(){
+  $("#brew-note-<%= brew_note.id %>-tasting-notes").on("click", "li", function(event){
+    var id = $(this).attr("data-id");
+    console.log(event.target)
+    var url = "<%= tasting_notes_url%>" + "/"+id;
+    console.log(url)
+    $.ajax({
+      url: url,
+      success: function(data){
+        $(event.target).replaceWith(data)
+      },
+    });
+  })
+
+
+
+})
+</script>

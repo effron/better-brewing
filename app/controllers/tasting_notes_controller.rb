@@ -34,6 +34,10 @@ class TastingNotesController < ApplicationController
 
   def show
     @tasting_note = TastingNote.find(params[:id])
+
+    if request.xhr?
+      render partial: "embedded_flavor_wheel", locals: { tasting_note: @tasting_note }
+    end
   end
 
   def edit

@@ -22,17 +22,11 @@ $(function(){
   
   $("#search-field").on("ajax:success", function(event, data){
     $(event.target).removeClass("ajax-waiting")
-    console.log("searched")
     $("#recipe-list").html(data)  
   })
   
   $("#search-field").on("ajax:error", function(event, xhr, status, error){
     $(event.target).removeClass("ajax-waiting")
-    console.log("ERROR ERROR")
-    console.log(event)
-    console.log(error)
-    console.log(status)
-    console.log(xhr.responseText)
   })
   
   $("#search-field").on("ajax:before", function(event, data){
@@ -45,7 +39,6 @@ $(function(){
     }
     timer = window.setTimeout( function(){
       timer = null;
-      console.log("form was submitted")
       $("#search-field form").submit();
     }, 400 );
   });  

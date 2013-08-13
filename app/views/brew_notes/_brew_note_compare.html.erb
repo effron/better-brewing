@@ -24,19 +24,12 @@
 
 <script>
 $(function(){
-  $("#brew-note-<%= brew_note.id %>-tasting-notes").on("click", "li", function(event){
-    var that = this
-    var id = $(that).attr("data-id");
-    var url = "<%= tasting_notes_url%>" + "/"+id;
-    $.ajax({
-      url: url,
-      success: function(data){
-        $("#displayed-note-<%= brew_note.id  %>").html(data)
-      },
-    });
+
+  $("#brew-note-<%= brew_note.id %>-tasting-notes").on("ajax:success", "li", function(event, data){
+    $("#displayed-note-<%= brew_note.id %>").html(data)
+    $(window).off("resize","#displayed-note-<%= brew_note.id %>" )
+    console.log($("#displayed-note-<%= brew_note.id %>"))
   })
-
-
 
 })
 </script>

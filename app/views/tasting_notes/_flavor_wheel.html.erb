@@ -5,29 +5,11 @@
 
 $(function(){
 
-
-  var container = $("#tasting-chart-<%= tasting_note.id %>").parent();
-
   var names = <%= tasting_note.flavor_attribute_names.to_json.html_safe %>
   var values = <%= tasting_note.flavor_attribute_values.to_json %>
 
+  new FlavorWheel.Wheel("#tasting-chart-<%= tasting_note.id %>", names, values, false).init()
 
-
-  var resizeCanvas = function(){
-    var con = $("#tasting-chart-<%= tasting_note.id %>").parent();
-
-    var canvas = $("#tasting-chart-<%= tasting_note.id %>")[0];
-    var width = con.width();
-    canvas.width = width;
-    canvas.height = width;
-
-    FlavorWheel.init("#tasting-chart-<%= tasting_note.id %>", names, values, false)
-  };
-
-  resizeCanvas();
-  FlavorWheel.init("#tasting-chart-<%= tasting_note.id %>", names, values, true)
-
-  $(window).on('resize', container, resizeCanvas)
 })
 
 

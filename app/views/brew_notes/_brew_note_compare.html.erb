@@ -9,7 +9,7 @@
 <h2>General notes</h2>
 <%= render partial: "high_level_notes", locals: { brew_note: brew_note } %>
 
-<h2>Tasting Notes (click to expand)</h2>
+<h2>Tasting Notes <%= "(click to expand)" unless brew_note.tasting_notes.empty? %></h2>
 <% if !brew_note.tasting_notes.empty? %>
   <ul id="brew-note-<%= brew_note.id %>-tasting-notes">
     <li id="displayed-note-<%= brew_note.id %>"></li>

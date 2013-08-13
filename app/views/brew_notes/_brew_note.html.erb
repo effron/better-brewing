@@ -1,7 +1,8 @@
 
 <li class="brew-note group">
   <% if params[:recipe_id] %>
-  <ul><li><%= link_to brew_note.created_at.to_datetime.strftime('%d-%m-%y %l:%M'), brew_note, class: "main-note-link" %></li></ul>
+  <% date = brew_note.created_at.to_datetime.strftime('%d-%m-%y %l:%M') %>
+  <ul><li><%= link_to "Brew note: #{date}", brew_note, class: "main-note-link" %></li></ul>
   <ul class="group sub-note-ul">
     <li><%= link_to "Left", brew_note, remote: true, class: "left", "data-id"=> brew_note.id %></li>
     <li><%= link_to "Right", brew_note, remote: true, class: "right","data-id"=> brew_note.id %></li>

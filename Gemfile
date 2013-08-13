@@ -11,15 +11,16 @@ group :production do
   gem 'pg'
 end
 
-group :development do
+group :development, :test do
   gem 'letter_opener'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
   gem 'sqlite3'
   gem 'annotate'
+  gem 'rspec-rails'
+  gem 'capybara'
 end
-
 
 # For pagination
 gem 'dm-aggregates'

@@ -1,7 +1,7 @@
 <div class="top">
   <header class="main-header group">
     <figure class="decal"><%= image_tag "bottles.png" %></figure>
-    <figure class="main-logo"><%= image_tag "logo.png" %></figure>
+    <figure class="main-logo"><a href="<%= recipes_url %>"><%= image_tag "logo.png" %></a></figure>
     <nav>
       <ul>
         <% if user_signed_in? %>

@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :destroy]
 
   def index
-    if params[:search]
+    if !params[:search].blank?
       @recipes = Recipe.find_by_fuzzy_name(params[:search])
       @recipes = Kaminari.paginate_array(@recipes).page(params[:page]).per(12)
     else

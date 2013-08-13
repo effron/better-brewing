@@ -21,7 +21,7 @@ class RecipesController < ApplicationController
 
   def create
 
-    xml_url = params[:xml_url]
+    xml_url = params[:xml_url].strip
     uploaded_recipe = params[:xml_file]
 
     if !xml_url.blank?

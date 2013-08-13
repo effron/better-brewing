@@ -2,7 +2,7 @@
 <div id="new-recipe">
   <h1>Upload a recipe</h1>
   <h2>Enter a url for the BeerXML version of a recipe you'd like to brew.</h2>
-  <h3>E.g., http://www.brewtoad.com/recipes/good-brewer-ish-hefeweizen.xml</h3>
+  <h2>Or, upload a BeerXML file from your computer.
 
 
   <%= form_for @recipe, html: { enctype: "multipart/form-data" } do |f| %>
@@ -10,6 +10,8 @@
     <%= f.text_field :name %>
 
     <label for="xml_url">BeerXML URL</label>
+    <h3>E.g., http://www.brewtoad.com/recipes/good-brewer-ish-hefeweizen.xml</h3>
+    
     <input id="xml_url" name="xml_url" type="url" size="30">
 
     <label for="recipe_xml_file">Beer XML File</label>

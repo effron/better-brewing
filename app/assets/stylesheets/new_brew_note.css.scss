@@ -46,6 +46,25 @@
       float: left;
     }
   }
+
+  .boil-ingredients{
+    padding: 20px;
+    margin: 20px;
+    float: right;
+    border: 1px solid black;
+    border-collapse: collapse;
+    &> thead > tr{
+      background: #eee;
+    }
+    th, td{
+      border: 1px solid black;
+      padding: 5px;
+    }
+    tr:nth-child(even){
+      background: #ddd;
+    };
+  }
+
   label{
     display: block;
     padding: 10px;

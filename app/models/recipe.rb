@@ -46,6 +46,12 @@ class Recipe < ActiveRecord::Base
     end
   end
 
+  def boil_ingredients
+    b_hops = hops.select { |hop| hop.use == "Boil" }
+    b_miscs = miscs.select { |m| m.use == "Boil" }
+    (b_hops + b_miscs).sort_by { |ingredient| ingredient.time.to_f }.reverse
+  end
+
   def hops
     recipe_object.hops
   end
@@ -100,6 +106,10 @@ class Recipe < ActiveRecord::Base
 
   def batch_size
     recipe_object.batch_size
+  end
+
+  def batch_size_gallons
+    (batch_size.to_f * 0.264172).round(2)
   end
 
   def closest_styles

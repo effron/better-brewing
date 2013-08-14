@@ -1,12 +1,12 @@
 <div id="recipe">
-  
+
   <header>
     <h1 class="recipe-name"><%= @recipe.name %></h1>
     <h2 class="recipe-author">
       By <%= link_to @recipe.user.username, @recipe.user %>
     </h2>
     <% if @recipe.parent %>
-    <h2 class="original-author">Originally uploaded by: 
+    <h2 class="original-author">Originally uploaded by:
       <%= link_to @recipe.parent.user.username, @recipe.parent.user %></h2>
     <% end %>
 
@@ -20,10 +20,11 @@
     </p>
     <% end %>
     <p class="explainer">
-      Or click on Brew Notes to see how this brew turned out<%= " for #{@recipe.user.username}" unless current_users_recipe?(@recipe) %>.
+      Or click on Brew Notes to see how this brew turned out<%=
+       " for #{@recipe.user.username}" unless current_users_recipe?(@recipe) %>.
     </p>
   </header>
-  
+
   <div class="buttons group">
     <ul>
       <li>
@@ -32,24 +33,24 @@
                      class:"brew-me" %>
         <% else %>
           <form action="<%= recipes_url %>" method="post">
-            <input type="hidden" name="authenticity_token" 
+            <input type="hidden" name="authenticity_token"
                    value="<%= form_authenticity_token %>">
-            <input type="hidden" name="recipe[name]" 
+            <input type="hidden" name="recipe[name]"
                    value="<%= @recipe.name %>">
             <input type="hidden" name="recipe[xml]" value="<%= @recipe.xml %>">
-            <input type="hidden" name="recipe[parent_id]" 
+            <input type="hidden" name="recipe[parent_id]"
              value="<%= @recipe.parent ? @recipe.parent_id : @recipe.id %>">
             <input type="submit" value="Clone Me" class="clone-me">
           </form>
         <% end %>
       </li>
       <li>
-        <%= link_to "Brew Notes", recipe_brew_notes_url(@recipe.id), 
+        <%= link_to "Brew Notes", recipe_brew_notes_url(@recipe.id),
                     class: "brew-notes" %>
       </li>
     </ul>
   </div>
-  
+
   <div class="properties ingredients">
     <h2>Predicted Recipe Properties</h2>
     <table>

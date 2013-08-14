@@ -16,6 +16,10 @@
     &:active{
       color: darken(adjust_hue($main-color, 140), 30%);
     };
+    &.anchor {
+      position: relative;
+      top: -$header-height;
+    }
   }
 
   h2{
@@ -139,8 +143,38 @@
       color: white;
     };
   }
-  
+
   .tasting-notes > a {
     margin: 20px;
+  }
+
+  .tasting-notes li {
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    margin: 10px;
+    width: 150px;
+    float: left;
+    a {
+      float: left;
+    }
+  }
+
+
+
+  .tasting-notes .figure-container{
+    float: left;
+    position: relative;
+    width: 110px;
+    height: 110px;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .tasting-notes figure{
+    position: relative;
+    margin-left: -18%;
+    margin-top: -18%;
+    width: 150px;
+    height: 150px;
   }
 }

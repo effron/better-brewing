@@ -1,12 +1,12 @@
 var FlavorWheel = (function(){
-  var Wheel = function(canvasId, names, values, animation){
+  var Wheel = function(canvasId, names, values, customOptions){
 
     this.canvasId = canvasId;
     this.names = names;
     this.values = values;
-    this.animation = animation;
+    this.customOptions = customOptions
 
-    var ctx, data, options, container, canvas;
+    var ctx, data, container, canvas;
 
     this.init = function(){
       container = $(canvasId).parent();
@@ -15,31 +15,33 @@ var FlavorWheel = (function(){
 
       data = parseInfo(names, values);
 
-      bindEvents();
-      resizeCanvas();
-      draw(true);
+      this.bindEvents();
+      this.resizeCanvas();
+      this.draw(this.customOptions);
     };
 
     this.off = function(){
       $(window).off('resize', container)
     }
 
-    var bindEvents = function(){
-      $(window).on('resize', container, resizeCanvas)
-      console.log(container)
+    this.bindEvents = function(){
+      var that = this
+      $(window).on('resize', container, that.resizeCanvas.bind(that))
     }
 
-    var draw = function(animation){
-      options = {
+    this.draw = function(customOptions){
+      var options = {
         scaleOverride: true,
         scaleSteps: 5,
         scaleStepWidth: 1,
         scaleStartValue: 0,
         scaleShowLabels: true,
-        animation: animation,
+        animation: true,
         animationSteps: 45,
         animationEasing: "easeOutBounce"
       };
+
+      $.extend(options, customOptions)
 
       new Chart(ctx).Radar(data, options);
     }
@@ -57,11 +59,14 @@ var FlavorWheel = (function(){
       };
     }
 
-    var resizeCanvas = function(){
+    this.resizeCanvas = function(){
+      var that = this
       var width = container.width();
       canvas.width = width;
       canvas.height = width;
-      draw(false);
+      var settings = $.extend({}, that.customOptions, {animation: false})
+
+      that.draw(settings);
     };
   }
 

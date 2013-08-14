@@ -5,10 +5,10 @@
 
 $(function(){
 
-  var names = <%= tasting_note.flavor_attribute_names.to_json.html_safe %>
+  var names = []
   var values = <%= tasting_note.flavor_attribute_values.to_json %>
-
-  new FlavorWheel.Wheel("#tasting-chart-<%= tasting_note.id %>", names, values, {animation: true}).init()
+  var options = {animation: false, pointDot: false, scaleShowLabels: false}
+  new FlavorWheel.Wheel("#tasting-chart-<%= tasting_note.id %>", names, values, options).init()
 
 })
 

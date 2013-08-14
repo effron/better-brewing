@@ -6,10 +6,10 @@
 <p class="explainer">Here are all of the notes you took on brew day.</p>
 <p>You can edit any part of this page, and add more notes for the next part of your brew</p>
 
-<p>Check out the fermenting checks, bottling notes, and tasting notes sections of this page to improve your notes even more!</p>
+<p>Check out the <%= link_to "fermentation checks", brew_note_url(@brew_note, anchor: "fermentation_checks") %>, <%= link_to "bottling notes", brew_note_url(@brew_note, anchor: "bottling_notes") %>, and <%= link_to "tasting notes", brew_note_url(@brew_note, anchor: "tasting_notes") %> sections of this page to improve your notes even more!</p>
 
 <p>Or, click the 'Compare Notes' button above to compare this brew with the other times you've brewed this beer</p>
-  
+
 <h2>General Notes</h2>
 <p><%= @brew_note.body %></p>
 
@@ -34,17 +34,22 @@
     <%= round_or_nil(@brew_note.boil_note.post_boil_volume_gallons, 2) %></li>
 </ul>
 
+
+
 <div class="editable-ul-container">
 <%= render partial: "fermentation_note",
            locals: { fermentation_note: @brew_note.fermentation_note } %>
 </div>
 
+<a name="fermentation_checks" class="anchor"></a>
 
 <div class="editable-table-container">
 
 <%= render "fermentation_checks" %>
 
 </div>
+
+<a name="bottling_notes" class="anchor"></a>
 
 <h2>Bottling Notes</h2>
 <ul>
@@ -55,20 +60,31 @@
   <li>General Note: <%= @brew_note.bottling_note.body %></li>
 </ul>
 
+<a name="tasting_notes" class="anchor"></a>
+
 <div class="tasting-notes">
-<% unless @brew_note.tasting_notes.empty? %>
-  <h2>Tasting Notes</h2>
-  <ul>
+  <% unless @brew_note.tasting_notes.empty? %>
+  <h2>Tasting Notes (click to view detials)</h2>
+  <ul class="group">
   <% @brew_note.tasting_notes.each do |tasting_note| %>
     <li class="group">
-      <%= link_to clean_date(tasting_note), tasting_note %>
+      <a href="<%= tasting_note_url(tasting_note) %>">
+        <%= clean_date(tasting_note) %>
+        <div class="figure-container">
+          <figure>
+            <%= render partial: "tasting_notes/wheel_thumbnail",
+                       locals: { tasting_note: tasting_note} %>
+          </figure>
+        </div>
+      </a>
     </li>
   <% end %>
   </ul>
 <% end %>
 
 <% if current_user.brew_notes.include?(@brew_note) %>
-<%= link_to "Add tasting note", new_brew_note_tasting_note_url(@brew_note.id) %>
+<%= link_to "Add new tasting note",
+    new_brew_note_tasting_note_url(@brew_note.id) %>
 <% end %>
 </div>
 

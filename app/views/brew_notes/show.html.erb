@@ -3,7 +3,13 @@
 <h1>BREW NOTE FOR <%= link_to @brew_note.recipe.name, @brew_note.recipe %></h1>
 <%= link_to "Compare Notes", recipe_brew_notes_url(@brew_note.recipe_id),
             class: "compare-notes" %>
+<p class="explainer">Here are all of the notes you took on brew day.</p>
+<p>You can edit any part of this page, and add more notes for the next part of your brew</p>
 
+<p>Check out the fermenting checks, bottling notes, and tasting notes sections of this page to improve your notes even more!</p>
+
+<p>Or, click the 'Compare Notes' button above to compare this brew with the other times you've brewed this beer</p>
+  
 <h2>General Notes</h2>
 <p><%= @brew_note.body %></p>
 
@@ -54,7 +60,9 @@
   <h2>Tasting Notes</h2>
   <ul>
   <% @brew_note.tasting_notes.each do |tasting_note| %>
-    <li><%= link_to tasting_note.created_at.to_datetime.strftime('%d-%m-%y %l:%M'), tasting_note %></li>
+    <li class="group">
+      <%= link_to clean_date(tasting_note), tasting_note %>
+    </li>
   <% end %>
   </ul>
 <% end %>

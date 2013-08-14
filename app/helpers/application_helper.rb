@@ -17,5 +17,9 @@ module ApplicationHelper
   def current_users_recipe?(recipe)
     current_user && current_user.id == recipe.user.id
   end
+  
+  def clean_date(object)
+    object.created_at.to_datetime.strftime('%d-%m-%y %l:%M')
+  end
 
 end

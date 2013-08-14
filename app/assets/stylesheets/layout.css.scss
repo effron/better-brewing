@@ -7,6 +7,7 @@ $header-height: 70px;
 $main-width: 100%;
 $main-min-width: 1140px;
 $sidebar-height: 220px;
+$accent-background: #FFFA94;
 
 //CSS Reset Styles
 html, body, div, header, h1, h2, h3, nav, ul, li, a, footer, button, form, input, figure, img, table, thead, tbody, tfoot, tr, th, td, textarea, p{
@@ -90,7 +91,8 @@ footer {
   color: red;
   font-weight: bold;
   margin-top: 15px;
-  text-align: center;
+  padding-left: 10px;
+  background: $accent-background;
 }
 
 input {

@@ -1,3 +1,9 @@
+<header>
+  <p>Welcome to Better Brewing!</p>
+  <p>To get started, select a recipe below, or upload your own.</p>
+  <p>Start brewing better beer!</p>
+</header>
+
 <div id="recipes-index">
   <div id="search-field">
     <%= form_tag recipes_url, method: "get", remote: true do %>
@@ -17,22 +23,22 @@
 
 <script>
 $(function(){
-  
+
   var timer = null
-  
+
   $("#search-field").on("ajax:success", function(event, data){
     $(event.target).removeClass("ajax-waiting")
-    $("#recipe-list").html(data)  
+    $("#recipe-list").html(data)
   })
-  
+
   $("#search-field").on("ajax:error", function(event, xhr, status, error){
     $(event.target).removeClass("ajax-waiting")
   })
-  
+
   $("#search-field").on("ajax:before", function(event, data){
     $(event.target).addClass("ajax-waiting")
-  })  
-  
+  })
+
   $("#search-field").on("keyup", function(){
     if (timer) {
       window.clearTimeout(timer);
@@ -41,8 +47,8 @@ $(function(){
       timer = null;
       $("#search-field form").submit();
     }, 400 );
-  });  
-  
+  });
+
 })
 
 

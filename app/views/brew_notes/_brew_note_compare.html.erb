@@ -26,19 +26,19 @@
 $(function(){
 
   $("#brew-note-<%= brew_note.id %>-tasting-notes").on("ajax:success", "li", function(event, data){
-    $("#displayed-note-<%= brew_note.id %>").html(data)
-    $(this).addClass("highlighted")
-    $(this).siblings().removeClass("highlighted")
-    $(window).off("resize","#displayed-note-<%= brew_note.id %>")
-  })
+    $("#displayed-note-<%= brew_note.id %>").html(data);
+    $(this).addClass("highlighted");
+    $(this).siblings().removeClass("highlighted");
+    $(window).off("resize","#displayed-note-<%= brew_note.id %>");
+  });
 
   $("#brew-note-<%= brew_note.id %>-tasting-notes").on("ajax:before", "li", function(event, data){
-    $(this).addClass("ajax-waiting")
-  })
+    $(this).addClass("ajax-waiting");
+  });
 
   $("#brew-note-<%= brew_note.id %>-tasting-notes").on("ajax:complete", "li", function(event, data){
-    $(this).removeClass("ajax-waiting")
-  })
+    $(this).removeClass("ajax-waiting");
+  });
 
 
 })

@@ -111,11 +111,10 @@ $(function(){
   });
 
   $(".bottling-notes").on("ajax:success", ".edit-bottling-note", function(event, data){
-    $(".bottling-notes").html(data)
+    $(".bottling-notes").html(data);
   });
 
   $(".bottling-notes").on("ajax:success", "#bottling-note", function(event, data){
-    console.log(data)
     $(".bottling-notes").html(data);
   });
 

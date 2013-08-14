@@ -1,20 +1,46 @@
 #tasting-note-show{
-  
+
   h1{
     padding: 20px;
     font-size: 24px;
   }
-  
+
+  h2{
+    padding: 10px;
+  }
+
+  a{
+    color: blue;
+    &:hover{
+      text-decoration: underline;
+    };
+    &:active{
+      color: darken(blue, 20%);
+    };
+  }
+
   .chart-container{
     width: 500px;
     float: left;
+    padding-right: 30px;
   }
-  
+
   .notes{
     padding: 20px;
     li{
       padding-top: 10px;
     }
   }
-  
+
+  .back-to-brew{
+    padding: 10px;
+  }
+
+  [value="Destroy tasting note"]{
+    margin-top: 10px;
+    &:hover{
+      background: desaturate(red, 5%);
+    };
+  }
+
 }

@@ -1,9 +1,9 @@
 <div id="tasting-note-show">
   <header>
-  <h1>Tasting Note for <%= link_to @tasting_note.brew_note.recipe.name,
-                                   @tasting_note.brew_note.recipe %>
-  </h1>
-  <h2><%= link_to "Back to brew note", @tasting_note.brew_note %></h2>
+    <h1>Tasting Note for <%= link_to @tasting_note.brew_note.recipe.name,
+                                     @tasting_note.brew_note.recipe %>
+    </h1>
+    <h2 class="back-to-brew"><%= link_to "Back to brew note", brew_note_url(@tasting_note.brew_note, anchor: "tasting_notes") %></h2>
   </header>
   <h2>Overall Rating: <%= @tasting_note.rating %></h2>
 

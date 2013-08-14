@@ -20,4 +20,17 @@ describe "RecipeUploads" do
       end
     end
   end
+  
+  describe "Cloning Recipes" do
+    it "should clone the recipe" do
+      sign_up("original_author")
+      upload_recipe
+      sign_out
+      sign_up("cloner")
+      visit recipe_url(1)
+      click_button "Clone Me"
+      
+      page.should have_content "By cloner"
+    end
+  end
 end

@@ -1,4 +1,5 @@
 <div id="recipe">
+  
   <header>
     <h1 class="recipe-name"><%= @recipe.name %></h1>
     <h2 class="recipe-author">
@@ -9,27 +10,33 @@
       <%= link_to @recipe.parent.user.username, @recipe.parent.user %></h2>
     <% end %>
   </header>
+  
   <div class="buttons group">
     <ul>
-    <li>
-      <% if current_user && @recipe.user_id == current_user.id %>
-      <%= link_to "Brew Me!", new_recipe_brew_note_url(@recipe.id), class:"brew-me" %>
-    <% else %>
-      <form action="<%= recipes_url %>" method="post">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <input type="hidden" name="recipe[name]" value="<%= @recipe.name %>">
-        <input type="hidden" name="recipe[xml]" value="<%= @recipe.xml %>">
-        <input type="hidden" name="recipe[parent_id]" 
-        value="<%= @recipe.parent ? @recipe.parent_id : @recipe.id %>">
-        <input type="submit" value="Clone Me" class="clone-me">
-      </form>
-    <% end %>
-    </li>
-    <li>
-    <%= link_to "Brew Notes", recipe_brew_notes_url(@recipe.id), class: "brew-notes" %>
-    </li>
+      <li>
+        <% if current_user && @recipe.user_id == current_user.id %>
+          <%= link_to "Brew Me!", new_recipe_brew_note_url(@recipe.id),
+                     class:"brew-me" %>
+        <% else %>
+          <form action="<%= recipes_url %>" method="post">
+            <input type="hidden" name="authenticity_token" 
+                   value="<%= form_authenticity_token %>">
+            <input type="hidden" name="recipe[name]" 
+                   value="<%= @recipe.name %>">
+            <input type="hidden" name="recipe[xml]" value="<%= @recipe.xml %>">
+            <input type="hidden" name="recipe[parent_id]" 
+             value="<%= @recipe.parent ? @recipe.parent_id : @recipe.id %>">
+            <input type="submit" value="Clone Me" class="clone-me">
+          </form>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "Brew Notes", recipe_brew_notes_url(@recipe.id), 
+                    class: "brew-notes" %>
+      </li>
     </ul>
   </div>
+  
   <div class="properties ingredients">
     <h2>Predicted Recipe Properties</h2>
     <table>
@@ -147,20 +154,25 @@
           </tr>
         </thead>
         <tbody>
-          <% @recipe.miscs.sort_by {|misc| misc.time.to_f }.reverse.each do |additive| %>
+          <% @recipe.miscs.sort_by {|misc| misc.time.to_f }.
+             reverse.each do |misc| %>
             <tr class="additives-row">
-              <td title="<%= additive.notes %>"><%= additive.name %></td>
-              <% if additive.amount.unit == "kilograms" %>
-              <td><%= additive.amount.to_oz.to_f.round(2) %> oz</td>
+              <td title="<%= misc.notes %>"><%= misc.name %></td>
+              <% if misc.amount.unit == "kilograms" %>
+                <td><%= misc.amount.to_oz.to_f.round(2) %> oz</td>
               <% else %>
-              <td><%= additive.amount.to_f.round(3) %> <%= additive.amount.unit %></td>
+                <td>
+                  <%= misc.amount.to_f.round(3) %> <%= misc.amount.unit %>
+                </td>
               <% end %>
-              <% if additive.time.to_f.to_i % 1440 == 0 %>
-              <td><%= additive.time.to_days.to_f.to_i %> days</td>
+              <% if misc.time.to_f.to_i % 1440 == 0 %>
+                <td><%= misc.time.to_days.to_f.to_i %> days</td>
               <% else %>
-              <td><%= additive.time.to_f.to_i %> <%= additive.time.unit %></td>
+                <td>
+                  <%= misc.time.to_f.to_i %> <%= misc.time.unit %>
+                </td>
               <% end %>
-              <td><%= additive.use %></td>
+              <td><%= misc.use %></td>
             </tr>
           <% end %>
         </tbody>

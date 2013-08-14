@@ -50,6 +50,10 @@ def sign_up_as_tester
   sign_up("tester")
 end
 
+def sign_out
+  click_button "Sign Out"
+end
+
 def upload_recipe
   visit new_recipe_url
   fill_in "recipe_name", with: "test_recipe"

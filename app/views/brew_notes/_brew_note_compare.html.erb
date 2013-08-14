@@ -32,5 +32,14 @@ $(function(){
     $(window).off("resize","#displayed-note-<%= brew_note.id %>")
   })
 
+  $("#brew-note-<%= brew_note.id %>-tasting-notes").on("ajax:before", "li", function(event, data){
+    $(this).addClass("ajax-waiting")
+  })
+
+  $("#brew-note-<%= brew_note.id %>-tasting-notes").on("ajax:complete", "li", function(event, data){
+    $(this).removeClass("ajax-waiting")
+  })
+
+
 })
 </script>

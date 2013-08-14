@@ -7,7 +7,6 @@ https://github.com/thoughtbot/capybara-webkit
 ###brew day experience
 Add timers
 Add checklists
-Add helpful hints
 
 ###brew note compare
 

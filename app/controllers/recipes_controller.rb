@@ -21,12 +21,12 @@ class RecipesController < ApplicationController
 
   def create
 
-    xml_url = params[:xml_url].strip
+    xml_url = params[:xml_url]
     uploaded_recipe = params[:xml_file]
 
     if !xml_url.blank?
       begin
-        open(xml_url) do |file|
+        open(xml_url.strip) do |file|
           params[:recipe][:xml] = file.read
         end
       rescue

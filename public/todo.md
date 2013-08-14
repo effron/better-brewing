@@ -1,5 +1,8 @@
 ##TODO
 
+##Javascript tests
+visit this and figure it out:
+https://github.com/thoughtbot/capybara-webkit
 
 ###brew day experience
 Add timers
@@ -7,7 +10,6 @@ Add checklists
 Add helpful hints
 
 ###brew note compare
-Abstract flavor wheel module to take custom options, update the init method to apply those custom options to the default options. This will easily allow for thumbnail to not show the labels
 
 Tasting notes list: AJAX SPINNERS
 

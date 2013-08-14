@@ -1,38 +1,43 @@
 <div id="new-brew-note">
-  <p>Welcome to your brew! We will walk you through each step as you make your beer. Take notes as you brew so that you can become a better brewer!</p>
-  <div id="starter-form">
-    <%= render "hidden_form" %>
-  </div>
+  <button class="toggle-directions">Toggle Instructions</button>
   <section class="current-brew-view">
-    
+    <p>Welcome to your brew! We will walk you through each step as you make your beer. Take notes as you brew so that you can become a better brewer!</p>
+    <div id="starter-form">
+      <%= render "hidden_form" %>
+    </div>
   </section>
 </div>
 
 <script>
 
 $(function(){
-  
+
   $("#new_brew_note").on("ajax:success", function(event, data){
-    $(".current-brew-view").append(data);
+    $(".current-brew-view").html(data);
     $("#starter-form").addClass("hidden")
   });
-  
+
   $(".current-brew-view").on("ajax:success", "#mash-notes", function(event, data){
-    $(".current-brew-view").html(data);    
+    $(".current-brew-view").html(data);
   })
-  
+
   $(".current-brew-view").on("ajax:success", "#sparge-note", function(event, data){
-    $(".current-brew-view").html(data);    
+    $(".current-brew-view").html(data);
   })
-  
+
   $(".current-brew-view").on("ajax:success", "#boil-note", function(event, data){
-    $(".current-brew-view").html(data);    
+    $(".current-brew-view").html(data);
   })
-  
+
   $(".current-brew-view").on("ajax:success", "#fermentation-note", function(event, data){
-    $("body").html(data);    
+    $("body").html(data);
   })
-  
+
+  $(".toggle-directions").on("click", function(event){
+    $(".current-brew-view").toggleClass("no-directions")
+    console.log("CLICKED")
+  })
+
 })
 
 </script>

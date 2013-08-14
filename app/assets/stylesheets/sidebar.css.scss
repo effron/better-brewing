@@ -4,32 +4,37 @@
   min-width: $main-min-width * .2;
   position:fixed;
   background-color: $sidebar-light;
-}
 
-.sidebar img{
-  padding: 0 10px;
-  height: 12px;
-}
 
-.sidebar li {
-  &:last-child{
+  img{
+    padding: 0 10px;
+    height: 12px;
   }
-  &:nth-child(odd){
-    background-color: $sidebar-dark;
-  };
-}
 
-.sidebar li a{
-  display:block;
-  padding: 10px;
-  color: white;
-  font-weight: 300;
-  font-style: italic;
-  font-size: 24px;
-  &:hover{
-    background: lighten(desaturate($main-color, 100%), 30%);
+  li {
+    &:nth-child(odd){
+      background-color: $sidebar-dark;
+    };
   }
-  &:active{
-    background: desaturate($main-color, 100%);
+
+  li a{
+    display:block;
+    padding: 10px;
+    color: white;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 24px;
+    &:hover{
+      background: lighten(desaturate($main-color, 100%), 30%);
+      text-decoration: none;
+    }
+    &:active{
+      background: desaturate($main-color, 100%);
+    }
+  }
+
+  i{
+    font-size: 16px;
+    padding: 5px;
   }
 }

@@ -51,15 +51,11 @@
 
 <a name="bottling_notes" class="anchor"></a>
 
-<h2>Bottling Notes</h2>
-<ul>
-  <li>Amount bottled (gallons):
-    <%= round_or_nil(@brew_note.bottling_note.volume_gallons, 2) %></li>
-  <li>Priming Sugar Type: <%= @brew_note.bottling_note.priming_sugar_type %></li>
-  <li>Priming Sugar Amount: <%= @brew_note.bottling_note.priming_sugar_amount %></li>
-  <li>General Note: <%= @brew_note.bottling_note.body %></li>
-</ul>
+<div class="bottling-notes">
+  <%= render partial: "bottling_note",
+             locals: { bottling_note: @brew_note.bottling_note }%>
 
+</div>
 <a name="tasting_notes" class="anchor"></a>
 
 <div class="tasting-notes">
@@ -107,13 +103,22 @@ $(function(){
   EditableTable.init();
 
   $(".editable-ul-container").on("ajax:success", ".edit-fermentation-note",function(event, data){
-    console.log(data);
     $(".editable-ul-container").html(data);
   });
 
   $(".editable-ul-container").on("ajax:success", "#fermentation-note", function(event, data){
     $(".editable-ul-container").html(data);
   });
+
+  $(".bottling-notes").on("ajax:success", ".edit-bottling-note", function(event, data){
+    $(".bottling-notes").html(data)
+  });
+
+  $(".bottling-notes").on("ajax:success", "#bottling-note", function(event, data){
+    console.log(data)
+    $(".bottling-notes").html(data);
+  });
+
 
 })
 

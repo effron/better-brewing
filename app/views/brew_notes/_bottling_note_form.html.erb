@@ -1,0 +1,27 @@
+<%= form_for bottling_note,
+    remote: true, html: {id: "bottling-note"} do |f| %>
+
+  <h2>Bottling Notes</h2>
+  <label for="bottling_volume">Volume Bottled (gallons)</label>
+  <input type="text" id="bottling_volume"
+         name="bottling_note[volume_gallons]"
+         value="<%= round_or_nil(bottling_note.volume_gallons, 2) %>">
+
+  <label for="priming_sugar_type">Priming Sugar Type (eg. Dextrose)</label>
+  <input type="text" id="priming_sugar_type"
+         name="bottling_note[priming_sugar_type]"
+         value="<%= bottling_note.priming_sugar_type  %>">
+
+  <label for="priming_sugar_amount">Priming Sugar Amount (oz.)</label>
+  <input type="text" id="priming_sugar_amount"
+         name="bottling_note[priming_sugar_amount]"
+         value="<%= bottling_note.priming_sugar_amount %>">
+
+  <label for="bottling_body">Misc Notes</label>
+  <input type="text" id="bottling_body"
+         name="bottling_note[body]"
+         value="<%= bottling_note.body%>">
+
+  <%= f.submit "Update Bottling Notes" %>
+
+<% end %>

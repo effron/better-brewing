@@ -1,0 +1,14 @@
+<h2>Bottling Notes</h2>
+<ul>
+  <li>Amount bottled (gallons):
+    <%= round_or_nil(bottling_note.volume_gallons, 2) %></li>
+  <li>Priming Sugar Type: <%= bottling_note.priming_sugar_type %></li>
+  <li>Priming Sugar Amount: <%= bottling_note.priming_sugar_amount %></li>
+  <li>General Note: <%= bottling_note.body %></li>
+</ul>
+
+<% if current_user.brew_notes.include?(bottling_note.brew_note) %>
+<%= link_to "Edit bottling notes",
+            edit_bottling_note_url(bottling_note.id),
+            remote: true, class: "edit-bottling-note" %>
+<% end %>

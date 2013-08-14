@@ -2,16 +2,22 @@
     html: {id: "fermentation-note"} do |f| %>
 
 <h2>Fermentation Notes</h2>
+
+<p>Pour your cooled wort into your fermenter, and top off to around 5 gallons</p>
 <label for="fermenter_volume">Volume in Fermenter (gallons)</label>
 <input type="text" id="fermenter_volume"
        name="brew_note[fermentation_note_attributes][volume_gallons]"
        value="<%= brew_note.fermentation_note.volume_gallons %>">
+
+<p>Take a gravity sample using your hydrometer</p>
 
 <label for="og">Measured Original Gravity (eg. 1060)</label>
 <input type="text" id="og"
        name="brew_note[fermentation_note_attributes][og]"
        value="<%= brew_note.fermentation_note.og %>">
 
+<p>Pitch the yeast, seal your fermenting vessel. Congrats, your brew day is over!</p>
+  
 <label for="ferm_body">Misc Notes</label>
 <textarea id="ferm_body"
        name="brew_note[fermentation_note_attributes][body]"

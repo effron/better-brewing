@@ -6,15 +6,28 @@
       By <%= link_to @recipe.user.username, @recipe.user %>
     </h2>
     <% if @recipe.parent %>
-    <h2 class="original-author">Original uploaded by: 
+    <h2 class="original-author">Originally uploaded by: 
       <%= link_to @recipe.parent.user.username, @recipe.parent.user %></h2>
     <% end %>
+
+    <% if current_users_recipe?(@recipe) %>
+    <p class="explainer">
+      Ready to brew? Click Brew Me to walk through the process!
+    <p>
+    <% else %>
+    <p class="explainer">
+      Like this recipe? Click "Clone Me" to get started!
+    </p>
+    <% end %>
+    <p class="explainer">
+      Or click on Brew Notes to see how this brew turned out<%= " for #{@recipe.user.username}" unless current_users_recipe?(@recipe) %>.
+    </p>
   </header>
   
   <div class="buttons group">
     <ul>
       <li>
-        <% if current_user && @recipe.user_id == current_user.id %>
+        <% if current_users_recipe?(@recipe) %>
           <%= link_to "Brew Me!", new_recipe_brew_note_url(@recipe.id),
                      class:"brew-me" %>
         <% else %>

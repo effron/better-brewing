@@ -13,5 +13,9 @@ module ApplicationHelper
       number.round(decimals)
     end
   end
+  
+  def current_users_recipe?(recipe)
+    current_user && current_user.id == recipe.user.id
+  end
 
 end

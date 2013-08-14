@@ -1,6 +1,10 @@
 <%= form_for brew_note, url: "#{brew_note_url(brew_note.id)}?sparge",
     remote: true, html: {id: "sparge-note"} do |f| %>
   <h2>Sparge Notes</h2>
+  <p>Remove your grains from the mash water by pouring through a strainer/grain bag into your sparge water.</p> 
+  <p>Dunk the grains into the mixture a couple of times, and let it drain.</p>
+  <p>Record your actual sparge volume and temperature, then click through to the next step!</p>
+  
   <label for="sparge_volume">Sparge Volume (gallons)</label>
   <input type="text" id="sparge_volume"
          name="brew_note[sparge_note_attributes][volume_gallons]"
@@ -19,6 +23,6 @@
   <input type="hidden" name="brew_note[sparge_note_attributes][id]"
         value="<%= brew_note.sparge_note.id %>">
 
-  <%= f.submit "On to fermenting!" %>
+  <%= f.submit "On to the boil!" %>
 
 <% end %>

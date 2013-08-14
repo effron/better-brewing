@@ -4,6 +4,10 @@
     <h2 class="recipe-author">
       By <%= link_to @recipe.user.username, @recipe.user %>
     </h2>
+    <% if @recipe.parent %>
+    <h2 class="original-author">Original uploaded by: 
+      <%= link_to @recipe.parent.user.username, @recipe.parent.user %></h2>
+    <% end %>
   </header>
   <div class="buttons group">
     <ul>
@@ -15,6 +19,8 @@
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         <input type="hidden" name="recipe[name]" value="<%= @recipe.name %>">
         <input type="hidden" name="recipe[xml]" value="<%= @recipe.xml %>">
+        <input type="hidden" name="recipe[parent_id]" 
+        value="<%= @recipe.parent ? @recipe.parent_id : @recipe.id %>">
         <input type="submit" value="Clone Me" class="clone-me">
       </form>
     <% end %>

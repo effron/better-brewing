@@ -7,7 +7,9 @@ class RecipesController < ApplicationController
       @recipes = Recipe.find_by_fuzzy_name(params[:search])
       @recipes = Kaminari.paginate_array(@recipes).page(params[:page]).per(12)
     else
-      @recipes = Recipe.page(params[:page]).per(12)
+      @recipes = Kaminari.paginate_array(
+        Recipe.all.sort_by { |recipe| recipe.children.length }.reverse
+        ).page(params[:page]).per(12)
     end
 
     if request.xhr?

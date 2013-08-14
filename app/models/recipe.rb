@@ -11,9 +11,11 @@
 #
 
 class Recipe < ActiveRecord::Base
-  attr_accessible :name, :user_id, :xml
+  attr_accessible :name, :user_id, :xml, :parent_id
 
   belongs_to :user
+  belongs_to :parent, class_name: "Recipe"
+  has_many :children, class_name: "Recipe", foreign_key: :parent_id
   has_many :brew_notes
   has_many :tasting_notes, through: :brew_notes
 

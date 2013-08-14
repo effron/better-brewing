@@ -11,10 +11,13 @@ group :production do
   gem 'pg'
 end
 
-group :development, :test do
-  gem 'letter_opener'
+group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+end
+
+group :development, :test do
+  gem 'letter_opener'
   gem 'quiet_assets'
   gem 'sqlite3'
   gem 'annotate'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130811213318) do
+ActiveRecord::Schema.define(:version => 20130814011156) do
 
   create_table "boil_notes", :force => true do |t|
     t.integer  "brew_note_id"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(:version => 20130811213318) do
     t.text     "xml"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "parent_id"
   end
 
   create_table "serving_vessels", :force => true do |t|

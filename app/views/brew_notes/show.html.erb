@@ -3,7 +3,9 @@
 <h1>BREW NOTE FOR <%= link_to @brew_note.recipe.name, @brew_note.recipe %></h1>
 <%= link_to "Compare Notes", recipe_brew_notes_url(@brew_note.recipe_id),
             class: "button" %>
+
 <% if current_user.brew_notes.include?(@brew_note) %>
+
 <p class="explainer">Here are all of the notes you took on brew day.</p>
 <p class="explainer">You can edit any part of this page, and add more notes for the next steps of your brew</p>
 
@@ -14,8 +16,11 @@
 <p class="explainer">Here are the detailed noets for this brew.</p>
 <p class="explainer">To compare with other brews, click on the 'Compare Notes' button above</p>
 <% end %>
+
+<section class="notes-section">
 <h2>General Notes</h2>
 <p><%= @brew_note.body %></p>
+</section>
 
 <section class="notes-section">
 <h2>Mash Notes</h2>
@@ -110,7 +115,7 @@
 <% end %>
 
 <% if current_user.brew_notes.include?(@brew_note) %>
-<%= link_to "Edit Brew Note", edit_brew_note_url(@brew_note), id: "edit-note" %>
+<%= link_to "Edit Brew Note", edit_brew_note_url(@brew_note), id: "edit-note", class: "button" %>
 <% end %>
 </div>
 

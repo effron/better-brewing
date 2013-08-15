@@ -4,10 +4,10 @@
   <td><%= fermentation_check.specific_gravity %></td>
   <td><%= fermentation_check.body %></td>
   <% if current_user.brew_notes.include?(fermentation_check.fermentation_note.brew_note) %>
-  <td><%= link_to "Edit fermentation check", edit_fermentation_check_url(fermentation_check),
-    remote: true, class: "edit-row", "data-id" => fermentation_check.id %></td>
-  <td><%= button_to "Destroy check", fermentation_check_url(fermentation_check),
-      method: :delete, remote: true, class: "destroy-button", form_class: "destroy-row",
+  <td class="button-container"><%= link_to "Edit check", edit_fermentation_check_url(fermentation_check),
+    remote: true, class: "edit-row button", "data-id" => fermentation_check.id %></td>
+  <td class="button-container"><%= button_to "Destroy check", fermentation_check_url(fermentation_check),
+      method: :delete, remote: true, class: "destroy-button button destroy", form_class: "destroy-row",
       "data-id" => fermentation_check.id %>
   </td>
   <% end %>

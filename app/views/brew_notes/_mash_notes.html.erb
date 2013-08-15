@@ -8,7 +8,7 @@
            value="<%= brew_note.mash_volume_gallons if brew_note.persisted? %>">
 
   <p class="explainer">Then, turn off the heat and mix in all of your crushed grains</p>
-  <p class="explainer">fter you have thoroughly stirred the pot, start the timer at 60 minutes.</p>
+  <p class="explainer">After you have thoroughly stirred the pot, start the timer at 60 minutes.</p>
   <p class="explainer">Record all of your information in the table below, and click the button when the timer reaches zero!</p>
   <p class="explainer">While you are waiting, heat around 1 gallon of water to a little over 170˚F</p>
 
@@ -45,6 +45,6 @@
     </tbody>
   </table>
 
-  <%= f.submit "On to the sparge!" %>
+  <%= f.submit "On to the sparge!", class: "button" %>
 
 <% end %>

@@ -12,39 +12,33 @@
     padding: 15px;
     border: 1px solid black;
   }
-  
+
   .explainer{
     padding-left: 0px;
+    margin-top: 5px;
   }
 
   .current-brew-view {
     padding: 10px;
   }
-  
+
   input[type=text] {
     width: 200px;
   }
-  
+
+  table input[type=text]{
+    width: 100%;
+  }
+
   input[type=file] {
     display: block;
     padding: 10px;
   }
-  input[type=submit]{
-    display: block;
-    padding: 10px;
-    margin: 15px 0px 5px 0px;
-    background: darken($main-color, 20%);
-    color: lighten($main-color, 40%);
-    border: 2px solid black;
-    &:hover{
-      background: darken($main-color, 10%);
-      box-shadow: 0 0 0px;
-      border-bottom: 2px solid #555;
-    };
-    &:active{
-      box-shadow: inset 0 0 3px black;
-    };
+
+  .button{
+    margin-top: 20px;
   }
+
   .mash-note{
     padding: 10px;
     input[type=text]{

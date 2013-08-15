@@ -4,17 +4,39 @@
     text-transform: uppercase;
   }
 
-  p{
-    padding: 15px;
-    margin-left: 10px;
-  }
-
-
   h2{
-    padding: 10px 20px;
+    padding: 10px 0;
     font-size: 20px;
     font-weight: 700;
     font-style: italic;
+  }
+
+  .explainer{
+    margin-left: 20px;
+  }
+  .button{
+    margin: 20px 0;
+  }
+
+  li{
+    padding: 10px 0;
+  }
+
+  input{
+    display: block;
+  }
+
+  label{
+    display: block;
+    padding: 10px 0;
+  }
+
+  table .button{
+    margin: 0px;
+  }
+
+  table input[type="text"]{
+    display: inline-block;
   }
 
   .notes-section{
@@ -22,62 +44,8 @@
       top:1px solid black;
       bottom: 1px solid black;
     }
-    margin: 2px 0px;
-  }
-
-  table{
-    border-top: solid 1px $main-color;
-    width: 95%;
-    margin: auto;
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  thead{
-    display: table-header-group;
-    font-size: 13px;
-    line-height: 16px;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-  tr {
-    display: table-row;
-  }
-  td, th{
-    width: auto;
-    font-size: 14px;
-    line-height: 16px;
-    padding: 9px 4px 7px;
-    text-align: left;
-    border: 1px solid $main-color;
-  }
-  th{
-    background: lighten(desaturate($main-color,30%), 20%);
-    border-bottom: solid 1px $main-color;
-    vertical-align: bottom;
-  }
-
-  ul{
-    padding: 20px;
-  }
-
-  li {
-    padding: 10px 0;
-  }
-
-  form {
-    margin: 10px;
-  }
-  form input[type=text], form label {
-    margin: 10px;
-    display: block;
-    padding: 5px;
-  }
-
-  #fermentation-note{
-    a{
-      display: block;
-      margin: 10px 20px 20px 20px;
-    }
+    margin: 2px 0;
+    padding: 0 20px;
   }
 
   .beer-photo{
@@ -89,10 +57,6 @@
       width: 100%;
       height: auto;
     }
-  }
-
-  .tasting-notes > a {
-    margin: 20px;
   }
 
   .tasting-notes li {
@@ -121,5 +85,9 @@
     margin-top: -18%;
     width: 150px;
     height: 150px;
+  }
+
+  #edit-note{
+    margin: 10px 20px 0 20px;
   }
 }

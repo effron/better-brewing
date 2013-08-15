@@ -10,10 +10,10 @@
 
   <%= render partial: "nested_boil_note", locals: { brew_note: @brew_note } %>
 
-  <%= render partial: "nested_fermentation_note", 
+  <%= render partial: "nested_fermentation_note",
              locals: {brew_note: @brew_note} %>
 
-  <%= render partial: "nested_bottling_note", 
+  <%= render partial: "nested_bottling_note",
              locals: { brew_note: @brew_note } %>
 
   <%= f.hidden_field :recipe_id %>
@@ -23,6 +23,6 @@
   <%= f.file_field :beer_photo %>
   </div>
 
-  <%= f.submit "Let's Get Started" %>
+  <%= f.submit "Let's Get Started", class: "button" %>
 
 <% end %>

@@ -73,33 +73,10 @@
       line-height: 28px;
       font-weight: bold;
     }
-    table{
-      border-top: solid 1px $main-color;
-      margin-bottom: 40px;
-      width: 100%;
-      border-collapse: collapse;
-      border-spacing: 0;
-    }
-    thead{
-      display: table-header-group;
-      font-size: 13px;
-      line-height: 16px;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-    tr {
-      display: table-row;
-    }
     td, th{
      font-size: 18px;
      line-height: 20px;
      padding: 9px 4px 7px;
-     text-align: left;
-    }
-    th{
-      background: lighten(desaturate($main-color,30%), 20%);
-      border-bottom: solid 1px $main-color;
-      vertical-align: bottom;
     }
     tbody{
       display: table-row-group;

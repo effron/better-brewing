@@ -1,8 +1,10 @@
+  <h2>Boil Notes</h2>
+
 <%= render partial: "boil_table", locals: { brew_note: brew_note } %>
 
 <%= form_for brew_note, url: "#{brew_note_url(brew_note.id)}?boil",
     remote: true, html: {id: "boil-note"} do |f| %>
-  <h2>Boil Notes</h2>
+
   <p class="explainer">Top off the water to around 5 gallons, and heat it until it starts to boil</p>
 
   <label for="pre_boil">Pre Boil Volume (gallons)</label>
@@ -25,6 +27,6 @@
   <input type="hidden" name="brew_note[boil_note_attributes][id]"
         value="<%= brew_note.boil_note.id %>">
 
-  <%= f.submit "On to fermenting!" %>
+  <%= f.submit "On to fermenting!", class: "button" %>
 
 <% end %>

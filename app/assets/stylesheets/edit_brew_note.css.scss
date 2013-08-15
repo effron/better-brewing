@@ -1,0 +1,39 @@
+#edit-brew-note{
+  padding: 10px;
+  label{
+    display: block;
+    padding: 10px 0;
+  }
+
+  h1{
+    font-size: 30px;
+  }
+
+  input, textarea{
+    display: block;
+    width: 200px;
+    margin: 10px 0;
+    border: 1px solid black;
+  }
+
+  table input{
+    display: inline;
+    width: 100%;
+    margin: 0;
+  }
+
+  table{
+    margin: 10px 0;
+  }
+
+  input[type=file] {
+    display: block;
+    padding: 10px;
+    width: 400px;
+  }
+
+  h2{
+    font-weight: bold;
+    font-size: 20px;
+  }
+}

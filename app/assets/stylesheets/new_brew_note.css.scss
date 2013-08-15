@@ -4,6 +4,7 @@
   }
   h2{
     padding: 10px 0px;
+    font-weight: bold;
   }
   textarea{
     display:block;
@@ -15,7 +16,7 @@
 
   .explainer{
     padding-left: 0px;
-    margin-top: 5px;
+    margin: 5px 0;
   }
 
   .current-brew-view {
@@ -30,24 +31,7 @@
     width: 100%;
   }
 
-  input[type=file] {
-    display: block;
-    padding: 10px;
-  }
-
   .button{
-    margin-top: 20px;
-  }
-
-  .mash-note{
-    padding: 10px;
-    input[type=text]{
-      display: block;
-      float: left;
-    }
-  }
-
-  #mash-notes table{
     margin-top: 20px;
   }
 
@@ -57,17 +41,8 @@
   }
 
   .boil-ingredients{
-    padding: 20px;
-    margin: 20px;
-    float: right;
-    border: 1px solid black;
-    border-collapse: collapse;
     &> thead > tr{
       background: #eee;
-    }
-    th, td{
-      border: 1px solid black;
-      padding: 5px;
     }
     tr{
       background: white;

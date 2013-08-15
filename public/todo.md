@@ -10,6 +10,8 @@ https://github.com/thoughtbot/capybara-webkit
 ###brew day experience
 Add timers
 Add checklists
+Overall notes:
+  Each page has a text area to type overall notes. Submit it on each step, but then repopulate it with the info it already had. Make it nice looking somehow?
 
 ###brew note compare
 

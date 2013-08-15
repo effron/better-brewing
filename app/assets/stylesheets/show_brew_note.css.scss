@@ -28,6 +28,14 @@
     font-weight: 700;
     font-style: italic;
   }
+  
+  .notes-section{
+    border:{
+      top:1px solid black;
+      bottom: 1px solid black;
+    } 
+    margin: 2px 0px;
+  }
 
   table{
     border-top: solid 1px $main-color;

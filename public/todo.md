@@ -1,5 +1,9 @@
 ##TODO
 
+###FIX CHOSEN BUG THING
+
+####re uncomment capybara-webkit
+
 More AJAX SPINNERS:
 brew note show page: adding row, updating row, update bottling notes, update fermentation ntoes. Probably abstract this into library, give things specific class if they need to have ajax spinners added to them.
 

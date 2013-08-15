@@ -9,16 +9,6 @@
     padding: 10px;
   }
 
-  a{
-    color: blue;
-    &:hover{
-      text-decoration: underline;
-    };
-    &:active{
-      color: darken(blue, 20%);
-    };
-  }
-
   .chart-container{
     width: 500px;
     float: left;
@@ -32,15 +22,17 @@
     }
   }
 
-  .back-to-brew{
-    padding: 10px;
+  .buttons{
+    float: left;
   }
 
-  [value="Destroy tasting note"]{
-    margin-top: 10px;
-    &:hover{
-      background: desaturate(red, 5%);
-    };
+  .button{
+    margin: 10px 0;
   }
+
+  .back-to{
+    margin: 10px 10px;
+  }
+
 
 }

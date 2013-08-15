@@ -188,6 +188,20 @@ table .button{
   top: -$header-height;
 }
 
+.back-to{
+  display:block;
+  padding: 10px 0;
+  background: lighten($main-color, 23%);
+  text-align: center;
+  border-radius: 5px;
+  &:hover{
+    background: lighten($main-color, 33%);;
+  };
+  &:active{
+    box-shadow: inset 0 0 5px black;
+  };
+}
+
 
 /*clearfix*/
 .group:after{

@@ -1,9 +1,10 @@
-<div id="tasting-note-show">
+<div id="tasting-note-show" class="group">
   <header>
     <h1>Tasting Note for <%= link_to @tasting_note.brew_note.recipe.name,
                                      @tasting_note.brew_note.recipe %>
     </h1>
-    <h2 class="back-to-brew"><%= link_to "Back to brew note", brew_note_url(@tasting_note.brew_note, anchor: "tasting_notes") %></h2>
+      <a href="<%= brew_note_url(@tasting_note.brew_note, anchor: "tasting_notes") %>"
+        class="back-to button"><i class="icon-long-arrow-left"></i> Back to brew note</a>
   </header>
   <h2>Overall Rating: <%= @tasting_note.rating %></h2>
 
@@ -33,8 +34,10 @@
   </div>
 
   <% if current_user.brew_notes.include?(@tasting_note.brew_note) %>
-    <%= link_to "Edit tasting note", edit_tasting_note_url(@tasting_note) %>
+  <div class="buttons">
+    <%= link_to "Edit tasting note", edit_tasting_note_url(@tasting_note), class: "button" %>
     <%= button_to "Destroy tasting note", tasting_note_url(@tasting_note),
-                  method: "delete" %>
+                  method: "delete", class: "button destroy" %>
+  </div>
     <% end %>
 </div>

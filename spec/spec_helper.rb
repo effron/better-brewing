@@ -52,7 +52,8 @@ RSpec.configure do |config|
 end
 
 def sign_up(username)
-  visit new_user_registration_url
+  visit new_user_registration_path
+
   fill_in "user_username", with: username
   fill_in "user_email", with: "#{username}@example.com"
   fill_in "user_password", with: "password"
@@ -69,7 +70,7 @@ def sign_out
 end
 
 def upload_recipe
-  visit new_recipe_url
+  visit new_recipe_path
   fill_in "recipe_name", with: "test_recipe"
   fill_in "xml_url", with: "http://www.brewtoad.com/recipes/good-brewer-ish-hefeweizen.xml"
   click_button "Upload Recipe"

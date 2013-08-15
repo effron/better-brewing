@@ -22,4 +22,18 @@ describe "BrewNote" do
     end
 
   end
+  
+  describe "javascript works", js:true do
+    it "visits a page" do
+      visit "/"
+    
+      page.should have_content "Recipes"
+    end
+    
+    it "visits user signup page" do
+      visit new_user_registration_path
+
+      page.should have_content "Password confirmation"   
+    end
+  end
 end

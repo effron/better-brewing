@@ -8,6 +8,13 @@ GIT
       dm-validations (~> 1.1.0)
       nokogiri (~> 1.4.4)
 
+GIT
+  remote: https://github.com/tommeier/database_cleaner
+  revision: ff09fd50c66f376274a44c3a375a9ce425ae77fd
+  branch: fix-superclass
+  specs:
+    database_cleaner (1.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -87,7 +94,6 @@ GEM
       sass (~> 3.1)
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
-    database_cleaner (1.1.1)
     debug_inspector (0.0.2)
     devise (3.0.2)
       bcrypt-ruby (~> 3.0)
@@ -220,7 +226,7 @@ DEPENDENCIES
   chartkick
   chosen-rails
   coffee-rails (~> 3.2.1)
-  database_cleaner
+  database_cleaner!
   devise
   dm-aggregates
   ejs

@@ -24,7 +24,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'capybara-webkit'
-  gem 'database_cleaner'
+  gem 'database_cleaner', git: 'https://github.com/tommeier/database_cleaner', branch: 'fix-superclass'
 end
 
 # For pagination

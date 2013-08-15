@@ -12,6 +12,14 @@ describe "BrewNote" do
       brew_recipe
       page.should have_content "General Notes"
     end
+    
+    it "Walks through brew", js: true do
+      upload_recipe
+      brew_recipe
+      walk_through_brew
+      
+      page.should have_content "General Notes"
+    end
 
   end
 end

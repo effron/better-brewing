@@ -59,6 +59,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-webkit (1.0.0)
+      capybara (~> 2.0, >= 2.0.2)
+      json
     chartkick (1.2.0)
     chosen-rails (1.0.0)
       coffee-rails (>= 3.2)
@@ -84,6 +87,7 @@ GEM
       sass (~> 3.1)
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
+    database_cleaner (1.1.1)
     debug_inspector (0.0.2)
     devise (3.0.2)
       bcrypt-ruby (~> 3.0)
@@ -212,9 +216,11 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   capybara
+  capybara-webkit
   chartkick
   chosen-rails
   coffee-rails (~> 3.2.1)
+  database_cleaner
   devise
   dm-aggregates
   ejs

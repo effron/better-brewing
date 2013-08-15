@@ -23,6 +23,8 @@ group :development, :test do
   gem 'annotate'
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'database_cleaner'
 end
 
 # For pagination

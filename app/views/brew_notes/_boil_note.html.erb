@@ -1,25 +1,5 @@
-<table class="boil-ingredients">
-  <thead>
-    <tr>
-      <th>Time</th><th>Ingredient</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% brew_note.recipe.boil_ingredients.each do |boiled| %>
-      <tr>
-        <td><%= boiled.time.to_f.to_i %> <%= boiled.time.unit %></td>
-        <td>
-          <% if boiled.amount.type == "weight" %>
-            <%= boiled.amount.to_oz.to_f.round(2) %> oz of
-          <% else %>
-            <%= boiled.amount.to_f.round(2) %> <%= boiled.amount.unit %> of
-          <% end %>
-          <%= boiled.name %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render partial: "boil_table", locals: { brew_note: brew_note } %>
+
 <%= form_for brew_note, url: "#{brew_note_url(brew_note.id)}?boil",
     remote: true, html: {id: "boil-note"} do |f| %>
   <h2>Boil Notes</h2>

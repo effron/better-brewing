@@ -66,9 +66,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    capybara-webkit (1.0.0)
-      capybara (~> 2.0, >= 2.0.2)
-      json
     chartkick (1.2.0)
     chosen-rails (1.0.0)
       coffee-rails (>= 3.2)
@@ -222,7 +219,6 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   capybara
-  capybara-webkit
   chartkick
   chosen-rails
   coffee-rails (~> 3.2.1)

@@ -3,9 +3,6 @@
 More AJAX SPINNERS:
 brew note show page: adding row, updating row, update bottling notes, update fermentation ntoes. Probably abstract this into library, give things specific class if they need to have ajax spinners added to them.
 
-##Javascript tests
-visit this and figure it out:
-https://github.com/thoughtbot/capybara-webkit
 
 ###brew day experience
 Add timers
@@ -14,8 +11,6 @@ Overall notes:
   Each page has a text area to type overall notes. Submit it on each step, but then repopulate it with the info it already had. Make it nice looking somehow?
 
 ###brew note compare
-
-Tasting notes list: AJAX SPINNERS
 
 Brew notes overlay chart: combine all charts to more easily compare brews!
 

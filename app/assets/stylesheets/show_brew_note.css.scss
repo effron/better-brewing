@@ -8,19 +8,7 @@
     padding: 15px;
     margin-left: 10px;
   }
-  a{
-    color: adjust_hue($main-color, 140);
-    &:hover{
-      text-decoration: underline;
-    };
-    &:active{
-      color: darken(adjust_hue($main-color, 140), 30%);
-    };
-    &.anchor {
-      position: relative;
-      top: -$header-height;
-    }
-  }
+
 
   h2{
     padding: 10px 20px;
@@ -28,12 +16,12 @@
     font-weight: 700;
     font-style: italic;
   }
-  
+
   .notes-section{
     border:{
       top:1px solid black;
       bottom: 1px solid black;
-    } 
+    }
     margin: 2px 0px;
   }
 
@@ -79,46 +67,11 @@
   form {
     margin: 10px;
   }
-  form input, form label {
+  form input[type=text], form label {
     margin: 10px;
     display: block;
     padding: 5px;
   }
-
-  #edit-note{
-    margin-left: 10%;
-    display: block;
-    padding: 10px;
-    background: lighten($main-color, 20%);
-    width: 110px;
-    &:hover{
-      text-decoration: none;
-      box-shadow: 0 0 3px black;
-    };
-    &:active{
-      box-shadow: inset 0 0 3px black;
-    };
-  }
-
- .edit-fermentation-note, .tasting-notes > a, .edit-bottling-note{
-   display: block;
-   border: 1px solid black;
-   width: 200px;
-   padding: 10px;
-   background: $main-color;
-   color: white;
-   &:hover{
-     text-decoration: none;
-     box-shadow: 0 0 3px black;
-   };
-   &:active {
-     box-shadow: inset 0 0 3px black;
-   };
- }
-
- .edit-bottling-note{
-   margin: 0 0 20px 20px;
- }
 
   #fermentation-note{
     a{
@@ -138,24 +91,6 @@
     }
   }
 
-  .compare-notes{
-    display: block;
-    background: lighten($main-color, 15%);
-    padding: 10px;
-    color: white;
-    width: 20%;
-    margin-left: 15px;
-    text-align: center;
-    &:hover{
-      text-decoration: none;
-      box-shadow: 0 0 3px black;
-    };
-    &:active{
-      box-shadow: inset 0 0 3px black;
-      color: white;
-    };
-  }
-
   .tasting-notes > a {
     margin: 20px;
   }
@@ -170,8 +105,6 @@
       float: left;
     }
   }
-
-
 
   .tasting-notes .figure-container{
     float: left;

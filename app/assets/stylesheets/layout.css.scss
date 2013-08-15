@@ -8,6 +8,7 @@ $main-width: 100%;
 $main-min-width: 1140px;
 $sidebar-height: 220px;
 $accent-background: #FFFA94;
+$destroy-color: #C82C1E;
 
 //CSS Reset Styles
 html, body, div, header, h1, h2, h3, nav, ul, li, a, footer, button, form, input, figure, img, table, thead, tbody, tfoot, tr, th, td, textarea, p{
@@ -66,17 +67,17 @@ footer {
   }
 }
 
-[type=submit]{
-  padding: 5px;
-  background: lighten($main-color, 5%);
-  &:hover{
-    cursor: pointer;
-    box-shadow: 0 0 3px black;
-  };
-  &:active{
-    box-shadow: inset 0 0 3px black;
-  };
-}
+//[type=submit]{
+//  padding: 5px;
+//  background: lighten($main-color, 5%);
+//  &:hover{
+//    cursor: pointer;
+//    box-shadow: 0 0 3px black;
+//  };
+//  &:active{
+//    box-shadow: inset 0 0 3px black;
+//  };
+//}
 
 .destroy-button{
   &:hover{
@@ -104,6 +105,8 @@ input {
   content: image-url("ajax-loader.gif");
 }
 
+/* Application-wide styles for specific elements */
+
 .highlighted {
   background: yellow;
   pointer-events: none;
@@ -118,9 +121,38 @@ input {
       text-decoration: underline;
     }
     &:active{
-     color: darken($main-color, 20%); 
+     color: darken($main-color, 20%);
     }
   }
+}
+
+.button{
+  display: block;
+  width: 200px;
+  text-align: center;
+  color: white;
+  background-color: darken($main-color, 10%);
+  padding: 10px 5px;
+  border: 0;
+  &:hover{
+    background-color: lighten($main-color, 10%);
+  }
+  &:active{
+    box-shadow: inset 0 0 5px black;
+  }
+}
+
+.destroy:hover{
+  background-color: $destroy-color;
+}
+
+.button-container {
+  width: 150px;
+  text-align: center;
+}
+
+table .button{
+  width: 90%;
 }
 
 

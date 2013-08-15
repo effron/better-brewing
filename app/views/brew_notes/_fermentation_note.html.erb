@@ -10,6 +10,6 @@
 <% if current_user.brew_notes.include?(fermentation_note.brew_note) %>
 <%= link_to "Edit fermentation notes",
             edit_fermentation_note_url(fermentation_note.id),
-            remote: true, class: "edit-fermentation-note" %>
+            remote: true, class: "button" %>
 <% end %>
 </div>

@@ -10,5 +10,5 @@
 <% if current_user.brew_notes.include?(bottling_note.brew_note) %>
 <%= link_to "Edit bottling notes",
             edit_bottling_note_url(bottling_note.id),
-            remote: true, class: "edit-bottling-note" %>
+            remote: true, class: "button" %>
 <% end %>

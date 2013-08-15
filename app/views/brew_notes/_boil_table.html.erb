@@ -1,0 +1,24 @@
+<table class="boil-ingredients">
+  <thead>
+    <tr>
+      <th>Time</th><th>Ingredient</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% brew_note.recipe.boil_ingredients.each do |boiled| %>
+      <tr>
+        <td><%= boiled.time.to_f.to_i %> <%= boiled.time.unit %></td>
+        <td>
+          <% if boiled.amount.type == "weight" %>
+            <%= boiled.amount.to_oz.to_f.round(2) %> oz of
+          <% elsif boiled.name == "Whirlfloc Tablet" %>
+            <%= boiled.amount.to_f.to_i %> each of
+          <% else %>
+            <%= boiled.amount.to_f.round(2) %> <%= boiled.amount.unit %> of
+          <% end %>
+          <%= boiled.name %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

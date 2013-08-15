@@ -26,7 +26,7 @@
       remote: true, html: { class: "add-row" } do |f| %>
         <input type="hidden" name="mash_note[brew_note_id]"
         value="<%= @brew_note.id %>">
-    <%= f.submit "Add new mash note" %>
+    <%= f.submit "Add new mash note", class: "button" %>
   <% end %>
 
 <% end %>

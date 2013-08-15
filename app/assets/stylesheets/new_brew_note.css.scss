@@ -3,22 +3,28 @@
     padding: 10px;
   }
   h2{
-    padding: 10px;
+    padding: 10px 0px;
   }
   textarea{
     display:block;
-    width: 200px;
+    width: 180px;
     min-height: 60px;
     padding: 15px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
   }
-  p{
+  
+  .explainer{
+    padding-left: 0px;
+  }
+
+  .current-brew-view {
     padding: 10px;
   }
-  form {
-    padding: 10px;
+  
+  input[type=text] {
+    width: 200px;
   }
+  
   input[type=file] {
     display: block;
     padding: 10px;
@@ -26,7 +32,7 @@
   input[type=submit]{
     display: block;
     padding: 10px;
-    margin: 15px 5px 5px 5px;
+    margin: 15px 0px 5px 0px;
     background: darken($main-color, 20%);
     color: lighten($main-color, 40%);
     border: 2px solid black;
@@ -69,6 +75,9 @@
       border: 1px solid black;
       padding: 5px;
     }
+    tr{
+      background: white;
+    }
     tr:nth-child(even){
       background: #ddd;
     };
@@ -76,7 +85,7 @@
 
   label{
     display: block;
-    padding: 10px;
+    padding: 10px 0;
   }
   input[type=text]{
     padding: 5px;
@@ -107,7 +116,7 @@
     };
   }
 
-  .no-directions .directions{
+  .no-directions .explainer{
     display: none;
   }
 }

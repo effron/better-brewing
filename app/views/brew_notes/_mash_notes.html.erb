@@ -2,15 +2,15 @@
     remote: true, html: {id: "mash-notes"} do |f| %>
   <% time = 60 %>
   <h2>Mash Notes</h2>
-  <p class="directions">Heat your water up to 162˚F. (Generally 1.25 qts per pound of grain).<p>
+  <p class="explainer">Heat your water up to 162˚F. (Generally 1.25 qts per pound of grain).<p>
     <label for="mash_volume">Mash Volume (gallons)</label>
     <input type="text" name="brew_note[mash_volume_gallons]"
            value="<%= brew_note.mash_volume_gallons if brew_note.persisted? %>">
 
-  <p class="directions">Then, turn off the heat and mix in all of your crushed grains</p>
-  <p class="directions">fter you have thoroughly stirred the pot, start the timer at 60 minutes.</p>
-  <p class="directions">Record all of your information in the table below, and click the button when the timer reaches zero!</p>
-  <p class="directions">While you are waiting, heat around 1 gallon of water to a little over 170˚F</p>
+  <p class="explainer">Then, turn off the heat and mix in all of your crushed grains</p>
+  <p class="explainer">fter you have thoroughly stirred the pot, start the timer at 60 minutes.</p>
+  <p class="explainer">Record all of your information in the table below, and click the button when the timer reaches zero!</p>
+  <p class="explainer">While you are waiting, heat around 1 gallon of water to a little over 170˚F</p>
 
   <table>
     <thead>

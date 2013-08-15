@@ -109,6 +109,21 @@ input {
   pointer-events: none;
 }
 
+.explainer{
+  background: $accent-background;
+  padding: 10px;
+  a{
+    color: $main-color;
+    &:hover{
+      text-decoration: underline;
+    }
+    &:active{
+     color: darken($main-color, 20%); 
+    }
+  }
+}
+
+
 /*clearfix*/
 .group:after{
   content:"";

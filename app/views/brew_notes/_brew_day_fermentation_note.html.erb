@@ -3,21 +3,21 @@
 
 <h2>Fermentation Notes</h2>
 
-<p class="directions">Pour your cooled wort into your fermenter,
+<p class="explainer">Pour your cooled wort into your fermenter,
   and top off to around <%= brew_note.recipe.batch_size_gallons %> gallons</p>
 <label for="fermenter_volume">Volume in Fermenter (gallons)</label>
 <input type="text" id="fermenter_volume"
        name="brew_note[fermentation_note_attributes][volume_gallons]"
        value="<%= brew_note.fermentation_note.volume_gallons %>">
 
-<p class="directions">Take a gravity measurement using your hydrometer</p>
+<p class="explainer">Take a gravity measurement using your hydrometer</p>
 
 <label for="og">Measured Original Gravity (eg. 1060)</label>
 <input type="text" id="og"
        name="brew_note[fermentation_note_attributes][og]"
        value="<%= brew_note.fermentation_note.og %>">
 
-<p class="directions">Pitch the yeast, seal your fermenting vessel.
+<p class="explainer">Pitch the yeast, seal your fermenting vessel.
   Congrats, your brew day is over!</p>
 
 <label for="ferm_body">Misc Notes</label>

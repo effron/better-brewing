@@ -2,8 +2,11 @@
 
 <% if params[:recipe_id] %>
   <section class="brew-notes-list">
-    <%= link_to "Back to recipe", recipe_url(params[:recipe_id]),
-                class: "recipe-link" %>
+    <a href="<%= recipe_url(params[:recipe_id]) %>" class="recipe-link">
+      <i class="icon-long-arrow-left"></i> Back to recipe 
+    </a>
+    <h2>Brew notes</h2>
+    <p class="explainer">Click "Left" or "Right" to analyze, or click note date to see the entire note</p>
     <ul>
       <% if @brew_notes.empty? %>
         <li>No brew notes. Brew this recipe!</li>

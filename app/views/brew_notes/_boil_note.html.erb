@@ -23,24 +23,24 @@
 <%= form_for brew_note, url: "#{brew_note_url(brew_note.id)}?boil",
     remote: true, html: {id: "boil-note"} do |f| %>
   <h2>Boil Notes</h2>
-  <p class="directions">Top off the water to around 5 gallons, and heat it until it starts to boil</p>
+  <p class="explainer">Top off the water to around 5 gallons, and heat it until it starts to boil</p>
 
   <label for="pre_boil">Pre Boil Volume (gallons)</label>
   <input type="text" id="pre_boil"
          name="brew_note[boil_note_attributes][pre_boil_volume_gallons]"
          value="<%= brew_note.boil_note.pre_boil_volume_gallons %>">
 
-         <p class="directions">Then, turn off the heat and add all of the liquid and dry malt extract</p>
-         <p class="directions">When the water reaches a boil again, add your <%= brew_note.recipe.boil_time.to_f.to_i %> minute boil additions and start the timer!</p>
+         <p class="explainer">Then, turn off the heat and add all of the liquid and dry malt extract. Stir thoroughly, then bring water back to a boil.</p>
+         <p class="explainer">When the water reaches a boil again, add your <%= brew_note.recipe.boil_time.to_f.to_i %> minute boil additions and start the timer!</p>
 
-         <p class="directions">When the timer reaches 0, turn off the heat and start cooling.</p>
+         <p class="explainer">When the timer reaches 0, turn off the heat and start cooling.</p>
 
   <label for="post_boil">Post Boil Volume (gallons)</label>
   <input type="text" id="post_boil"
          name="brew_note[boil_note_attributes][post_boil_volume_gallons]"
          value="<%= brew_note.boil_note.post_boil_volume_gallons %>">
 
-   <p class="directions">Once the beer reaches around 80˚ F, move on to the next step</p>
+   <p class="explainer">Once the beer reaches around 80˚ F, move on to the next step</p>
 
   <input type="hidden" name="brew_note[boil_note_attributes][id]"
         value="<%= brew_note.boil_note.id %>">

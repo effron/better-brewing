@@ -85,5 +85,5 @@ def walk_through_brew
   click_button "On to the sparge!"
   click_button "On to the boil!"
   click_button "On to fermenting!"
-  click_button "Done brewing! Set up reminders"
+  click_button "Done! Save notes"
 end

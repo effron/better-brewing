@@ -19,7 +19,7 @@
   </ul>
   <% else %>
 
-  <%= link_to "#{brew_note.recipe.name}: #{brew_note.created_at}", brew_note %>
+  <%= link_to "#{brew_note.recipe.name}: #{clean_date(brew_note)}", brew_note %>
 
   <% end %>
 </li>

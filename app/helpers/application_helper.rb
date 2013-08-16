@@ -19,11 +19,11 @@ module ApplicationHelper
   end
 
   def clean_date(object)
-    object.created_at.to_datetime.strftime('%d-%m-%y %l:%M')
+    object.created_at.to_datetime.strftime('%m-%d-%y %l:%M')
   end
 
   def minimal_date(object)
-    object.created_at.to_datetime.strftime('%d-%m-%y')
+    object.created_at.to_datetime.strftime('%m-%d-%y')
   end
 
 end

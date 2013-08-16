@@ -10,7 +10,6 @@
             <ul class="hidden-menu">
               <li><%= link_to "My Recipes", current_user %></li>
               <li><%= link_to "My Brew Notes", brew_notes_url %>
-              <li><a href="#">My Tasting Notes</a></li>
               <li>
                 <%= button_to "Sign Out", destroy_user_session_url,
                     method: :delete %>

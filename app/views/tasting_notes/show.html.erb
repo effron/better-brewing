@@ -1,7 +1,8 @@
 <div id="tasting-note-show" class="group">
   <header>
     <h1>Tasting Note for <%= link_to @tasting_note.brew_note.recipe.name,
-                                     @tasting_note.brew_note.recipe %>
+                                     @tasting_note.brew_note.recipe, 
+                                     class: "inline-link" %>
     </h1>
       <a href="<%= brew_note_url(@tasting_note.brew_note, anchor: "tasting_notes") %>"
         class="back-to button"><i class="icon-long-arrow-left"></i> Back to brew note</a>

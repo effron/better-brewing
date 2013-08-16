@@ -1,6 +1,6 @@
 <div id="show-brew-note">
 
-<h1>BREW NOTE FOR <%= link_to @brew_note.recipe.name, @brew_note.recipe %></h1>
+<h1>BREW NOTE FOR <%= link_to @brew_note.recipe.name, @brew_note.recipe, class: "inline-link" %></h1>
 <%= link_to "Compare Notes", recipe_brew_notes_url(@brew_note.recipe_id),
             class: "button" %>
 

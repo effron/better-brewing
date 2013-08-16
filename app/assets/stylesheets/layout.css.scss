@@ -124,6 +124,7 @@ th{
   background: lighten(desaturate($main-color,30%), 20%);
   border-bottom: solid 1px $main-color;
   vertical-align: bottom;
+  font-size: 16px;
 }
 
 table input[type="text"]{
@@ -181,6 +182,16 @@ table input[type="text"]{
 table .button{
   box-sizing: border-box;
   width: 100%;
+}
+
+.inline-link{
+  color: $main-color;
+  &:hover{
+    text-decoration: underline;
+  }
+  &:active{
+   color: darken($main-color, 20%);
+  }
 }
 
 .anchor{

@@ -36,5 +36,15 @@
   #search-field{
     padding: 20px 0 0 20px;
     margin-bottom: -20px;
+    input[type="submit"]{
+      cursor: pointer;
+      background: #ccc;
+      &:hover{
+        background: #aaa;
+      }
+      &:active{
+        box-shadow: inset 0 0 3px black;
+      }
+    }
   }
 }

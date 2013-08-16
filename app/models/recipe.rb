@@ -118,6 +118,7 @@ class Recipe < ActiveRecord::Base
 
   #People are bad at beerxml. Clean up some found errors
   def cleanup_xml
+    return nil unless xml
     xml.gsub!(/<EFFICIENCY>-<\/EFFICIENCY>/, '<EFFICIENCY>0.0</EFFICIENCY>')
   end
 end

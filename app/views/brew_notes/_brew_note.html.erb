@@ -3,8 +3,7 @@
   <% if params[:recipe_id] %>
   <ul>
     <li>
-      <%= link_to "Brew note: #{minimal_date(brew_note)}", brew_note,
-                  class: "main-note-link" %>
+      <a href="<%= brew_note_url(brew_note) %>" class="main-note-link"><i class="icon-long-arrow-left"></i> Brew note: <%= minimal_date(brew_note) %></a>
     </li>
   </ul>
   <ul class="group sub-note-ul">

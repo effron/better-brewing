@@ -5,6 +5,11 @@
     text-transform: uppercase;
   }
 
+  h2{
+    margin: 10px;
+    font-weight: bold;
+  }
+
   .recipe-link{
     display:block;
     padding: 10px 0;
@@ -53,6 +58,10 @@
 
   .message{
     padding: 20px;
+  }
+
+  .explainer{
+    margin: 10px;
   }
 
 }

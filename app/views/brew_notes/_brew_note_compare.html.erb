@@ -1,4 +1,4 @@
-<h1><%= brew_note.created_at.to_datetime.strftime('%d/%m/%y %l:%M') %></h1>
+<h1><%= clean_date(brew_note) %></h1>
 <h2>Mash Notes</h2>
 <%= render partial: "mash_notes/mash_chart", locals: { brew_note: brew_note } %>
 

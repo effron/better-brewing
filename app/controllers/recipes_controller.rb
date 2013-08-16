@@ -7,9 +7,12 @@ class RecipesController < ApplicationController
       @recipes = Recipe.find_by_fuzzy_name(params[:search])
       @recipes = Kaminari.paginate_array(@recipes).page(params[:page]).per(12)
     else
-      @recipes = Kaminari.paginate_array(
-        Recipe.includes(:children).sort_by { |recipe| recipe.children.length }.reverse
-        ).page(params[:page]).per(12)
+      @recipes = Recipe.select("recipes.*, COUNT(children.id) AS child_count").
+                        joins("LEFT OUTER JOIN recipes AS children ON children.parent_id = recipes.id").
+                        group("recipes.id").
+                        order("child_count").
+                        reverse_order.page(params[:page]).per(12)
+
     end
 
     if request.xhr?

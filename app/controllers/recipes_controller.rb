@@ -8,7 +8,7 @@ class RecipesController < ApplicationController
       @recipes = Kaminari.paginate_array(@recipes).page(params[:page]).per(12)
     else
       @recipes = Kaminari.paginate_array(
-        Recipe.all.sort_by { |recipe| recipe.children.length }.reverse
+        Recipe.includes(:children).sort_by { |recipe| recipe.children.length }.reverse
         ).page(params[:page]).per(12)
     end
 

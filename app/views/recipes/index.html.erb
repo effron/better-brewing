@@ -6,18 +6,18 @@
 
 <div id="recipes-index">
   <div id="search-field">
-    <%= form_tag recipes_url, method: "get", remote: true do %>
+    <%= form_tag recipes_search_url, method: "get", remote: true do %>
       <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "Search", name: nil %>
+      <input type="submit" value="Search">
     <% end %>
   </div>
   <div id="recipe-list">
     <h1>All Recipes</h1>
-    <%= paginate @recipes %>
+    <%= paginate @recipes, remote: true %>
     <ul class="recipe-tiles group">
       <%= render @recipes %>
     </ul>
-    <%= paginate @recipes %>
+    <%= paginate @recipes, remote: true %>
   </div>
 </div>
 
@@ -48,6 +48,10 @@ $(function(){
       $("#search-field form").submit();
     }, 300 );
   });
+
+  $("#recipes-index").on("ajax:success", ".pagination", function(event, data){
+    $("#recipe-list").html(data)
+  })
 
 })
 

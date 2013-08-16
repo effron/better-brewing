@@ -1,5 +1,5 @@
 <h1>Search results</h1>
-<%= paginate recipes %>
+<%= paginate recipes, remote: true %>
 <ul class="recipe-tiles group">
   <% if recipes.length > 0 %>
     <%= render recipes %>
@@ -7,4 +7,4 @@
     <li>No results found. <%= link_to "Back to all recipes", recipes_url %></li>
   <% end %>
 </ul>
-<%= paginate recipes %>
+<%= paginate recipes, remote: true %>

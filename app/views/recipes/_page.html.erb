@@ -1,0 +1,6 @@
+<h1>All Recipes</h1>
+<%= paginate recipes, remote: true %>
+<ul class="recipe-tiles group">
+  <%= render recipes %>
+</ul>
+<%= paginate recipes, remote: true %>

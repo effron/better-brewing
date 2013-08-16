@@ -3,20 +3,33 @@ class RecipesController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :destroy]
 
   def index
-    if !params[:search].blank?
-      @recipes = Recipe.find_by_fuzzy_name(params[:search])
-      @recipes = Kaminari.paginate_array(@recipes).page(params[:page]).per(12)
-    else
+    @recipes = Recipe.select("recipes.*, COUNT(children.id) AS child_count").
+      joins("LEFT OUTER JOIN recipes AS children ON children.parent_id = recipes.id").
+      group("recipes.id").
+      order("child_count").
+      reverse_order.page(params[:page]).per(12)
+
+    if request.xhr?
+      render partial: "page", locals: { recipes: @recipes }
+    end
+  end
+
+  def search
+    if params[:search].blank?
       @recipes = Recipe.select("recipes.*, COUNT(children.id) AS child_count").
                         joins("LEFT OUTER JOIN recipes AS children ON children.parent_id = recipes.id").
                         group("recipes.id").
                         order("child_count").
                         reverse_order.page(params[:page]).per(12)
-
+    else
+      @recipes = Recipe.find_by_fuzzy_name(params[:search])
+      @recipes = Kaminari.paginate_array(@recipes).page(params[:page]).per(12)
     end
 
     if request.xhr?
       render partial: "search_results", locals: { recipes: @recipes }
+    else
+      render :index
     end
   end
 

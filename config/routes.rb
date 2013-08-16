@@ -4,6 +4,8 @@ BetterBrewing::Application.routes.draw do
 
   devise_for :users
 
+  get 'recipes/search', to: 'recipes#search'
+
   resources :recipes, except: [:edit, :update] do
     resources :brew_notes, only: [:create, :new, :index]
   end

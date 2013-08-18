@@ -23,7 +23,7 @@ group :development, :test do
   gem 'annotate'
   gem 'rspec-rails'
   gem 'capybara'
-  # gem 'capybara-webkit'
+  gem 'capybara-webkit'
   gem 'database_cleaner', git: 'https://github.com/tommeier/database_cleaner', branch: 'fix-superclass'
 end
 

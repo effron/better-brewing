@@ -6,8 +6,6 @@
 More AJAX SPINNERS:
 brew note show page: adding row, updating row, update bottling notes, update fermentation ntoes. Probably abstract this into library, give things specific class if they need to have ajax spinners added to them.
 
-Use Order by to sort recipes in index
-
 ###brew day experience
 Add timers
 Add checklists

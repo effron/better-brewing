@@ -19,6 +19,6 @@ class FermentationNote < ActiveRecord::Base
                   :fermentation_checks_attributes, :volume_gallons
 
   belongs_to :brew_note
-  has_many :fermentation_checks
+  has_many :fermentation_checks, dependent: :destroy
   accepts_nested_attributes_for :fermentation_checks
 end

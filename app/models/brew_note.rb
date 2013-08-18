@@ -26,12 +26,12 @@ class BrewNote < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :recipe
-  has_many :mash_notes
-  has_one :sparge_note
-  has_one :boil_note
-  has_one :fermentation_note
-  has_one :bottling_note
-  has_many :tasting_notes
+  has_many :mash_notes, dependent: :destroy
+  has_one :sparge_note, dependent: :destroy
+  has_one :boil_note, dependent: :destroy
+  has_one :fermentation_note, dependent: :destroy
+  has_one :bottling_note, dependent: :destroy
+  has_many :tasting_notes, dependent: :destroy
   accepts_nested_attributes_for :mash_notes, :boil_note, :fermentation_note,
                                 :bottling_note, :sparge_note
 

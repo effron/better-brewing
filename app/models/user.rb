@@ -40,11 +40,11 @@ class User < ActiveRecord::Base
   # Virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'username'
   attr_accessor :login
-  has_many :recipes
-  has_many :brew_notes
+  has_many :recipes, dependent: :destroy
+  has_many :brew_notes, dependent: :destroy
   has_many :tasting_notes, through: :brew_notes
   
-  has_many :friendships
+  has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
 
   validates :username, uniqueness: { case_sensitive: false }

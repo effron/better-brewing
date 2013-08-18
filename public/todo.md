@@ -1,10 +1,8 @@
 ##TODO
 
-###FIX CHOSEN BUG THING
-
 
 More AJAX SPINNERS:
-brew note show page: adding row, updating row, update bottling notes, update fermentation ntoes. Probably abstract this into library, give things specific class if they need to have ajax spinners added to them.
+brew note show page: adding row, updating row, update bottling notes, update  fermentation ntoes. Probably abstract this into library, give things specific class if they need to have ajax spinners added to them.
 
 ###brew day experience
 Add timers
@@ -23,5 +21,5 @@ Link the messages to add mash and fermenting notes to somewhere to actially do i
 Make add/remove friend happen Ajaxly
 
 ####Future:
-Ajaxy pagination
+
 Share on facebook and twitter

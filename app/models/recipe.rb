@@ -15,7 +15,7 @@ class Recipe < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :parent, class_name: "Recipe"
-  has_many :children, class_name: "Recipe", foreign_key: :parent_id
+  has_many :children, class_name: "Recipe", foreign_key: :parent_id, dependent: :nullify
   has_many :brew_notes
   has_many :tasting_notes, through: :brew_notes
 

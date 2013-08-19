@@ -3,7 +3,7 @@ Welcome to Better Brewing
 
 Purpose
 -------
-Better Brewing is a place for beer homebrewers to improve their craft by helping them keep track of their recipes, individual brews, and help them pinpoint issues which may cause off flavors in the final product.
+Better Brewing is a place for beer homebrewers to improve their craft by helping them keep track of their recipes, brews, and tasting notes.
 
 Use
 ---

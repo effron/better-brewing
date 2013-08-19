@@ -19,7 +19,7 @@ var data = {
 			data : [
         <%= brew_note.mash_volume_gallons %>,
         <%= brew_note.sparge_note.volume_gallons %>,
-        <%= brew_note.sparge_note.temperature %>,
+        <%= ((brew_note.sparge_note.temperature || 0) - 100) / 10 %>,
         <%= brew_note.boil_note.average_volume_gallons %>,
         <%= brew_note.fermentation_note.volume_gallons %>,
         <%= ((brew_note.fermentation_note.og || 0) - 1000) / 10 %>,

@@ -46,6 +46,6 @@ Technologies used
 TODO
 -----
 
-- Add a newsfeed to see when friends brewed beer
+- Add a newsfeed to see when friends brew beer
 - Merge brew notes compare page into single column with overlapping charts
 - Edit recipes and track changes

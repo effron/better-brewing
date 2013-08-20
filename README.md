@@ -29,14 +29,16 @@ WARNING: Anyone can access this and create any recipe or note they want. The use
 Technologies used
 -----------------
 - Ruby
-- Javascript
+- Rails
+- JavaScript
 - HTML
-- CSS/Sass
-- Ruby on Rails
+- CSS/SASS
 - jQuery
+- jQuery UI
 - UJS
 - RSpec w/ Capybara
 - Chart.js
 - Google Charts
 - BeerXML
+- git
 - Heroku

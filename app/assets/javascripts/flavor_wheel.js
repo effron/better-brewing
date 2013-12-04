@@ -16,8 +16,8 @@ var FlavorWheel = (function(){
       data = parseInfo(names, values);
 
       this.bindEvents();
-      this.resizeCanvas();
       this.draw(this.customOptions);
+      this.resizeCanvas();
     };
 
     this.off = function(){

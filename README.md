@@ -7,7 +7,7 @@ Better Brewing is a place for beer homebrewers to improve their craft by helping
 
 Use
 ---
-Sign up at [Better Brewing](http://better-brewing.herokuapp.com) to get started! Once logged in, you can either upload your own recipe from any recipe software that can export BeerXML(most recipe software), or find and clone a recipe uploaded by another user.
+Sign up at [Better Brewing](http://www.better-brewing.com) to get started! Once logged in, you can either upload your own recipe from any recipe software that can export BeerXML(most recipe software), or find and clone a recipe uploaded by another user.
 
 Better Brewing walks you through the brew process, prompting you to take consistent and complete brew notes. After one brew, you can see the automatically organized notes, and add post brew-day notes too, including fermentation checks and detailed tasting notes.
 

@@ -15,9 +15,9 @@ var FlavorWheel = (function(){
 
       data = parseInfo(names, values);
 
-      this.bindEvents();
+      this.bindEvents();      
+
       this.draw(this.customOptions);
-      this.resizeCanvas();
     };
 
     this.off = function(){
@@ -26,10 +26,16 @@ var FlavorWheel = (function(){
 
     this.bindEvents = function(){
       var that = this
-      $(window).on('resize', container, that.resizeCanvas.bind(that))
+      $(window).on('resize', container, that.redrawWithoutAnimation.bind(that))
     }
 
     this.draw = function(customOptions){
+
+      var that = this;
+      var width = container.width();
+      canvas.width = width;
+      canvas.height = width;
+
       var options = {
         scaleOverride: true,
         scaleSteps: 5,
@@ -59,12 +65,9 @@ var FlavorWheel = (function(){
       };
     }
 
-    this.resizeCanvas = function(){
-      var that = this
-      var width = container.width();
-      canvas.width = width;
-      canvas.height = width;
-      var settings = $.extend({}, that.customOptions, {animation: false})
+    this.redrawWithoutAnimation = function(){
+      var that = this;
+      var settings = $.extend({}, that.customOptions, {animation: false});
 
       that.draw(settings);
     };

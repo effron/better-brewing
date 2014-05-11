@@ -64,7 +64,7 @@ demo = User.create!({ username: "demo_user", email:"demo_user@example.com",
                       password: "password", password_confirmation: "password" })
 
 xml = ""
-open("http://www.brewtoad.com/recipes/firework-cream-ale.xml") do |file|
+open("https://www.brewtoad.com/recipes/firework-cream-ale.xml") do |file|
   xml = file.read
 end
 
